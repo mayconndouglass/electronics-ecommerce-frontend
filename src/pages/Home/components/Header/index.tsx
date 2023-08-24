@@ -2,6 +2,7 @@ import * as S from './styles'
 import { Center } from '../../../../components/Center'
 
 import logo from '/assets/images/logo.png'
+
 import { PiShoppingCartThin } from 'react-icons/Pi'
 import { CiHeart } from 'react-icons/Ci'
 import { CiSearch } from 'react-icons/Ci'
