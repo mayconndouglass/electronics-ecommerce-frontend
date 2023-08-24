@@ -8,10 +8,12 @@ const slideOut = keyframes`
   from {
     transform: translateY(0);
     opacity: 1;
+    height: 40px;
   }
   to {
-    transform: translateY(-45px);
+    transform: translateY(-40px);
     opacity: 0;
+    height: 0px;
   }
 `
 
@@ -20,9 +22,10 @@ export const Container = styled.div<BannerProps>`
   justify-content: space-between;
   align-items: center;
 
-  padding: 8px 20px;
+  padding: 0px 20px;
   background-image: url('assets/images/image-header-top.png');
   opacity: ${props => (props.isOpen ? '1' : '0')};
+  height: ${props => (props.isOpen ? '40px' : '0')};
 
   p, a {
     text-align: center;
@@ -45,5 +48,5 @@ export const Container = styled.div<BannerProps>`
     cursor: pointer;
   }
 
-  animation: ${props => (!props.isOpen ? slideOut : '')} 0.5s ease-in-out;
+  animation: ${props => (!props.isOpen ? slideOut : '')} 0.5s ease;
 `
