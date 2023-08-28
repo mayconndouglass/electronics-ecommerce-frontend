@@ -1,11 +1,11 @@
 import * as S from './styles'
 
-interface ProductImageProps {
+interface ProductImageCarouselProps {
   image: string
   price: string
 }
 
-export const ProductImage = ({ image, price }: ProductImageProps) => {
+export const ProductImageCarousel = ({ image, price }: ProductImageCarouselProps) => {
   return (
     <S.Container>
       <img src={image} alt="" />
