@@ -1,18 +1,15 @@
+import { useState } from 'react'
+import Slider from 'react-slick'
 import * as S from './styles'
+
+import { Center } from '../../../../components/Center'
+import { ProductImageCarousel } from './components/ProductImageCarousel'
+import { ProductInfoCarousel } from './components/ProductInfoCarousel'
 
 import { productImageData } from './data/product-image-data'
 import { ProductInfoData } from './data/product-info-data'
 
-import { Center } from '../../../../components/Center'
-
-import { useState } from 'react'
-
 import shapeCarousel from '/assets/images/shape-carousel.png'
-
-import Slider from 'react-slick'
-import { ProductImageCarousel } from './components/ProductImageCarousel'
-import { ProductInfoCarousel } from './components/ProductInfoCarousel'
-/* https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react-slick */
 
 const beforeChange = (prev: number, next: number) => {
   const prevSlideElement = document.querySelector(`[data-index="${prev}"]`)

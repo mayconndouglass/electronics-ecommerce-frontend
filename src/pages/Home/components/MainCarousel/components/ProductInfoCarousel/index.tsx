@@ -1,9 +1,10 @@
 import * as S from './styles'
+import { Tag } from '../../../../../../components/Tag'
 
-import { FaFire } from 'react-icons/Fa'
 import { HiOutlineShoppingCart } from 'react-icons/Hi'
 import { AiFillStar } from 'react-icons/Ai'
 import { CiStar } from 'react-icons/Ci'
+import { FaFire } from 'react-icons/Fa'
 
 interface ProductInfoCarouselProps {
   id: number
@@ -20,12 +21,7 @@ export const ProductInfoCarousel = ({
 }: ProductInfoCarouselProps) => {
   return (
     <S.Container className='product-info'>
-      <span>
-        <div className="icon-container">
-          <FaFire />
-        </div>
-        Hot Deal In This Week
-      </span>
+      <Tag icon={<FaFire />} title='Hot Deal In This Week' />
 
       <h1>{title}</h1>
 
