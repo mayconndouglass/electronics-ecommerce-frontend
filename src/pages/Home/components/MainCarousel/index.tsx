@@ -1,5 +1,7 @@
 import * as S from './styles'
 
+import { productImageData } from './data/product-image-data'
+
 import { Center } from '../../../../components/Center'
 
 import { useState } from 'react'
@@ -14,10 +16,10 @@ import userTwo from '/assets/images/userTwo.png'
 import userThree from '/assets/images/userThree.png'
 import userFor from '/assets/images/userFor.png'
 
-import headPhone from '/assets/images/main-image-headphone.png'
 import shapeCarousel from '/assets/images/shape-carousel.png'
 
 import Slider from 'react-slick'
+import { ProductImage } from './components/ProductImage'
 /* https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react-slick */
 
 const beforeChange = (prev: number, next: number) => {
@@ -29,8 +31,10 @@ const beforeChange = (prev: number, next: number) => {
     prevSlideElement!.classList.remove('next-slide-anim')
     nextSlideElement!.classList.add('next-slide-anim')
   })
+
   console.log('testando')
 }
+
 export const MainCarousel = () => {
   const [infoNav, setInfoNav] = useState<Slider>()
   const [imageNav, setImageNav] = useState<Slider>()
@@ -210,34 +214,16 @@ export const MainCarousel = () => {
           </div>
         </Slider>
 
-
         <Slider
           {...imageSlider}
           asNavFor={imageNav}
           ref={(ImageSlider: Slider) => setInfoNav(ImageSlider)}
         >
-          <div className="product-image" >
-            <img src={headPhone} alt="" />
-            <div className="product-price">
-              <span>From</span>
-              <span>$49.00</span>
-            </div>
-          </div>
-          <div className="product-image">
-            <img src={headPhone} alt="" />
-            <div className="product-price">
-              <span>From</span>
-              <span>$49.00</span>
-            </div>
-          </div>
-          <div className="product-image">
-            <img src={headPhone} alt="" />
-            <div className="product-price">
-              <span>From</span>
-              <span>$49.00</span>
-            </div>
-          </div>
+          <ProductImage {...productImageData}/>
+          <ProductImage {...productImageData}/>
+          <ProductImage {...productImageData}/>
         </Slider>
+
         <div className='shape-carousel'>
           <img src={shapeCarousel} alt="" />
         </div>
