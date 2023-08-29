@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Header = styled.header`
+export const Header = styled.header<{ position: string }>`
   background-color: #f9f3f0;
   padding-bottom: 2rem;
 
@@ -39,6 +39,8 @@ export const Header = styled.header`
     padding: 0 2.5rem;
     border-radius: 0.5rem;
     background-color: white;
+
+    position: ${props => props.position};
 
     nav {
       ul {

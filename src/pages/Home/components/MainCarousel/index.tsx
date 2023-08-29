@@ -14,7 +14,6 @@ import shapeCarousel from '/assets/images/shape-carousel.png'
 const beforeChange = (prev: number, next: number) => {
   const prevSlideElement = document.querySelector(`[data-index="${prev}"]`)
   const nextSlideElement = document.querySelector(`[data-index="${next}"]`)
-  console.log(prevSlideElement, nextSlideElement)
 
   setTimeout(() => {
     prevSlideElement!.classList.remove('next-slide-anim')

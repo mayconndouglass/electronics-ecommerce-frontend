@@ -8,7 +8,7 @@ export const HeaderTop = () => {
   const [isOpen, setIsOpen] = useState(true)
 
   return (
-    <S.Container isOpen={isOpen}>
+    <S.Container open={isOpen}>
       <div></div>
       <Center>
         <p>Open Doors To A World Of Fashion <a href="#">Discover More</a></p>

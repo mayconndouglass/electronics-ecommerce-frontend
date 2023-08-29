@@ -1,4 +1,6 @@
 import * as S from './styles'
+import { useState, useEffect } from 'react'
+
 import { Center } from '../../../../components/Center'
 
 import logo from '/assets/images/logo.png'
@@ -9,8 +11,23 @@ import { CiSearch } from 'react-icons/Ci'
 import { CiUser } from 'react-icons/Ci'
 
 export const Header = () => {
+  const [isMenuFixed, setIsMenuFixed] = useState<boolean>(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+      setIsMenuFixed(scrollTop > 80)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
-    <S.Header>
+    <S.Header position={isMenuFixed ? 'fixed' : 'relative'}>
       <Center>
         <div className="header-utils">
           <ul>

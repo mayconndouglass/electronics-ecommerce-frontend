@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components'
 
 interface BannerProps {
-  isOpen: boolean;
+  open: boolean;
 }
 
 const slideOut = keyframes`
@@ -24,8 +24,8 @@ export const Container = styled.div<BannerProps>`
 
   padding: 0px 20px;
   background-image: url('assets/images/image-header-top.png');
-  opacity: ${props => (props.isOpen ? '1' : '0')};
-  height: ${props => (props.isOpen ? '40px' : '0')};
+  opacity: ${props => (props.open ? '1' : '0')};
+  height: ${props => (props.open ? '40px' : '0')};
 
   p, a {
     text-align: center;
@@ -48,5 +48,5 @@ export const Container = styled.div<BannerProps>`
     cursor: pointer;
   }
 
-  animation: ${props => (!props.isOpen ? slideOut : '')} 0.5s ease;
+  animation: ${props => (!props.open ? slideOut : '')} 0.5s ease;
 `

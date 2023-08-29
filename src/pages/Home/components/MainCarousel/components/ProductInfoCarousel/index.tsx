@@ -14,7 +14,6 @@ interface ProductInfoCarouselProps {
 }
 
 export const ProductInfoCarousel = ({
-  id,
   title,
   users,
   numberOfReviews
@@ -33,7 +32,7 @@ export const ProductInfoCarousel = ({
         <div className="users">
           <ul>
             {users.map(user => (
-              <li key={id}>
+              <li key={ user }>
                 <img src={user} alt="User" />
               </li>
             ))}
