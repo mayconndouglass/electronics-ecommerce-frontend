@@ -1,5 +1,4 @@
 import * as S from './styles'
-import { useState, useEffect } from 'react'
 
 import { Center } from '../../../../components/Center'
 
@@ -9,25 +8,14 @@ import { PiShoppingCartThin } from 'react-icons/Pi'
 import { CiHeart } from 'react-icons/Ci'
 import { CiSearch } from 'react-icons/Ci'
 import { CiUser } from 'react-icons/Ci'
+// import { usePageY } from '../../../../hooks/usePageY'
 
 export const Header = () => {
-  const [isMenuFixed, setIsMenuFixed] = useState<boolean>(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-      setIsMenuFixed(scrollTop > 80)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
+  // const isPageTop = usePageY()
+  /*  const headerState = isPageTop ? 'container-navigation' : 'container-navigation scrolled' */
 
   return (
-    <S.Header position={isMenuFixed ? 'fixed' : 'relative'}>
+    <S.Header>
       <Center>
         <div className="header-utils">
           <ul>
@@ -37,7 +25,7 @@ export const Header = () => {
           </ul>
         </div>
 
-        <div className="container-navigation">
+        <div className='container-navigation'>
           <img src={logo} alt="logo" />
 
           <nav>

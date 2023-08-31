@@ -1,8 +1,14 @@
 import styled from 'styled-components'
 
-export const Header = styled.header<{ position: string }>`
+export const Header = styled.header`
   background-color: #f9f3f0;
   padding-bottom: 2rem;
+/*
+  .scrolled {
+    position: sticky;
+    width: 1320px;
+    top: 10px
+  } */
 
   .header-utils {
     padding: 0.5rem 1rem;
@@ -39,8 +45,10 @@ export const Header = styled.header<{ position: string }>`
     padding: 0 2.5rem;
     border-radius: 0.5rem;
     background-color: white;
+    z-index: 3;
 
-    position: ${props => props.position};
+    position: sticky;
+    top: 20px;
 
     nav {
       ul {
