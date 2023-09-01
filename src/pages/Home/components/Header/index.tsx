@@ -1,19 +1,14 @@
 import * as S from './styles'
 
 import { Center } from '../../../../components/Center'
-
 import logo from '/assets/images/logo.png'
 
 import { PiShoppingCartThin } from 'react-icons/Pi'
 import { CiHeart } from 'react-icons/Ci'
 import { CiSearch } from 'react-icons/Ci'
 import { CiUser } from 'react-icons/Ci'
-// import { usePageY } from '../../../../hooks/usePageY'
 
 export const Header = () => {
-  // const isPageTop = usePageY()
-  /*  const headerState = isPageTop ? 'container-navigation' : 'container-navigation scrolled' */
-
   return (
     <S.Header>
       <Center>
@@ -24,7 +19,6 @@ export const Header = () => {
             <li><a href="#">Sign In</a></li>
           </ul>
         </div>
-
         <div className='container-navigation'>
           <img src={logo} alt="logo" />
 
@@ -45,6 +39,7 @@ export const Header = () => {
             <a href="#"><CiUser /></a>
           </div>
         </div>
+
       </Center>
     </S.Header>
   )

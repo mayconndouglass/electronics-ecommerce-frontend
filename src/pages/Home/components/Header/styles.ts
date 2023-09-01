@@ -9,33 +9,6 @@ export const Header = styled.header`
     width: 1320px;
     top: 10px
   } */
-
-  .header-utils {
-    padding: 0.5rem 1rem;
-
-    ul {
-      display: flex;
-      justify-content: end;
-      gap: 2rem;
-
-      li {
-        list-style: none;
-
-        a {
-          color: #777;
-          font-family: 'DM sans';
-          font-weight: 400;
-          font-size: 0.875rem;
-          text-decoration: none;
-
-          &:hover {
-            color: #0d6efd;
-          }
-        }
-      }
-    }
-  }
-
   .container-navigation {
     display: flex;
     justify-content: space-between;
@@ -134,4 +107,34 @@ export const Header = styled.header`
   svg {
     z-index: 1;
   }
+
+  .header-utils {
+    padding: 0.5rem 1rem;
+
+    ul {
+      display: flex;
+      justify-content: end;
+      gap: 2rem;
+
+      li {
+        list-style: none;
+
+        a {
+          color: #777;
+          font-family: 'DM sans';
+          font-weight: 400;
+          font-size: 0.875rem;
+          text-decoration: none;
+
+          &:hover {
+            color: #0d6efd;
+          }
+        }
+      }
+    }
+  }
+
+
+
+
 `
