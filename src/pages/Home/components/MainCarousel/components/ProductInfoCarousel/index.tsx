@@ -5,6 +5,7 @@ import { HiOutlineShoppingCart } from 'react-icons/Hi'
 import { AiFillStar } from 'react-icons/Ai'
 import { CiStar } from 'react-icons/Ci'
 import { FaFire } from 'react-icons/Fa'
+import { AnimatedButton } from '../../../../../../components/AnimatedButton'
 
 interface ProductInfoCarouselProps {
   id: number
@@ -25,14 +26,15 @@ export const ProductInfoCarousel = ({
       <h1>{title}</h1>
 
       <div className="more-info">
-        <a href="#">
-          <HiOutlineShoppingCart /> Shop Now
-        </a>
+        <AnimatedButton
+          icon={<HiOutlineShoppingCart />}
+          title={'Shop Now'}
+        />
 
         <div className="users">
           <ul>
             {users.map(user => (
-              <li key={ user }>
+              <li key={user}>
                 <img src={user} alt="User" />
               </li>
             ))}
