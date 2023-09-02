@@ -10,10 +10,10 @@ type AnimatedButtonProps = {
 
 export const AnimatedButton = (props: AnimatedButtonProps) => {
   return (
-    <S.Container>
+    <S.Container color={props.color} backgroundColor={props.backgroundColor}>
       <a href="#">
         {props.icon} {props.title}
       </a>
-    </S.Container>
+    </S.Container >
   )
 }

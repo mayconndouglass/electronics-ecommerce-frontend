@@ -3,6 +3,7 @@ import * as S from './styles'
 import { Tag } from '../../../../components/Tag'
 import { ImHeadphones } from 'react-icons/Im'
 import headsetWhite from '../../../../../public/assets/images/headset-white.png'
+import { AnimatedButton } from '../../../../components/AnimatedButton'
 
 export const Experience = () => {
   return (
@@ -30,6 +31,11 @@ export const Experience = () => {
             <p>Sec</p>
           </div>
         </div>
+        <AnimatedButton
+          title={'Check it Out!'}
+          color='white'
+          backgroundColor='#3577F0'
+        />
       </div>
 
       <div className="image">

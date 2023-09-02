@@ -11,7 +11,7 @@ export const Container = styled.section`
   background-color: #F6F7FB;
 
   h2 {
-    font-size: 48px;
+    font-size: 3rem;
     font-weight: 700;
     margin: 10px 0 30px 0;
     color: #292930;
@@ -20,11 +20,16 @@ export const Container = styled.section`
 
   .info {
     width: 50%;
+
+    a {
+      display: inline-block;
+    }
   }
 
   .countdown-container {
     display: flex;
     gap: 15px;
+    margin-bottom: 2.5rem;
 
     .countdown {
       height: 80px;
@@ -38,7 +43,7 @@ export const Container = styled.section`
       border-radius: 50%;
 
       span {
-        font-size: 24px;
+        font-size: 1.5rem;
         font-weight: 500;
         color: #000;
         line-height: 1;
@@ -47,7 +52,7 @@ export const Container = styled.section`
 
       p {
         line-height: 1;
-        font-size: 14px;
+        font-size: 0.875rem;
         font-weight: 500;
         color: #777;
       }

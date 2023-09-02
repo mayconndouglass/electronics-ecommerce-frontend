@@ -36,7 +36,7 @@ export const Container = styled.div<ButtonProps>`
         right: 0;
         z-index: -1;
         transition: transform .5s cubic-bezier(0.165, 0.84, 0.44, 1);
-        background-color: white;
+        background-color: ${props => props.backgroundColor ? props.backgroundColor : 'white'};
       }
 
       &:hover::before {
