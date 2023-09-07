@@ -4,8 +4,13 @@ import { Center } from '../../../../components/Center'
 
 import { BsTags } from 'react-icons/Bs'
 import { Tag } from '../../../../components/Tag'
+import { CardCategory } from './CardCategory'
 
-import phones from '../../../../../public/assets/images/phones.png'
+const dataTest = {
+  image: '../../../../../public/assets/images/phones.png',
+  alt: 'qualqr um',
+  title: 'Maycon'
+}
 
 export const Categories = () => {
   return (
@@ -17,10 +22,7 @@ export const Categories = () => {
 
         <div className="container-categories">
           <div className="cards">
-            <a href="#">
-              <img src={phones} alt="Phones Categorie" />
-              <h4>Phones</h4>
-            </a>
+            <CardCategory {...dataTest} />
           </div>
         </div>
       </Center>
