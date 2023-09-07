@@ -13,9 +13,5 @@ export const Container = styled.section`
 
   .container-categories {
     margin-top: 60px;
-
-    .cards {
-
-    }
   }
 `
