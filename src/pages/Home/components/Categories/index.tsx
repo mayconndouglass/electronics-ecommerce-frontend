@@ -1,19 +1,17 @@
+import * as S from './styles'
 import { useEffect, useState } from 'react'
-import axios from 'axios'
 
 import Slider from 'react-slick'
+import axios from 'axios'
 
 import { Center } from '../../../../components/Center'
-import { BsTags } from 'react-icons/Bs'
 import { Tag } from '../../../../components/Tag'
 import { CardCategory } from './components/CardCategory'
+import { Arrow } from './components/Arrow'
 
-import * as S from './styles'
-
+import { BsTags } from 'react-icons/Bs'
 import { HiOutlineArrowNarrowRight } from 'react-icons/Hi'
 import { HiOutlineArrowNarrowLeft } from 'react-icons/Hi'
-
-import { Arrow } from './components/Arrow'
 
 type Category = {
   id: string

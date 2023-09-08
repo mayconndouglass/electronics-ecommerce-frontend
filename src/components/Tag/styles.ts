@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.span`
+export const Container = styled.span<{ color: string }>`
   display: flex;
   align-items: center;
   gap: 10px;
@@ -10,7 +10,7 @@ export const Container = styled.span`
 
   font-size: 14px;
   font-weight: 700;
-  color: #ff497c;
+  color: ${props => props.color};
 
   .icon-container {
     display: flex;
@@ -20,7 +20,7 @@ export const Container = styled.span`
     height: 24px;
     width: 24px;
 
-    background-color: #ff497c;
+    background-color: ${props => props.color};
     border-radius: 50%;
   }
 

@@ -3,11 +3,12 @@ import * as S from './styles'
 interface TagProps {
   title: string
   icon: React.ReactNode
+  color: string
 }
 
-export const Tag = ({ title, icon }: TagProps) => {
+export const Tag = ({ title, icon, color }: TagProps) => {
   return (
-    <S.Container>
+    <S.Container color={color}>
       <div className="icon-container">
         {icon}
       </div>
