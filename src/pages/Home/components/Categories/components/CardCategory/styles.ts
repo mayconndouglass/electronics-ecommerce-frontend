@@ -21,7 +21,7 @@ export const Container = styled.div`
       content: "";
       height: 100%;
       width: 100%;
-      background-color: var(--color-white);
+      background-color: white;
       border: 1px solid #f0f0f0;
       border-radius: 4px;
       position: absolute;

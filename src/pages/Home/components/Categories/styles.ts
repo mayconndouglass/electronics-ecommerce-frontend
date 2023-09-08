@@ -12,6 +12,10 @@ export const Container = styled.section`
   }
 
   .container-categories {
-    margin-top: 60px;
+    margin-top: 10px;
+
+    .slick-list {
+      padding-block: 2rem;
+    }
   }
 `
