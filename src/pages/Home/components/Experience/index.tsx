@@ -9,7 +9,11 @@ export const Experience = () => {
   return (
     <S.Container>
       <div className="info">
-        <Tag icon={<ImHeadphones />} title='Don’t Miss!!' />
+        <Tag
+          icon={<ImHeadphones />}
+          title='Don’t Miss!!'
+          color={'#ff497c'}
+        />
         <h2>
           Enhance Your Music Experience
         </h2>

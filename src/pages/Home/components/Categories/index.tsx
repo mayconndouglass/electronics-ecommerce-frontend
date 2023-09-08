@@ -51,7 +51,11 @@ export const Categories = () => {
   return (
     <S.Container>
       <Center>
-        <Tag icon={<BsTags />} title='Categories' />
+        <Tag
+          icon={<BsTags />}
+          title='Categories'
+          color={'#ff497c'}
+        />
 
         <h2>Browse by Category</h2>
 

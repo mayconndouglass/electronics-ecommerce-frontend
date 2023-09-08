@@ -21,7 +21,11 @@ export const ProductInfoCarousel = ({
 }: ProductInfoCarouselProps) => {
   return (
     <S.Container className='product-info'>
-      <Tag icon={<FaFire />} title='Hot Deal In This Week' />
+      <Tag
+        icon={<FaFire />}
+        title='Hot Deal In This Week'
+        color={'#ff497c'}
+      />
 
       <h1>{title}</h1>
 
