@@ -3,7 +3,7 @@ import * as S from './styles'
 
 type AnimatedButtonProps = {
   icon?: React.ReactNode
-  title: string
+  title?: string
   backgroundColor?: string
   color?: string
 }

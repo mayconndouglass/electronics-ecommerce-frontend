@@ -5,6 +5,7 @@ import { HiOutlineShoppingCart } from 'react-icons/Hi'
 import { AiFillStar } from 'react-icons/Ai'
 import { CiStar } from 'react-icons/Ci'
 import { FaFire } from 'react-icons/Fa'
+
 import { AnimatedButton } from '../../../../../../components/AnimatedButton'
 
 interface ProductInfoCarouselProps {
