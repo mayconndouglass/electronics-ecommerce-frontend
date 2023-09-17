@@ -24,7 +24,7 @@ export const ProductInfoCarousel = ({
     <S.Container className='product-info'>
       <Tag
         icon={<FaFire />}
-        title='Hot Deal In This Week'
+        title='Ofertas Desta Semana'
         color={'#ff497c'}
       />
 
@@ -33,7 +33,7 @@ export const ProductInfoCarousel = ({
       <div className="more-info">
         <AnimatedButton
           icon={<HiOutlineShoppingCart />}
-          title={'Shop Now'}
+          title={'Compre Agora'}
         />
 
         <div className="users">
@@ -55,7 +55,7 @@ export const ProductInfoCarousel = ({
             <CiStar />
           </div>
 
-          <span>{numberOfReviews}</span> Reviews
+          <span>{numberOfReviews}</span> Avaliações
         </div>
       </div>
     </S.Container>

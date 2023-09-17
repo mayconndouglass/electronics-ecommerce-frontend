@@ -27,7 +27,7 @@ export const ProductCard = () => {
           </div>
           <div className="add-to-cart">
             <AnimatedButton
-              title='Add to Cart'
+              title='Adicionar ao Carrinho'
               backgroundColor='#ff497c'
             />
           </div>

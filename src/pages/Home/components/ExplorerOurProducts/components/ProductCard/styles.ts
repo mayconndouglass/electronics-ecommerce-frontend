@@ -88,15 +88,15 @@ export const Container = styled.div`
           display: flex;
           justify-content: center;
           align-items: center;
-          width: 130px;
+          /* width: 130px; */
           height: 40px;
           margin-right: 0;
-          padding: 0;
+          padding: 0 5px;
           border-radius: 4px;
 
           color: white;
           font-weight: 700;
-          font-size: 14px;
+          font-size: 0.875rem;
         }
       }
     }

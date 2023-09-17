@@ -10,7 +10,7 @@ export const ProductImageCarousel = ({ image, price }: ProductImageCarouselProps
     <S.Container>
       <img src={image} alt="" />
       <div className="product-price">
-        <span>From</span>
+        <span>Promoção</span>
         <span>{price}</span>
       </div>
     </S.Container>

@@ -14,9 +14,9 @@ export const Header = () => {
       <Center>
         <div className="header-utils">
           <ul>
-            <li><a href="#">Help</a></li>
-            <li><a href="#">Join Us</a></li>
-            <li><a href="#">Sign In</a></li>
+            <li><a href="#">Ajuda</a></li>
+            <li><a href="#">Siga-nos</a></li>
+            <li><a href="#">Login</a></li>
           </ul>
         </div>
         <div className='container-navigation'>
@@ -24,11 +24,11 @@ export const Header = () => {
 
           <nav>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Shop</a></li>
-              <li><a href="#">Pages</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="#">Início</a></li>
+              <li><a href="#">Loja</a></li>
+              <li><a href="#">Páginas</a></li>
+              <li><a href="#">Sobre</a></li>
+              <li><a href="#">Contato</a></li>
             </ul>
           </nav>
 

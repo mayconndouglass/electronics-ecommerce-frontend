@@ -10,8 +10,8 @@ export const ExplorerOurProducts = () => {
   return (
     <S.Container>
       <Center>
-        <Tag title='Our Products' color='#8C71DB' icon={<BsBasket />} />
-        <h2>Explore our Products</h2>
+        <Tag title='Nossos Produtos' color='#8C71DB' icon={<BsBasket />} />
+        <h2>Explore nossos Produtos</h2>
 
         <div className="container-products-cards">
           <ProductCard />

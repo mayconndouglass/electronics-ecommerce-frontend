@@ -11,16 +11,16 @@ export const Experience = () => {
       <div className="info">
         <Tag
           icon={<ImHeadphones />}
-          title='Don’t Miss!!'
+          title='Não Perca!!'
           color={'#ff497c'}
         />
         <h2>
-          Enhance Your Music Experience
+          Aprimore Sua <br />Experiência Musical
         </h2>
         <div className="countdown-container">
           <div className="countdown">
             <span>0</span>
-            <p>Day</p>
+            <p>Dias</p>
           </div>
           <div className="countdown">
             <span>00</span>
@@ -32,11 +32,11 @@ export const Experience = () => {
           </div>
           <div className="countdown">
             <span>00</span>
-            <p>Sec</p>
+            <p>Seg</p>
           </div>
         </div>
         <AnimatedButton
-          title={'Check it Out!'}
+          title={'Confira Agora!'}
           color='white'
           backgroundColor='#3577F0'
         />

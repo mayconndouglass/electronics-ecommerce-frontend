@@ -53,11 +53,11 @@ export const Categories = () => {
       <Center>
         <Tag
           icon={<BsTags />}
-          title='Categories'
+          title='Categorias'
           color={'#ff497c'}
         />
 
-        <h2>Browse by Category</h2>
+        <h2>Busque por Categorias</h2>
 
         <div className="container-categories">
           <div className="cards">

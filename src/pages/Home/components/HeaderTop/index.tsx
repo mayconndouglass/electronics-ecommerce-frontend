@@ -11,7 +11,7 @@ export const HeaderTop = () => {
     <S.Container open={isOpen}>
       <div></div>
       <Center>
-        <p>Open Doors To A World Of Fashion <a href="#">Discover More</a></p>
+        <p>Portas Abertas Para Um Mundo De Técnologia <a href="#">Descubra Mais</a></p>
       </Center>
 
       <div className="close" onClick={() => setIsOpen(!isOpen)}>
