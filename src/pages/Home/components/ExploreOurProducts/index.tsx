@@ -16,7 +16,7 @@ import { HiOutlineArrowNarrowLeft } from 'react-icons/Hi'
 import { BsBasket } from 'react-icons/Bs'
 import { AnimatedButton } from '../../../../components/AnimatedButton'
 
-export const ExplorerOurProducts = () => {
+export const ExploreOurProducts = () => {
   const [products, setProducts] = useState<Product[]>()
 
   useEffect(() => {
