@@ -28,7 +28,7 @@ export const Container = styled.section`
 
   .countdown-container {
     display: flex;
-    gap: 15px;
+    gap: 1rem;
     margin-bottom: 2.5rem;
 
     .countdown {

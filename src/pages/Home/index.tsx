@@ -1,6 +1,6 @@
 import { Categories } from './components/Categories'
 import { Experience } from './components/Experience'
-import { ExplorerOurProducts } from './components/ExplorerOurProducts'
+import { ExploreOurProducts } from './components/ExploreOurProducts'
 import { Header } from './components/Header'
 import { HeaderTop } from './components/HeaderTop'
 import { MainCarousel } from './components/MainCarousel'
@@ -13,7 +13,7 @@ export const Home = () => {
       <MainCarousel />
       <Categories />
       <Experience />
-      <ExplorerOurProducts />
+      <ExploreOurProducts />
     </>
   )
 }

@@ -17,6 +17,8 @@ export const Container = styled.div`
 
   .users {
     animation: carousel-animation 1200 ease-in-out 0s normal none 1 running;
+    margin-left: 2rem;
+
     ul {
       display: flex;
 
