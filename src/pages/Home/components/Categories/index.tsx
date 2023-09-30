@@ -7,7 +7,7 @@ import axios from 'axios'
 import { Center } from '../../../../components/Center'
 import { Tag } from '../../../../components/Tag'
 import { CardCategory } from './components/CardCategory'
-import { Arrow } from './components/Arrow'
+import { Arrow } from '../../../../components/Arrow'
 
 import { BsTags } from 'react-icons/Bs'
 import { HiOutlineArrowNarrowRight } from 'react-icons/Hi'
@@ -43,8 +43,8 @@ export const Categories = () => {
     speed: 500,
     slidesToShow: 7,
     slidesToScroll: 3,
-    prevArrow: <Arrow right='58px' icon={<HiOutlineArrowNarrowLeft />} />,
-    nextArrow: <Arrow right='0' icon={<HiOutlineArrowNarrowRight />} />,
+    prevArrow: <Arrow right='58px' top='-32px' icon={<HiOutlineArrowNarrowLeft />} />,
+    nextArrow: <Arrow right='0' top='-32px' icon={<HiOutlineArrowNarrowRight />} />,
     useTransform: true,
   }
 
