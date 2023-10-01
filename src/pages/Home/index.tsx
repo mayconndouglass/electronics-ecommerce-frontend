@@ -4,6 +4,7 @@ import { ExploreOurProducts } from './components/ExploreOurProducts'
 import { Header } from './components/Header'
 import { HeaderTop } from './components/HeaderTop'
 import { MainCarousel } from './components/MainCarousel'
+import { Testimonials } from './components/Testimonials'
 
 export const Home = () => {
   return (
@@ -14,6 +15,7 @@ export const Home = () => {
       <Categories />
       <Experience />
       <ExploreOurProducts />
+      <Testimonials />
     </>
   )
 }
