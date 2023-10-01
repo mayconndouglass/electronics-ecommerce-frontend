@@ -12,6 +12,7 @@ import { Arrow } from '../../../../components/Arrow'
 import { BsTags } from 'react-icons/Bs'
 import { HiOutlineArrowNarrowRight } from 'react-icons/Hi'
 import { HiOutlineArrowNarrowLeft } from 'react-icons/Hi'
+import { Title } from '../../../../components/Title'
 
 type Category = {
   id: string
@@ -57,7 +58,7 @@ export const Categories = () => {
           color={'#ff497c'}
         />
 
-        <h2>Busque por Categorias</h2>
+        <Title fontSize={2.25}>Busque por Categorias</Title>
 
         <div className="container-categories">
           <div className="cards">

@@ -4,6 +4,7 @@ import { Tag } from '../../../../components/Tag'
 import { ImHeadphones } from 'react-icons/Im'
 import headsetWhite from '../../../../../public/assets/images/headset-white.png'
 import { AnimatedButton } from '../../../../components/AnimatedButton'
+import { Title } from '../../../../components/Title'
 
 export const Experience = () => {
   return (
@@ -14,9 +15,11 @@ export const Experience = () => {
           title='Não Perca!!'
           color={'#ff497c'}
         />
-        <h2>
+
+        <Title fontSize={3}>
           Aprimore Sua <br />Experiência Musical
-        </h2>
+        </Title>
+
         <div className="countdown-container">
           <div className="countdown">
             <span>0</span>

@@ -15,6 +15,7 @@ import { HiOutlineArrowNarrowRight } from 'react-icons/Hi'
 import { HiOutlineArrowNarrowLeft } from 'react-icons/Hi'
 import { BsBasket } from 'react-icons/Bs'
 import { AnimatedButton } from '../../../../components/AnimatedButton'
+import { Title } from '../../../../components/Title'
 
 export const ExploreOurProducts = () => {
   const [products, setProducts] = useState<Product[]>()
@@ -49,7 +50,7 @@ export const ExploreOurProducts = () => {
     <S.Container>
       <Center>
         <Tag title='Nossos Produtos' color='#8C71DB' icon={<BsBasket />} />
-        <h2>Explore nossos Produtos</h2>
+        <Title fontSize={2.25}>Explore nossos Produtos</Title>
 
         <div className="container-products-cards">
           <Slider {...settings}>

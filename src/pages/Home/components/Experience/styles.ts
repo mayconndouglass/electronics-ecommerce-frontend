@@ -11,11 +11,7 @@ export const Container = styled.section`
   background-color: #F6F7FB;
 
   h2 {
-    font-size: 3rem;
-    font-weight: 700;
     margin: 10px 0 30px 0;
-    color: #292930;
-    line-height: 1.3;
   }
 
   .info {
