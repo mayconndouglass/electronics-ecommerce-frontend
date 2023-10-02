@@ -8,7 +8,7 @@ import { Product } from '../../../../types/product'
 
 import { Tag } from '../../../../components/Tag'
 import { Center } from '../../../../components/Center'
-import { ProductCard } from './components/ProductCard'
+import { ProductCard } from '../../../../components/ProductCard'
 import { Arrow } from '../../../../components/Arrow'
 
 import { HiOutlineArrowNarrowRight } from 'react-icons/Hi'
@@ -55,7 +55,7 @@ export const ExploreOurProducts = () => {
         <div className="container-products-cards">
           <Slider {...settings}>
             {products?.map(product => (
-              <ProductCard key={product.id} {...product} />
+              <ProductCard key={product.id} {...product} cardStyle='normal' />
             ))}
           </Slider>
         </div>
