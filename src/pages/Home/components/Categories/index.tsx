@@ -8,11 +8,11 @@ import { Center } from '../../../../components/Center'
 import { Tag } from '../../../../components/Tag'
 import { CardCategory } from './components/CardCategory'
 import { Arrow } from '../../../../components/Arrow'
+import { Title } from '../../../../components/Title'
 
 import { BsTags } from 'react-icons/Bs'
 import { HiOutlineArrowNarrowRight } from 'react-icons/Hi'
 import { HiOutlineArrowNarrowLeft } from 'react-icons/Hi'
-import { Title } from '../../../../components/Title'
 
 type Category = {
   id: string
