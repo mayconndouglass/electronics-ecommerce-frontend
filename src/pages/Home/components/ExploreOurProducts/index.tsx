@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Slider from 'react-slick'
 
-import { Product } from '../../../../types/product'
+import { ProductTypeTwo } from '../../../../types/product'
 
 import { Tag } from '../../../../components/Tag'
 import { Center } from '../../../../components/Center'
@@ -18,15 +18,14 @@ import { AnimatedButton } from '../../../../components/AnimatedButton'
 import { Title } from '../../../../components/Title'
 
 export const ExploreOurProducts = () => {
-  const [products, setProducts] = useState<Product[]>()
+  const [featuredProducts, setFeaturedProducts] = useState<ProductTypeTwo[]>()
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3333/products')
-        const { products } = response.data
-
-        setProducts(products)
+        const response = await axios.get('http://localhost:3333/featured-products')
+        const { featuredProducts } = response.data
+        setFeaturedProducts(featuredProducts)
       } catch (error) {
         console.error(error)
       }
@@ -54,7 +53,7 @@ export const ExploreOurProducts = () => {
 
         <div className="container-products-cards">
           <Slider {...settings}>
-            {products?.map(product => (
+            {featuredProducts?.map(product => (
               <ProductCard key={product.id} {...product} cardStyle='normal' />
             ))}
           </Slider>
