@@ -6,6 +6,7 @@ import { HeaderTop } from './components/HeaderTop'
 import { MainCarousel } from './components/MainCarousel'
 import { Promotions } from './components/Promotions'
 import { Testimonials } from './components/Testimonials'
+import { WayUs } from './components/WayUs'
 
 export const Home = () => {
   return (
@@ -18,6 +19,7 @@ export const Home = () => {
       <ExploreOurProducts />
       <Testimonials />
       <Promotions />
+      <WayUs />
     </>
   )
 }
