@@ -1,6 +1,6 @@
 import * as S from './styles'
 
-import { Product } from '../../types/product'
+import { ProductTypeTwo } from '../../types/product'
 
 import { AiFillStar } from 'react-icons/Ai'
 import { ImEye } from 'react-icons/Im'
@@ -12,13 +12,13 @@ type ProductCardProps = {
   cardStyle: 'normal' | 'circular'
 }
 
-export const ProductCard = (product: Product & ProductCardProps) => {
-  const { images, name, discount, price, promotional_price, cardStyle } = product
+export const ProductCard = (product: ProductTypeTwo & ProductCardProps) => {
+  const { image_url, name, discount, price, promotional_price, cardStyle } = product
 
   return (
     <S.Container cardStyle={cardStyle}>
       <a className="image-container">
-        <img src={images[0].url} alt={name} />
+        <img src={image_url} alt={name} />
 
         {discount && (
           <div className="badget-container">
@@ -104,7 +104,6 @@ export const ProductCard = (product: Product & ProductCardProps) => {
             </div>
           </div>
         }
-
       </div>
     </S.Container>
   )

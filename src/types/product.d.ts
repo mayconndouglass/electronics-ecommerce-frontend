@@ -1,4 +1,4 @@
-export type Product = {
+/* export type Product = {
   id: string
   name: string
   description: string
@@ -19,4 +19,16 @@ export type Product = {
       url
     }
   ]
+}
+ */
+export type ProductTypeTwo = {
+  id: string
+  name: string
+  description: string
+  created_At: string
+  price: string
+  promotional_price: string
+  discount: number
+  category_id: string
+  image_url: string
 }
