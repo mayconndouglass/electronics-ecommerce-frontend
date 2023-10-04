@@ -6,6 +6,7 @@ import { HeaderTop } from './components/HeaderTop'
 import { MainCarousel } from './components/MainCarousel'
 import { Promotions } from './components/Promotions'
 import { Testimonials } from './components/Testimonials'
+import { ToSign } from './components/ToSign'
 import { WayUs } from './components/WayUs'
 
 export const Home = () => {
@@ -20,6 +21,7 @@ export const Home = () => {
       <Testimonials />
       <Promotions />
       <WayUs />
+      <ToSign />
     </>
   )
 }
