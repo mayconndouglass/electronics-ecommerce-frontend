@@ -1,13 +1,15 @@
 import { styled } from 'styled-components'
 
-export const Container = styled.div`
+export const Container = styled.div<{ color: string }>`
+  display: inline-block;
+
   a {
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1;
 
-    color: #292930;
+    color: ${props => props.color};
     font-size: 1.5rem;
     font-weight: 400;
 

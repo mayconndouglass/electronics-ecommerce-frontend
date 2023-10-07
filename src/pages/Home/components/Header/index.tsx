@@ -1,13 +1,15 @@
 import * as S from './styles'
 
 import { Center } from '../../../../components/Center'
+import { AnimatedIcon } from '../../../../components/AnimatedIcon'
+
 import logo from '/assets/images/logo.png'
 
 import { PiShoppingCartThin } from 'react-icons/Pi'
 import { CiHeart } from 'react-icons/Ci'
 import { CiSearch } from 'react-icons/Ci'
 import { CiUser } from 'react-icons/Ci'
-import { AnimatedIcon } from '../../../../components/AnimatedIcon'
+
 
 export const Header = () => {
   return (
@@ -34,10 +36,10 @@ export const Header = () => {
           </nav>
 
           <div className="icons">
-            <AnimatedIcon icon={<CiSearch />} />
-            <AnimatedIcon icon={<CiHeart />} />
-            <AnimatedIcon icon={<PiShoppingCartThin />} />
-            <AnimatedIcon icon={<CiUser />} />
+            <AnimatedIcon icon={<CiSearch />} color='#292930' />
+            <AnimatedIcon icon={<CiHeart />} color='#292930' />
+            <AnimatedIcon icon={<PiShoppingCartThin />} color='#292930' />
+            <AnimatedIcon icon={<CiUser />} color='#292930' />
           </div>
         </div>
 
