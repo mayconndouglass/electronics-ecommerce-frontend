@@ -7,6 +7,7 @@ import { PiShoppingCartThin } from 'react-icons/Pi'
 import { CiHeart } from 'react-icons/Ci'
 import { CiSearch } from 'react-icons/Ci'
 import { CiUser } from 'react-icons/Ci'
+import { AnimatedIcon } from '../../../../components/AnimatedIcon'
 
 export const Header = () => {
   return (
@@ -33,10 +34,10 @@ export const Header = () => {
           </nav>
 
           <div className="icons">
-            <a href="#"><CiSearch /></a>
-            <a href="#"><CiHeart /></a>
-            <a href="#"><PiShoppingCartThin /></a>
-            <a href="#"><CiUser /></a>
+            <AnimatedIcon icon={<CiSearch />} />
+            <AnimatedIcon icon={<CiHeart />} />
+            <AnimatedIcon icon={<PiShoppingCartThin />} />
+            <AnimatedIcon icon={<CiUser />} />
           </div>
         </div>
 
