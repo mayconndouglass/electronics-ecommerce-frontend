@@ -62,7 +62,7 @@ export const ExploreOurProducts = () => {
         <div className="button">
           <AnimatedButton
             title='Veja Todos Os Produtos'
-            backgroundColor='#F6F7FB'
+            background='#F6F7FB'
             padding={{ vertical: 1, horizontal: 2.375 }}
             color='#777777'
           />

@@ -37,7 +37,7 @@ export const ToSign = () => {
           <div className="input-container">
             <input type="text" placeholder="example@email.com" />
             <AnimatedButton
-              backgroundColor='#292930'
+              background='#292930'
               color='white'
               padding={{ horizontal: 2.3, vertical: 1 }}
               title="Assinar"

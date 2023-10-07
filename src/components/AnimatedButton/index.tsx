@@ -4,7 +4,7 @@ import * as S from './styles'
 type AnimatedButtonProps = {
   icon?: React.ReactNode
   title?: string
-  backgroundColor?: string
+  background?: string
   color?: string
   padding: {
     vertical: number
@@ -16,7 +16,7 @@ export const AnimatedButton = (props: AnimatedButtonProps) => {
   return (
     <S.Container
       color={props.color}
-      backgroundColor={props.backgroundColor}
+      background={props.background}
       padding={{
         vertical: props.padding.vertical,
         horizontal: props.padding.horizontal

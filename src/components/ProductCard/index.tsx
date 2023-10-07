@@ -9,14 +9,14 @@ import { AiOutlineHeart } from 'react-icons/Ai'
 import { AnimatedButton } from '../AnimatedButton'
 
 type ProductCardProps = {
-  cardStyle: 'normal' | 'circular'
+  cardStyling: 'normal' | 'circular'
 }
 
 export const ProductCard = (product: ProductTypeTwo & ProductCardProps) => {
-  const { image_url, name, discount, price, promotional_price, cardStyle } = product
+  const { image_url, name, discount, price, promotional_price, cardStyling } = product
 
   return (
-    <S.Container cardStyle={cardStyle}>
+    <S.Container cardStyling={cardStyling}>
       <a className="image-container">
         <img src={image_url} alt={name} />
 
@@ -39,7 +39,7 @@ export const ProductCard = (product: ProductTypeTwo & ProductCardProps) => {
           <div className="add-to-cart">
             <AnimatedButton
               title='Adicionar ao Carrinho'
-              backgroundColor='#ff497c'
+              background='#ff497c'
               padding={{ vertical: 0.625, horizontal: 0.3125 }}
               color='white'
             />
@@ -79,7 +79,7 @@ export const ProductCard = (product: ProductTypeTwo & ProductCardProps) => {
           )}
         </div>
 
-        {cardStyle === 'circular' &&
+        {cardStyling === 'circular' &&
           <div className="actions-container">
             <div className="view">
               <AnimatedButton
@@ -90,7 +90,7 @@ export const ProductCard = (product: ProductTypeTwo & ProductCardProps) => {
             <div className="add-to-cart">
               <AnimatedButton
                 title='Adicionar ao Carrinho'
-                backgroundColor='#ff497c'
+                background='#ff497c'
                 padding={{ vertical: 0.625, horizontal: 0.3125 }}
                 color='white'
               />

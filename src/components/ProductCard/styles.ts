@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components'
 
-export const Container = styled.div<{ cardStyle: 'normal' | 'circular' }>`
+export const Container = styled.div<{ cardStyling: 'normal' | 'circular' }>`
   padding: 30px 15px;
   width: 337.5px;
 
-  ${props => props.cardStyle === 'circular' ? css`
+  ${props => props.cardStyling === 'circular' ? css`
     &:hover {
       .image-container img {
         transform: scale(1.08);
@@ -17,7 +17,7 @@ export const Container = styled.div<{ cardStyle: 'normal' | 'circular' }>`
     justify-content: center;
     align-items: center;
     background-color: #F6F7FB;
-    border-radius: ${props => props.cardStyle === 'normal' ? '6px' : '50%'};
+    border-radius: ${props => props.cardStyling === 'normal' ? '6px' : '50%'};
     position: relative;
     cursor: pointer;
 
@@ -65,7 +65,7 @@ export const Container = styled.div<{ cardStyle: 'normal' | 'circular' }>`
     }
 
     .actions-container {
-      display: ${props => props.cardStyle === 'circular' ? 'none' : 'flex'};
+      display: ${props => props.cardStyling === 'circular' ? 'none' : 'flex'};
       justify-content: center;
       align-items: center;
       gap: 10px;
@@ -105,7 +105,7 @@ export const Container = styled.div<{ cardStyle: 'normal' | 'circular' }>`
 
   .product-info {
     margin: 25px 0 30px;
-    ${props => props.cardStyle === 'circular' ? css`
+    ${props => props.cardStyling === 'circular' ? css`
       display: flex;
       flex-direction: column;
       align-items: center;

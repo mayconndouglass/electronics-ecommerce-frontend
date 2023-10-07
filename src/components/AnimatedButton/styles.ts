@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 interface ButtonProps {
-  backgroundColor?: string
+  background?: string
   color?: string
   padding: {
     horizontal: number
@@ -17,7 +17,7 @@ export const Container = styled.div<ButtonProps>`
       gap: 0.625rem;
 
       background-color:
-        ${props => props.backgroundColor ? props.backgroundColor : 'white'};
+        ${props => props.background ? props.background : 'white'};
       color: ${props => props.color ? props.color : '#292930'};
       box-shadow: 0 16px 32px 0 rgba(103,103,103,.06);
       border-radius: 6px;
@@ -44,7 +44,7 @@ export const Container = styled.div<ButtonProps>`
         z-index: -1;
         transition: transform .5s cubic-bezier(0.165, 0.84, 0.44, 1);
         background-color:
-          ${props => props.backgroundColor ? props.backgroundColor : 'white'};
+          ${props => props.background ? props.background : 'white'};
       }
 
       &:hover::before {

@@ -1,17 +1,20 @@
 import * as S from './styles'
 
+import { useEffect, useState } from 'react'
+
+import axios from 'axios'
+import Slider from 'react-slick'
+
+import { ProductTypeTwo } from '../../../../types/product'
+
 import { Center } from '../../../../components/Center'
 import { Tag } from '../../../../components/Tag'
+import { Title } from '../../../../components/Title'
+import { ProductCard } from '../../../../components/ProductCard'
+import { Arrow } from '../../../../components/Arrow'
 
 import { BsBasket } from 'react-icons/Bs'
-import { Title } from '../../../../components/Title'
-import { useEffect, useState } from 'react'
-import axios from 'axios'
-import { ProductCard } from '../../../../components/ProductCard'
-import { ProductTypeTwo } from '../../../../types/product'
-import { Arrow } from '../../../../components/Arrow'
 import { HiOutlineArrowNarrowLeft, HiOutlineArrowNarrowRight } from 'react-icons/Hi'
-import Slider from 'react-slick'
 
 export const Promotions = () => {
   const [productsOnSale, setProductsOnSale] = useState<ProductTypeTwo[]>()
@@ -58,6 +61,5 @@ export const Promotions = () => {
         </div>
       </Center>
     </S.Container>
-    //TODO: Ainda falta a linha de separação aqui em
   )
 }

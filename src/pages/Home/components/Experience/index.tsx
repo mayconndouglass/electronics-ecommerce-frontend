@@ -42,7 +42,7 @@ export const Experience = () => {
         <AnimatedButton
           title={'Confira Agora!'}
           color='white'
-          backgroundColor='#3577F0'
+          background='#3577F0'
           padding={{ vertical: 1, horizontal: 2.375 }}
         />
       </div>

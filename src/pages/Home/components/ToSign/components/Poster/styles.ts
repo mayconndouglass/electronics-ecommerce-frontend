@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
 
-export const Container = styled.div<{ textStyle: string }>`
+export const Container = styled.div<{ sideStyle: string }>`
   width: 100%;
   height: 250px;
   position: relative;
@@ -64,10 +64,10 @@ export const Container = styled.div<{ textStyle: string }>`
       position: relative;
       color: rgba(255,255,255,.4);
       transition: all .3s ease-in-out;
-      order: ${props => props.textStyle === 'left' ? '-1' : '1'};
+      order: ${props => props.sideStyle === 'left' ? '-1' : '1'};
     }
 
-    order: ${props => props.textStyle === 'left' ? '-1' : '1'};
-    margin-left: ${props => props.textStyle === 'left' ? '3.125rem' : '0'};
+    order: ${props => props.sideStyle === 'left' ? '-1' : '1'};
+    margin-left: ${props => props.sideStyle === 'left' ? '3.125rem' : '0'};
   }
 `
