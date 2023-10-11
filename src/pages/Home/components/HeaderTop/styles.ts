@@ -53,7 +53,7 @@ export const Container = styled.div<BannerProps>`
     padding: 2rem 1.25rem;
   }
 
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: 280px) {
     padding: 3rem 0.5rem;
     gap: 1rem;
   }
