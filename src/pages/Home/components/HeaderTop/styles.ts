@@ -8,10 +8,10 @@ const slideOut = keyframes`
   from {
     transform: translateY(0);
     opacity: 1;
-    height: 40px;
+    height: 2.5rem;
   }
   to {
-    transform: translateY(-40px);
+    transform: translateY(-2.5rem);
     opacity: 0;
     height: 0px;
   }
@@ -22,25 +22,24 @@ export const Container = styled.div<BannerProps>`
   justify-content: space-between;
   align-items: center;
 
-  padding: 0px 20px;
+  padding: 0 1.25rem;
   background-image: url('assets/images/image-header-top.png');
   opacity: ${props => (props.open ? '1' : '0')};
-  height: ${props => (props.open ? '40px' : '0')};
+  height: ${props => (props.open ? '2.5rem' : '0')};
 
   p, a {
     text-align: center;
-    color: white;
-    font-size: 14px;
-    font-weight: 400;
-    font-family: 'DM Sans', 'sans-serif';
+    color: ${props => props.theme.white};
+    font-size: 0.875rem;
+    font-weight: ${props => props.theme['font-w-egular']};
   }
 
   a {
-    font-weight: 700;
+    font-weight: ${props => props.theme['font-w-bold']};
     transition: all .3s ease-in-out;
 
     &:hover {
-      color: #ff497c;
+      color: ${props => props.theme['pink-600']};
     }
   }
 
@@ -49,4 +48,13 @@ export const Container = styled.div<BannerProps>`
   }
 
   animation: ${props => (!props.open ? slideOut : '')} 0.5s ease;
+
+  @media screen and (max-width: 512px) {
+    padding: 2rem 1.25rem;
+  }
+
+  @media screen and (max-width: 320px) {
+    padding: 3rem 0.5rem;
+    gap: 1rem;
+  }
 `
