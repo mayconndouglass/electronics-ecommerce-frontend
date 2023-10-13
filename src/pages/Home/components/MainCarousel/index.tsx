@@ -32,7 +32,6 @@ export const MainCarousel = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-
   }
 
   const infoSlider = {
@@ -56,7 +55,7 @@ export const MainCarousel = () => {
           ref={(infoSlider: Slider) => setImageNav(infoSlider)}
         >
           {ProductInfoData.map(productInfo => (
-            <ProductInfoCarousel key={productInfo.id} {...productInfo}/>
+            <ProductInfoCarousel key={productInfo.id} {...productInfo} />
           ))}
         </Slider>
 
@@ -65,9 +64,9 @@ export const MainCarousel = () => {
           asNavFor={imageNav}
           ref={(ImageSlider: Slider) => setInfoNav(ImageSlider)}
         >
-          <ProductImageCarousel {...productImageData}/>
-          <ProductImageCarousel {...productImageData}/>
-          <ProductImageCarousel {...productImageData}/>
+          <ProductImageCarousel {...productImageData} />
+          <ProductImageCarousel {...productImageData} />
+          <ProductImageCarousel {...productImageData} />
         </Slider>
 
         <div className='shape-carousel'>

@@ -7,6 +7,11 @@ export const Container = styled.section`
 
   overflow: hidden;
 
+  & > div {
+    display: flex;
+    align-items: center;
+  }
+
   @keyframes carousel-animation {
     0% {
         opacity: 0;
@@ -29,12 +34,12 @@ export const Container = styled.section`
       }
 
       .more-info {
-        & > a {
+        & > a, & > div {
           animation: carousel-animation 1200ms ease-in-out 0s normal none 1 running;
         }
 
         .users {
-          animation: carousel-animation 1200ms ease-in-out 0s normal none 1 running;
+          animation: carousel-animation 700ms ease-in-out 0s normal none 1 running;
         }
 
         .reviews {
@@ -44,13 +49,16 @@ export const Container = styled.section`
     }
   }
 
-  & > div {
-    display: flex;
-    align-items: center;
-  }
-
   .slick-slider.slick-initialized {
     width: 678px;
+
+    @media screen and (max-width: 1480px) {
+     width: 45.3125vw;
+    }
+
+    @media screen and (max-width: 990px) {
+     width: 50%;
+    }
   }
 
   .slick-dots {
@@ -66,7 +74,7 @@ export const Container = styled.section`
       height: 4px;
       width: 24px;
       border-radius: 6px;
-      background-color: white;
+      background-color: ${props => props.theme.white};
       padding: 0;
 
       &::before, &:hover::before {
@@ -96,5 +104,46 @@ export const Container = styled.section`
     z-index: 1;
     right: 30%;
     bottom: -9.25rem;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .shape-carousel {
+      right: 5%;
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    padding: 2rem 0;
+
+    .slick-slider.slick-initialized {
+      @media screen and (max-width: 512px) {
+       width: 100%;
+     }
+    }
+  }
+
+  @media screen and (max-width: 512px) {
+    padding-bottom: 4rem;
+
+    & > div {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .slick-dots {
+      text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 412px) {
+    .shape-carousel {
+      right: -5%;
+    }
+  }
+
+  @media screen and (max-width: 300px) {
+    .shape-carousel {
+      right: -24%;
+    }
   }
 `

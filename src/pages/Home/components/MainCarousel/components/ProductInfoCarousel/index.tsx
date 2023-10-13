@@ -36,28 +36,30 @@ export const ProductInfoCarousel = ({
           title={'Compre Agora'}
           padding={{ vertical: 1, horizontal: 2.375 }}
         />
-
-        <div className="users">
-          <ul>
-            {users.map(user => (
-              <li key={user}>
-                <img src={user} alt="User" />
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="reviews">
-          <div className="rating-stars">
-            <AiFillStar />
-            <AiFillStar />
-            <AiFillStar />
-            <AiFillStar />
-            <CiStar />
+        <div>
+          <div className="users">
+            <ul>
+              {users.map(user => (
+                <li key={user}>
+                  <img src={user} alt="User" />
+                </li>
+              ))}
+            </ul>
           </div>
 
-          <span>{numberOfReviews}</span> Avaliações
+          <div className="reviews">
+            <div className="rating-stars">
+              <AiFillStar />
+              <AiFillStar />
+              <AiFillStar />
+              <AiFillStar />
+              <CiStar />
+            </div>
+
+            <span>{numberOfReviews}</span> Avaliações
+          </div>
         </div>
+
       </div>
     </S.Container>
   )
