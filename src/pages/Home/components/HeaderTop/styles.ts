@@ -12,6 +12,7 @@ const slideOut = keyframes`
   }
   to {
     transform: translateY(-2.5rem);
+    padding: 0;
     opacity: 0;
     height: 0px;
   }
@@ -49,12 +50,9 @@ export const Container = styled.div<BannerProps>`
 
   animation: ${props => (!props.open ? slideOut : '')} 0.5s ease;
 
-  @media screen and (max-width: 512px) {
-    padding: 2rem 1.25rem;
-  }
+  @media screen and (max-width: 270px) {
 
-  @media screen and (max-width: 280px) {
-    padding: 3rem 0.5rem;
+    padding: ${props => (props.open ? '2rem 1.25rem' : '0')};
     gap: 1rem;
   }
 `
