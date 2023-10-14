@@ -4,13 +4,14 @@ export const Container = styled.section`
   padding: 5rem 0 3.125rem;
 
   @media screen and (max-width: 420px) {
+    padding: 5rem 0 0;
+
     & > div {
       h2 {
         text-align: center;
       }
     }
   }
-
 
   .container-categories {
     margin-top: 10px;
