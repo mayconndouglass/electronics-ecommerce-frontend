@@ -2,7 +2,7 @@ import { styled } from 'styled-components'
 
 export const Container = styled.div`
   .message {
-    background-color: white;
+    background-color: ${props => props.theme.white};
     border-radius: 10px;
     padding: 2.5rem;
     margin-bottom: 2.5rem;
@@ -10,10 +10,10 @@ export const Container = styled.div`
     box-shadow: 0 16px 32px 0 rgba(0,0,0,.04);
 
     p {
-      font-size: 16px;
-      font-weight: 400;
+      font-size: 1rem;
+      font-weight: ${props => props.theme['font-w-egular']};
       line-height: 28px;
-      color: #777777;
+      color: ${props => props.theme['gray-500']};
 
       &::after {
         content: "";
@@ -26,6 +26,14 @@ export const Container = styled.div`
         left: 100px;
       }
     }
+
+    @media screen and (max-width: 1200px){
+      padding: 1.5rem;
+    }
+
+    @media screen and (max-width: 460px){
+      padding: 1rem;
+    }
   }
 
 .user {
@@ -36,16 +44,16 @@ export const Container = styled.div`
     .info {
       span {
         font-size: .875rem;
-        color: #777777;
+        color: ${props => props.theme['gray-500']};
         line-height: 1.7;
-        font-weight: 400;
+        font-weight: ${props => props.theme['font-w-egular']};
       }
 
       h6 {
         font-size: 1.125rem;
-        font-weight: 500;
+        font-weight: ${props => props.theme['font-w-medium']};
         line-height: 1.3;
-        color: #292930;
+        color: ${props => props.theme['gray-900']};
       }
     }
   }
