@@ -43,6 +43,49 @@ export const ExploreOurProducts = () => {
     prevArrow: <Arrow right='73px' top='-52px' icon={<HiOutlineArrowNarrowLeft />} />,
     nextArrow: <Arrow right='15px' top='-52px' icon={<HiOutlineArrowNarrowRight />} />,
     useTransform: true,
+    responsive: [
+      {
+        breakpoint: 1300,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        }
+      },
+      {
+        breakpoint: 990,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint: 750,
+        settings: {
+          prevArrow: <Arrow right='62px' top='-52px' icon={<HiOutlineArrowNarrowLeft />} />,
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint: 512,
+        settings: {
+          prevArrow: <Arrow right='62px' top='-52px' icon={<HiOutlineArrowNarrowLeft />} />,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          rows: 4,
+        }
+      },
+      {
+        breakpoint: 460,
+        settings: {
+          prevArrow: <Arrow right='62px' top='-32px' icon={<HiOutlineArrowNarrowLeft />} />,
+          nextArrow: <Arrow right='15px' top='-32px' icon={<HiOutlineArrowNarrowRight />} />,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          rows: 4,
+        }
+      },
+    ]
   }
 
   return (
@@ -54,7 +97,7 @@ export const ExploreOurProducts = () => {
         <div className="container-products-cards">
           <Slider {...settings}>
             {featuredProducts?.map(product => (
-              <ProductCard key={product.id} {...product} cardStyle='normal' />
+              <ProductCard key={product.id} {...product} cardStyling='normal' />
             ))}
           </Slider>
         </div>
