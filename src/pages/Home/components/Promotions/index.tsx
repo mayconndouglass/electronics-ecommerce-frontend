@@ -6,15 +6,14 @@ import axios from 'axios'
 import Slider from 'react-slick'
 
 import { ProductTypeTwo } from '../../../../types/product'
+import { settings } from './settings/slider'
 
 import { Center } from '../../../../components/Center'
 import { Tag } from '../../../../components/Tag'
 import { Title } from '../../../../components/Title'
 import { ProductCard } from '../../../../components/ProductCard'
-import { Arrow } from '../../../../components/Arrow'
 
 import { BsBasket } from 'react-icons/Bs'
-import { HiOutlineArrowNarrowLeft, HiOutlineArrowNarrowRight } from 'react-icons/Hi'
 
 export const Promotions = () => {
   const [productsOnSale, setProductsOnSale] = useState<ProductTypeTwo[]>()
@@ -34,16 +33,6 @@ export const Promotions = () => {
     fetchData()
   }, [])
 
-  const settings = {
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    prevArrow: <Arrow right='73px' top='-52px' icon={<HiOutlineArrowNarrowLeft />} />,
-    nextArrow: <Arrow right='15px' top='-52px' icon={<HiOutlineArrowNarrowRight />} />,
-    useTransform: true,
-  }
-
   return (
     <S.Container>
       <Center>
@@ -55,7 +44,11 @@ export const Promotions = () => {
         <div className="products-container">
           <Slider {...settings}>
             {productsOnSale?.map(product => (
-              <ProductCard key={product.id} {...product} cardStyle='circular' />
+              <ProductCard
+                key={product.id}
+                {...product}
+                cardStyling='circular'
+              />
             ))}
           </Slider>
         </div>
