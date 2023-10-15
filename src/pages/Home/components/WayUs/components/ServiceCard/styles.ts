@@ -3,24 +3,32 @@ import { styled } from 'styled-components'
 export const Container = styled.div`
   background-color: white;
   border: 1px solid #f1f1f1;
-  padding: 50px 40px;
+  padding: 3.125rem 2.5rem;
   text-align: center;
   margin-bottom: 30px;
   border-radius: 6px;
   position: relative;
   transition: all .3s ease-in-out;
 
-  max-width: 224px;
+  width: 210px;
+
+  @media screen and (max-width: 1400px) {
+    width: 198px  ;
+  }
+
+  @media screen and (max-width: 496px) {
+    width: 100%;
+  }
 
   .img {
     margin-bottom: 20px;
   }
 
   h6 {
-    color: #292930;
-    font-size: 16px;
+    color:${props => props.theme['gray-900']};
+    font-size: 1rem;
     line-height: 26px;
-    font-weight: 700;
+    font-weight: ${props => props.theme['font-w-bold']};
     margin-bottom: 0;
   }
 
