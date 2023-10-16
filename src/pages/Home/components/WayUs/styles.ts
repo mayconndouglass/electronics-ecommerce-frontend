@@ -26,7 +26,7 @@ export const Container = styled.section`
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 3.2rem;
+    gap: 3rem;
 
     @media screen and (max-width: 496px) {
       gap: 1rem;

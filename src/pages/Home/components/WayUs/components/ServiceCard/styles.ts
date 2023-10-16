@@ -3,14 +3,14 @@ import { styled } from 'styled-components'
 export const Container = styled.div`
   background-color: white;
   border: 1px solid #f1f1f1;
-  padding: 3.125rem 2.5rem;
+  padding: 2.125rem 1.5rem;
   text-align: center;
   margin-bottom: 30px;
   border-radius: 6px;
   position: relative;
   transition: all .3s ease-in-out;
 
-  width: 210px;
+  width: 224px;
 
   @media screen and (max-width: 1400px) {
     width: 198px  ;
