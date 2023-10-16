@@ -9,6 +9,10 @@ export const Container = styled.section`
     gap: 1.875rem;
 
     margin-bottom: 30px;
+
+    @media screen and (max-width: 990px){
+      flex-direction: column;
+    }
   }
 
   .newsletter {
@@ -44,17 +48,45 @@ export const Container = styled.section`
         width: 390px;
 
         font-size: 0.875rem;
-        font-weight: 400;
+        font-weight: ${props => props.theme['font-w-egular']};
         height: auto;
         line-height: 60px;
-        background: #fff;
+        background: ${props => props.theme.white};
         box-shadow: none;
         padding: 0 30px 0 66px;
         outline: none;
         border: none;
         border-radius: 6px;
         margin-bottom: 1rem;
+
+        @media screen and (max-width: 490px) {
+          width: 100%;
+        }
       }
+
+      @media screen and (max-width: 750px) {
+        flex-direction: column;
+        gap: 0;
+
+        & > div:last-child {
+         align-self: start;
+        }
+      }
+    }
+
+    @media screen and (max-width: 990px) {
+      background-position: center;
+      padding: 5rem 1.875rem 4.0625rem;
+    }
+
+    @media screen and (max-width: 370px) {
+      h2 {
+        font-size: 1.25rem;
+      }
+    }
+
+    @media screen and (max-width: 300px) {
+      padding: 3rem 0.875rem 2.06rem;
     }
   }
 `

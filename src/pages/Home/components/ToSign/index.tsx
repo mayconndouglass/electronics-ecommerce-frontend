@@ -20,13 +20,13 @@ export const ToSign = () => {
             image={poster1}
             title={'Alta qualidade, preço baixo'}
             subTitle={'Coleções'}
-            textStyle='right'
+            sideStyle='right'
           />
           <Poster
             image={poster2}
             title={'VR visor de realidade'}
             subTitle={'Oferta de 50%'}
-            textStyle='left'
+            sideStyle='left'
           />
         </div>
 

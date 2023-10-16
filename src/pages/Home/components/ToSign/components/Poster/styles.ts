@@ -2,7 +2,7 @@ import { styled } from 'styled-components'
 
 export const Container = styled.div<{ sideStyle: string }>`
   width: 100%;
-  height: 250px;
+  /* height: 250px; */
   position: relative;
   display: flex;
   align-items: center;
@@ -29,6 +29,7 @@ export const Container = styled.div<{ sideStyle: string }>`
   &:hover {
     cursor: pointer;
     border-radius: 6px;
+    overflow: hidden;
 
     img {
       transform: scale(1.1);
@@ -37,7 +38,7 @@ export const Container = styled.div<{ sideStyle: string }>`
 
     .content {
       span {
-        color: white;
+        color: ${props => props.theme.white};
       }
     }
   }
@@ -55,7 +56,7 @@ export const Container = styled.div<{ sideStyle: string }>`
     h3 {
       line-height: 1;
       font-size: 2.5rem;
-      color: white;
+      color: ${props => props.theme.white};
     }
 
     span {
@@ -69,5 +70,24 @@ export const Container = styled.div<{ sideStyle: string }>`
 
     order: ${props => props.sideStyle === 'left' ? '-1' : '1'};
     margin-left: ${props => props.sideStyle === 'left' ? '3.125rem' : '0'};
+
+    @media screen and (max-width: 1200px) {
+      h3 {
+        font-size: 2rem;
+      }
+    }
+
+    @media screen and (max-width: 490px) {
+      h3 {
+        font-size: 1.375rem;
+      }
+    }
+
+
+    @media screen and (max-width: 370px) {
+      h3 {
+        font-size: 1rem;
+      }
+    }
   }
 `
