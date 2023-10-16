@@ -4,14 +4,16 @@ export const Container = styled.footer`
   .services {
     display: flex;
     justify-content: space-between;
+    gap: 1rem;
     flex-wrap: wrap;
+
     padding-bottom: 1.25rem;
-    border-bottom: 2px solid #F6F7FB;
+    border-bottom: 2px solid ${props => props.theme['slate-50']};
   }
 
   .lists {
     padding: 3.15rem 0;
-    border-bottom: 2px solid #F6F7FB;
+    border-bottom: 2px solid ${props => props.theme['slate-50']};
 
     & > ul {
       display: grid;
@@ -23,7 +25,7 @@ export const Container = styled.footer`
         gap: 1.25rem;
 
         h5 {
-          font-weight: 600;
+          font-weight: ${props => props.theme['font-w-semi-bold']};
           font-size: 1.125rem;
           letter-spacing: -0.025em;
         }
@@ -49,7 +51,7 @@ export const Container = styled.footer`
               content: "";
               height: 2px;
               width: 0;
-              background-color: #000;
+              background-color: ${props => props.theme.black};
               position: absolute;
               bottom: -2px;
               right: 0;
@@ -58,7 +60,7 @@ export const Container = styled.footer`
               }
 
               &:hover {
-                color: #292930;
+                color: ${props => props.theme['gray-900']};
               }
 
               &:hover::before {
@@ -75,18 +77,18 @@ export const Container = styled.footer`
             position: relative;
 
             font-size: 1rem;
-            font-weight: 500;
+            font-weight: ${props => props.theme['font-w-medium']};
             line-height: 1.7;
-            color: #777777;
+            color: ${props => props.theme['gray-500']};
           }
         }
 
         .content {
           p {
             font-size: 1rem;
-            font-weight: 500;
+            font-weight: ${props => props.theme['font-w-medium']};
             line-height: 1.7;
-            color: #777777;
+            color: ${props => props.theme['gray-500']};
 
             margin-bottom: 0.5rem;
           }
@@ -101,8 +103,21 @@ export const Container = styled.footer`
               flex-direction: column;
               gap: 1rem;
             }
+
+            @media screen and (max-width: 280px) {
+              flex-direction: column;
+            }
           }
         }
+      }
+
+      @media screen and (max-width: 990px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 3rem;
+      }
+
+      @media screen and (max-width: 512px) {
+        grid-template-columns: repeat(1, 1fr);
       }
     }
   }
@@ -123,10 +138,11 @@ export const Container = styled.footer`
     }
 
     .copyright {
-      padding: 15px;
-      color: #777777;
-      font-weight: 500;
-      font-size: 14px;
+      padding: 1rem;
+      color: ${props => props.theme['gray-500']};
+      font-weight: ${props => props.theme['font-w-medium']};
+      font-size: 0.875rem;
+      text-align: center;
     }
 
     .carts {
@@ -136,10 +152,15 @@ export const Container = styled.footer`
         gap: 1.25rem;
       }
 
-      color: #777777;
-      font-size: 14px;
-      font-weight: 500;
+      color: ${props => props.theme['gray-500']};
+      font-size: 0.875rem;
+      font-weight: ${props => props.theme['font-w-medium']};
       letter-spacing: -0.025em;
+    }
+
+    @media screen and (max-width: 990px) {
+      flex-direction: column;
+      gap: 0.25rem;
     }
   }
 `

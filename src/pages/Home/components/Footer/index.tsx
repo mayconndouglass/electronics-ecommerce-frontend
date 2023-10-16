@@ -4,7 +4,7 @@ import { Center } from '../../../../components/Center'
 import { AnimatedIcon } from '../../../../components/AnimatedIcon'
 
 import { dataServices } from './data/data-services'
-import { Service } from './components'
+import { Service } from './components/Service'
 
 import { PiEnvelopeSimpleOpenBold } from 'react-icons/Pi'
 import { BsTelephone } from 'react-icons/Bs'

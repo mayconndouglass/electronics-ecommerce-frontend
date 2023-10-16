@@ -14,14 +14,14 @@ export const Container = styled.div`
     h6 {
       line-height: 1.7;
       font-size: 1rem;
-      font-weight: 700;
-      color: #292930;
+      font-weight: ${props => props.theme['font-w-bold']};
+      color: ${props => props.theme['gray-900']};
     }
 
     p {
       font-size: 1rem;
-      font-weight: 400;
-      color: #777777;
+      font-weight: ${props => props.theme['font-w-egular']};
+      color: ${props => props.theme['gray-500']};
       margin: 0 0 30px;
     }
   }
