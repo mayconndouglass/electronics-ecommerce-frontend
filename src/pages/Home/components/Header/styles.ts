@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-export const Header = styled.header<{ menuIsOpen: boolean }>`
+export const Header = styled.header<{ $menuIsOpen: boolean }>`
   background-color: ${props => props.theme['gray-100']};
   padding-bottom: 2rem;
 
@@ -135,7 +135,7 @@ export const Header = styled.header<{ menuIsOpen: boolean }>`
   }
 
   .overlay {
-    display: ${props => props.menuIsOpen ? 'block' : 'none'};
+    display: ${props => props.$menuIsOpen ? 'block' : 'none'};
     height: 100vh;
     width: 100%;
     background-color: rgba(0,0,0,.6);
@@ -149,7 +149,7 @@ export const Header = styled.header<{ menuIsOpen: boolean }>`
   }
 `
 
-export const SideBar = styled.div<{ menuIsOpen: boolean }>`
+export const SideBar = styled.div<{ $menuIsOpen: boolean }>`
   display: none;
 
   @media screen and (max-width: 990px) {
@@ -169,7 +169,7 @@ export const SideBar = styled.div<{ menuIsOpen: boolean }>`
   visibility: hidden;
   opacity: 0;
 
-  ${props => props.menuIsOpen ? css`
+  ${props => props.$menuIsOpen ? css`
     right: 0;
     visibility: visible;
     opacity: 1;

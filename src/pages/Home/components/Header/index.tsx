@@ -19,7 +19,7 @@ export const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <S.Header menuIsOpen={isOpen}>
+    <S.Header $menuIsOpen={isOpen}>
       <Center>
         <div className="header-utils">
           <ul>
@@ -53,7 +53,7 @@ export const Header = () => {
           </div>
         </div>
 
-        <S.SideBar menuIsOpen={isOpen}>
+        <S.SideBar $menuIsOpen={isOpen}>
           <div className="side-bar-header">
             <img src={logo} alt="Logo" />
 
