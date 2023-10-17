@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 interface ButtonProps {
-  background?: string
+  $background?: string
   color?: string
-  padding: {
+  $padding: {
     horizontal: number
     vertical: number
   }
@@ -17,15 +17,15 @@ export const Container = styled.div<ButtonProps>`
       gap: 0.625rem;
 
       background-color:
-        ${props => props.background ? props.background : 'white'};
-      color: ${props => props.color ? props.color : '#292930'};
+        ${props => props.$background ? props.$background : props.theme.white};
+      color: ${props => props.color ? props.color : props.theme['gray-900']};
       box-shadow: 0 16px 32px 0 rgba(103,103,103,.06);
       border-radius: 6px;
       line-height: 1.7;
-      font-weight: 600;
+      font-weight: ${props => props.theme['font-w-semi-bold']};
 
       padding:
-        ${({ padding }) => `${padding.vertical}rem ${padding.horizontal}rem`};
+        ${({ $padding }) => `${$padding.vertical}rem ${$padding.horizontal}rem`};
       position: relative;
       transition: all .3s ease-in-out;
       z-index: 1;
@@ -44,7 +44,7 @@ export const Container = styled.div<ButtonProps>`
         z-index: -1;
         transition: transform .5s cubic-bezier(0.165, 0.84, 0.44, 1);
         background-color:
-          ${props => props.background ? props.background : 'white'};
+          ${props => props.$background ? props.$background : props.theme.white};
       }
 
       &:hover::before {
@@ -54,8 +54,12 @@ export const Container = styled.div<ButtonProps>`
 
       svg {
         font-weight: 400;
-        color: #292930;
+        color: ${props => props.theme['gray-900']};
         font-size: 1.2rem;
+      }
+
+      @media screen and (max-width: 750px) {
+        font-size: 0.875rem;
       }
     }
 `

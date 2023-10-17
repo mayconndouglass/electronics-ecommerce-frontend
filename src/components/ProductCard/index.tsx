@@ -9,14 +9,14 @@ import { AiOutlineHeart } from 'react-icons/Ai'
 import { AnimatedButton } from '../AnimatedButton'
 
 type ProductCardProps = {
-  cardStyling: 'normal' | 'circular'
+  $cardStyling: 'normal' | 'circular'
 }
 
 export const ProductCard = (product: ProductTypeTwo & ProductCardProps) => {
-  const { image_url, name, discount, price, promotional_price, cardStyling } = product
+  const { image_url, name, discount, price, promotional_price, $cardStyling } = product
 
   return (
-    <S.Container cardStyling={cardStyling}>
+    <S.Container $cardStyling={$cardStyling} className='product-card'>
       <a className="image-container">
         <img src={image_url} alt={name} />
 
@@ -79,7 +79,7 @@ export const ProductCard = (product: ProductTypeTwo & ProductCardProps) => {
           )}
         </div>
 
-        {cardStyling === 'circular' &&
+        {$cardStyling === 'circular' &&
           <div className="actions-container">
             <div className="view">
               <AnimatedButton
