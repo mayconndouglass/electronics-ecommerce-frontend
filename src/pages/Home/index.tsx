@@ -1,14 +1,14 @@
+import { HeaderTop } from './components/HeaderTop'
+import { Header } from './components/Header'
+import { MainCarousel } from './components/MainCarousel'
 import { Categories } from './components/Categories'
 import { Experience } from './components/Experience'
 import { ExploreOurProducts } from './components/ExploreOurProducts'
-import { Footer } from './components/Footer'
-import { Header } from './components/Header'
-import { HeaderTop } from './components/HeaderTop'
-import { MainCarousel } from './components/MainCarousel'
-import { Promotions } from './components/Promotions'
 import { Testimonials } from './components/Testimonials'
-import { ToSign } from './components/ToSign'
+import { Promotions } from './components/Promotions'
 import { WayUs } from './components/WayUs'
+import { ToSign } from './components/ToSign'
+import { Footer } from './components/Footer'
 
 export const Home = () => {
   return (
