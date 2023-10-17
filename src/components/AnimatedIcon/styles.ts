@@ -11,7 +11,7 @@ export const Container = styled.div<{ color: string }>`
 
     color: ${props => props.color};
     font-size: 1.5rem;
-    font-weight: 400;
+    font-weight: ${props => props.theme['font-w-egular']};
 
     position: relative;
     transition: 0.3s;
@@ -31,7 +31,7 @@ export const Container = styled.div<{ color: string }>`
     }
 
     &:hover {
-      color: white;
+      color: ${props => props.theme.white};
 
       &::before {
         transform: scale(1);

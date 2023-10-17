@@ -4,17 +4,19 @@ type ArrowProps = {
   className?: string
   onClick?: (event: React.MouseEvent<HTMLParagraphElement, MouseEvent>) => void
   icon: React.ReactNode
-  right: string
-  top: string
+  $right: string
+  $top: string
+  $arrowAnimation: 'right' | 'left'
 }
 
-export const Arrow = ({ className, onClick, icon, right, top }: ArrowProps) => {
+export const Arrow = ({ className, onClick, icon, $right, $top, $arrowAnimation }: ArrowProps) => {
   return (
     <S.Container
       className={className}
       onClick={onClick}
-      right={right}
-      top={top}
+      $right={$right}
+      $top={$top}
+      $arrowAnimation={$arrowAnimation}
     >
       {icon}
     </S.Container>
