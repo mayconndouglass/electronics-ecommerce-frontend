@@ -9,8 +9,8 @@ export const settings = {
   slidesToShow: 4,
   rows: 2,
   slidesToScroll: 4,
-  prevArrow: <Arrow right='73px' top='-52px' icon={<HiOutlineArrowNarrowLeft />} />,
-  nextArrow: <Arrow right='15px' top='-52px' icon={<HiOutlineArrowNarrowRight />} />,
+  prevArrow: <Arrow $right='73px' $top='-52px' $arrowAnimation='left' icon={<HiOutlineArrowNarrowLeft />} />,
+  nextArrow: <Arrow $right='15px' $top='-52px' $arrowAnimation='right' icon={<HiOutlineArrowNarrowRight />} />,
   useTransform: true,
   responsive: [
     {
@@ -30,7 +30,7 @@ export const settings = {
     {
       breakpoint: 750,
       settings: {
-        prevArrow: <Arrow right='62px' top='-52px' icon={<HiOutlineArrowNarrowLeft />} />,
+        prevArrow: <Arrow $right='62px' $top='-52px' $arrowAnimation='left' icon={<HiOutlineArrowNarrowLeft />} />,
         slidesToShow: 2,
         slidesToScroll: 2,
       }
@@ -38,7 +38,7 @@ export const settings = {
     {
       breakpoint: 512,
       settings: {
-        prevArrow: <Arrow right='62px' top='-52px' icon={<HiOutlineArrowNarrowLeft />} />,
+        prevArrow: <Arrow $right='62px' $top='-52px' $arrowAnimation='left' icon={<HiOutlineArrowNarrowLeft />} />,
         slidesToShow: 1,
         slidesToScroll: 1,
         rows: 4,
@@ -47,8 +47,8 @@ export const settings = {
     {
       breakpoint: 460,
       settings: {
-        prevArrow: <Arrow right='62px' top='-32px' icon={<HiOutlineArrowNarrowLeft />} />,
-        nextArrow: <Arrow right='15px' top='-32px' icon={<HiOutlineArrowNarrowRight />} />,
+        prevArrow: <Arrow $right='62px' $top='-32px' $arrowAnimation='left' icon={<HiOutlineArrowNarrowLeft />} />,
+        nextArrow: <Arrow $right='15px' $top='-32px' $arrowAnimation='right' icon={<HiOutlineArrowNarrowRight />} />,
         slidesToShow: 1,
         slidesToScroll: 1,
         rows: 4,

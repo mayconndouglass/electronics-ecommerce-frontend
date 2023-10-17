@@ -20,13 +20,13 @@ export const ToSign = () => {
             image={poster1}
             title={'Alta qualidade, preço baixo'}
             subTitle={'Coleções'}
-            sideStyle='right'
+            $sideStyle='right'
           />
           <Poster
             image={poster2}
             title={'VR visor de realidade'}
             subTitle={'Oferta de 50%'}
-            sideStyle='left'
+            $sideStyle='left'
           />
         </div>
 
@@ -37,9 +37,9 @@ export const ToSign = () => {
           <div className="input-container">
             <input type="text" placeholder="example@email.com" />
             <AnimatedButton
-              background='#292930'
+              $background='#292930'
               color='white'
-              padding={{ horizontal: 2.3, vertical: 1 }}
+              $padding={{ horizontal: 2.3, vertical: 1 }}
               title="Assinar"
             />
           </div>

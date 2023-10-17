@@ -34,7 +34,7 @@ export const ProductInfoCarousel = ({
         <AnimatedButton
           icon={<HiOutlineShoppingCart />}
           title={'Compre Agora'}
-          padding={{ vertical: 1, horizontal: 2.375 }}
+          $padding={{ vertical: 1, horizontal: 2.375 }}
         />
         <div>
           <div className="users">

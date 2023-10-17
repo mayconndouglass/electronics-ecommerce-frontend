@@ -4,12 +4,12 @@ type PostProps = {
   image: string
   title: string
   subTitle: string
-  sideStyle: 'left' | 'right'
+  $sideStyle: 'left' | 'right'
 }
 
-export const Poster = ({ image, title, subTitle, sideStyle }: PostProps) => {
+export const Poster = ({ image, title, subTitle, $sideStyle }: PostProps) => {
   return (
-    <S.Container sideStyle={sideStyle}>
+    <S.Container $sideStyle={$sideStyle}>
       <img src={image} alt={title} />
 
       <a href="">

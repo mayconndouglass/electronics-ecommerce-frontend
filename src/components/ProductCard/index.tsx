@@ -33,21 +33,21 @@ export const ProductCard = (product: ProductTypeTwo & ProductCardProps) => {
           <div className="view">
             <AnimatedButton
               icon={<ImEye />}
-              padding={{ vertical: 0.825, horizontal: 0.825 }}
+              $padding={{ vertical: 0.825, horizontal: 0.825 }}
             />
           </div>
           <div className="add-to-cart">
             <AnimatedButton
               title='Adicionar ao Carrinho'
-              background='#ff497c'
-              padding={{ vertical: 0.625, horizontal: 0.3125 }}
+              $background='#ff497c'
+              $padding={{ vertical: 0.625, horizontal: 0.3125 }}
               color='white'
             />
           </div>
           <div className="favorite">
             <AnimatedButton
               icon={<AiOutlineHeart />}
-              padding={{ vertical: 0.825, horizontal: 0.825 }}
+              $padding={{ vertical: 0.825, horizontal: 0.825 }}
             />
           </div>
         </div>
@@ -84,14 +84,14 @@ export const ProductCard = (product: ProductTypeTwo & ProductCardProps) => {
             <div className="view">
               <AnimatedButton
                 icon={<ImEye />}
-                padding={{ vertical: 0.825, horizontal: 0.825 }}
+                $padding={{ vertical: 0.825, horizontal: 0.825 }}
               />
             </div>
             <div className="add-to-cart">
               <AnimatedButton
                 title='Adicionar ao Carrinho'
-                background='#ff497c'
-                padding={{ vertical: 0.625, horizontal: 0.3125 }}
+                $background='#ff497c'
+                $padding={{ vertical: 0.625, horizontal: 0.3125 }}
                 color='white'
               />
             </div>
@@ -99,7 +99,7 @@ export const ProductCard = (product: ProductTypeTwo & ProductCardProps) => {
             <div className="favorite">
               <AnimatedButton
                 icon={<AiOutlineHeart />}
-                padding={{ vertical: 0.825, horizontal: 0.825 }}
+                $padding={{ vertical: 0.825, horizontal: 0.825 }}
               />
             </div>
           </div>

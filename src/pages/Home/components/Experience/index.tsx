@@ -44,8 +44,8 @@ export const Experience = () => {
           <AnimatedButton
             title={'Confira Agora!'}
             color='white'
-            background='#3577F0'
-            padding={{ vertical: 1, horizontal: 2.375 }}
+            $background='#3577F0'
+            $padding={{ vertical: 1, horizontal: 2.375 }}
           />
         </div>
 
