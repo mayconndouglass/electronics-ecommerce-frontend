@@ -47,7 +47,7 @@ export const Promotions = () => {
               <ProductCard
                 key={product.id}
                 {...product}
-                cardStyling='circular'
+                $cardStyling='circular'
               />
             ))}
           </Slider>
