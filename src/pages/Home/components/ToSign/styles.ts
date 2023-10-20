@@ -3,18 +3,6 @@ import { styled } from 'styled-components'
 export const Container = styled.section`
   margin-bottom: 80px;
 
-  .posts-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 1.875rem;
-
-    margin-bottom: 30px;
-
-    @media screen and (max-width: 990px){
-      flex-direction: column;
-    }
-  }
-
   .newsletter {
     padding: 6.25rem 6.6875rem 5.3125rem;
     border-radius: 6px;
