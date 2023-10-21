@@ -1,4 +1,4 @@
-/* export type Product = {
+export type ProductType = {
   id: string
   name: string
   description: string
@@ -20,7 +20,7 @@
     }
   ]
 }
- */
+
 export type ProductTypeTwo = {
   id: string
   name: string
