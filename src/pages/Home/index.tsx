@@ -8,7 +8,7 @@ import { Testimonials } from './components/Testimonials'
 import { Promotions } from '../../components/Promotions'
 import { WayUs } from './components/WayUs'
 import { Posters } from '../../components/Posters'
-import { ToSign } from './components/ToSign'
+import { ToSign } from '../../components/ToSign'
 import { Footer } from '../../components/Footer'
 
 export const Home = () => {
@@ -16,15 +16,17 @@ export const Home = () => {
     <>
       <HeaderTop />
       <Header />
-      <MainCarousel />
-      <Categories />
-      <Experience />
-      <ExploreOurProducts />
-      <Testimonials />
-      <Promotions />
-      <WayUs />
-      <Posters />
-      <ToSign />
+      <main>
+        <MainCarousel />
+        <Categories />
+        <Experience />
+        <ExploreOurProducts />
+        <Testimonials />
+        <Promotions $typeCard='circular' />
+        <WayUs />
+        <Posters />
+        <ToSign />
+      </main>
       <Footer />
     </>
   )
