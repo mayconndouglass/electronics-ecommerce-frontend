@@ -24,7 +24,7 @@ export const Container = styled.div<BannerProps>`
   align-items: center;
 
   padding: 0 1.25rem;
-  background-image: url('assets/images/image-header-top.png');
+  background-image: url('../../../../../../public/assets/images/image-header-top.png');
   opacity: ${props => (props.open ? '1' : '0')};
   height: ${props => (props.open ? '2.5rem' : '0')};
 
