@@ -1,6 +1,7 @@
 import * as S from './styles'
 
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import { Center } from '../Center'
 import { AnimatedIcon } from '../AnimatedIcon'
@@ -13,7 +14,6 @@ import { CiSearch } from 'react-icons/Ci'
 import { CiUser } from 'react-icons/Ci'
 import { RiMenu3Fill } from 'react-icons/Ri'
 import { AiOutlineClose } from 'react-icons/Ai'
-
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -31,11 +31,13 @@ export const Header = () => {
       <Center>
 
         <div className='container-navigation'>
-          <img src={logo} alt="logo" />
+          <Link to={'/'}>
+            <img src={logo} alt="logo" />
+          </Link>
 
           <nav>
             <ul>
-              <li><a href="#">Início</a></li>
+              <li><Link to={'/'}>Início</Link></li>
               <li><a href="#">Loja</a></li>
               <li><a href="#">Páginas</a></li>
               <li><a href="#">Sobre</a></li>

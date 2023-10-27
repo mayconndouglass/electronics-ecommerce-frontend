@@ -1,4 +1,5 @@
 import * as S from './styles'
+import { Link } from 'react-router-dom'
 
 import { ProductTypeTwo } from '../../types/product'
 
@@ -13,11 +14,19 @@ type ProductCardProps = {
 }
 
 export const ProductCard = (product: ProductTypeTwo & ProductCardProps) => {
-  const { image_url, name, discount, price, promotional_price, $cardStyling } = product
+  const {
+    id,
+    image_url,
+    name,
+    discount,
+    price,
+    promotional_price,
+    $cardStyling
+  } = product
 
   return (
     <S.Container $cardStyling={$cardStyling} className='product-card'>
-      <a className="image-container">
+      <Link to={`/loja/product/${id}`} className="image-container">
         <img src={image_url} alt={name} />
 
         {discount && (
@@ -30,12 +39,15 @@ export const ProductCard = (product: ProductTypeTwo & ProductCardProps) => {
         }
 
         <div className="actions-container">
-          <div className="view">
-            <AnimatedButton
-              icon={<ImEye />}
-              $padding={{ vertical: 0.825, horizontal: 0.825 }}
-            />
-          </div>
+          <Link to={`/loja/product/${id}`}>
+            <div className="view">
+              <AnimatedButton
+                icon={<ImEye />}
+                $padding={{ vertical: 0.825, horizontal: 0.825 }}
+              />
+            </div>
+          </Link>
+
           <div className="add-to-cart">
             <AnimatedButton
               title='Adicionar ao Carrinho'
@@ -44,6 +56,7 @@ export const ProductCard = (product: ProductTypeTwo & ProductCardProps) => {
               color='white'
             />
           </div>
+
           <div className="favorite">
             <AnimatedButton
               icon={<AiOutlineHeart />}
@@ -51,7 +64,7 @@ export const ProductCard = (product: ProductTypeTwo & ProductCardProps) => {
             />
           </div>
         </div>
-      </a>
+      </Link>
 
       <div className="product-info">
         <div className="rating-stars">
@@ -81,12 +94,15 @@ export const ProductCard = (product: ProductTypeTwo & ProductCardProps) => {
 
         {$cardStyling === 'circular' &&
           <div className="actions-container">
-            <div className="view">
-              <AnimatedButton
-                icon={<ImEye />}
-                $padding={{ vertical: 0.825, horizontal: 0.825 }}
-              />
-            </div>
+            <Link to={`/loja/product/${id}`}>
+              <div className="view">
+                <AnimatedButton
+                  icon={<ImEye />}
+                  $padding={{ vertical: 0.825, horizontal: 0.825 }}
+                />
+              </div>
+            </Link>
+
             <div className="add-to-cart">
               <AnimatedButton
                 title='Adicionar ao Carrinho'
