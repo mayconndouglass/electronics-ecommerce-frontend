@@ -1,5 +1,5 @@
 import * as S from './styles'
-import { useEffect, useState } from 'react'
+import { useQuery } from 'react-query'
 
 import axios from 'axios'
 import Slider from 'react-slick'
@@ -16,21 +16,15 @@ import { AnimatedButton } from '../../../../components/AnimatedButton'
 import { Title } from '../../../../components/Title'
 
 export const ExploreOurProducts = () => {
-  const [featuredProducts, setFeaturedProducts] = useState<ProductTypeTwo[]>()
+  const {
+    data: featuredProducts,
+    isFetching
+  } = useQuery<ProductTypeTwo[]>('featuredProducts', async () => {
+    const response = await axios.get('http://localhost:3333/featured-products')
+    const { featuredProducts } = response.data
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('http://localhost:3333/featured-products')
-        const { featuredProducts } = response.data
-        setFeaturedProducts(featuredProducts)
-      } catch (error) {
-        console.error(error)
-      }
-    }
-
-    fetchData()
-  }, [])
+    return featuredProducts
+  }, { staleTime: 1000 * 60 * 10 })
 
   return (
     <S.Container>
@@ -40,7 +34,7 @@ export const ExploreOurProducts = () => {
 
         <div className="container-products-cards">
           <Slider {...settings}>
-            {featuredProducts?.map(product => (
+            {!isFetching && featuredProducts?.map(product => (
               <ProductCard key={product.id} {...product} $cardStyling='normal' />
             ))}
           </Slider>
