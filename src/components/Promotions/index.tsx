@@ -1,8 +1,7 @@
 import * as S from './styles'
 
-import { useEffect, useState } from 'react'
-
 import axios from 'axios'
+import { useQuery } from 'react-query'
 import Slider from 'react-slick'
 
 import { ProductTypeTwo } from '../../types/product'
@@ -20,22 +19,15 @@ type cardStyling = {
 }
 
 export const Promotions = ({ $typeCard }: cardStyling) => {
-  const [productsOnSale, setProductsOnSale] = useState<ProductTypeTwo[]>()
+  const {
+    data: productsOnSale,
+    isFetching
+  } = useQuery<ProductTypeTwo[]>('productsOnSale', async () => {
+    const response = await axios.get('http://localhost:3333/products-on-sale')
+    const { productsOnSale } = response.data
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('http://localhost:3333/products-on-sale')
-        const { productsOnSale } = response.data
-
-        setProductsOnSale(productsOnSale)
-      } catch (error) {
-        console.error(error)
-      }
-    }
-
-    fetchData()
-  }, [])
+    return productsOnSale
+  }, { staleTime: 1000 * 60 * 10 })
 
   return (
     <S.Container>
@@ -47,7 +39,7 @@ export const Promotions = ({ $typeCard }: cardStyling) => {
 
         <div className="products-container">
           <Slider {...settings}>
-            {productsOnSale?.map(product => (
+            {!isFetching && productsOnSale?.map(product => (
               <ProductCard
                 key={product.id}
                 {...product}
