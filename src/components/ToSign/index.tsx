@@ -1,12 +1,12 @@
 import * as S from './styles'
 
-import { Center } from '../../../../components/Center'
-import { Tag } from '../../../../components/Tag'
+import { Center } from '../Center'
+import { Tag } from '../Tag'
 
 import { BsEnvelopeOpenFill } from 'react-icons/Bs'
 
-import { Title } from '../../../../components/Title'
-import { AnimatedButton } from '../../../../components/AnimatedButton'
+import { Title } from '../Title'
+import { AnimatedButton } from '../AnimatedButton'
 
 export const ToSign = () => {
   return (
