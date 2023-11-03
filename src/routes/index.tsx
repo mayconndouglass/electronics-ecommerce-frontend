@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 
 import { Home } from '../pages/Home'
-import { ProductDetails } from '../pages/ProductDetails'
+import { IndividualProduct } from '../pages/IndividualProduct'
 import { TestPage } from '../pages/TestPage'
 
 export const Router = () => {
@@ -9,7 +9,7 @@ export const Router = () => {
     <Routes>
       <Route>
         <Route path='/' element={<Home />} />
-        <Route path='/loja/product/:id' element={<ProductDetails />} />
+        <Route path='/loja/product/:id' element={<IndividualProduct />} />
         <Route path='/testPage' element={<TestPage />} />
       </Route>
 
