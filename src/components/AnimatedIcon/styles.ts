@@ -3,7 +3,7 @@ import { styled } from 'styled-components'
 export const Container = styled.div<{ color: string }>`
   display: inline-block;
 
-  a {
+  span {
     display: flex;
     justify-content: center;
     align-items: center;

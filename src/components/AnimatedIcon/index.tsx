@@ -8,7 +8,7 @@ type AnimatedIconProps = {
 export const AnimatedIcon = ({ icon, color }: AnimatedIconProps) => {
   return (
     <S.Container color={color}>
-      <a href="#">{icon}</a>
+      <span>{icon}</span>
     </S.Container>
   )
 }
