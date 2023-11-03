@@ -82,6 +82,27 @@ export const Header = styled.header<{ $menuIsOpen: boolean }>`
     gap: 1.2rem;
     cursor: pointer;
 
+    & > a {
+      position: relative;
+
+      & > span {
+        text-align: center;
+        background-color: ${props => props.theme['blue-400']};
+        border: 2px solid ${props => props.theme.white};
+        font-size: 12px;
+        font-weight: 500;
+        color: ${props => props.theme.white};
+        border-radius: 50%;
+        height: 22px;
+        width: 22px;
+        line-height: 19px;
+        position: absolute;
+        top: -12px;
+        right: -12px;
+        z-index: 4;
+      }
+    }
+
     & > div:last-child {
       display: none;
 
@@ -163,6 +184,7 @@ export const Header = styled.header<{ $menuIsOpen: boolean }>`
 
 export const SideBar = styled.div<{ $menuIsOpen: boolean }>`
   display: none;
+  z-index: 5;
 
   @media screen and (max-width: 990px) {
     display: block;

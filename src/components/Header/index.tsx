@@ -1,6 +1,7 @@
 import * as S from './styles'
 
 import { useState } from 'react'
+import { useCart } from '../../store/useCart'
 import { Link } from 'react-router-dom'
 
 import { Center } from '../Center'
@@ -17,6 +18,7 @@ import { AiOutlineClose } from 'react-icons/Ai'
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const { quantity } = useCart()
 
   return (
     <S.Header $menuIsOpen={isOpen}>
@@ -48,9 +50,16 @@ export const Header = () => {
           <div className="icons">
             <AnimatedIcon icon={<CiSearch />} color='#292930' />
             <AnimatedIcon icon={<CiHeart />} color='#292930' />
-            <AnimatedIcon icon={<PiShoppingCartThin />} color='#292930' />
-            <AnimatedIcon icon={<CiUser />} color='#292930' />
 
+            <a href="#" className='cart-menu'>
+              {quantity != 0 && (
+                <span>{quantity}</span>
+              )}
+
+              <AnimatedIcon icon={<PiShoppingCartThin />} color='#292930' />
+            </a>
+
+            <AnimatedIcon icon={<CiUser />} color='#292930' />
             <div onClick={() => setIsOpen(!isOpen)}>
               <AnimatedIcon icon={<RiMenu3Fill />} color='#292930' />
             </div>
