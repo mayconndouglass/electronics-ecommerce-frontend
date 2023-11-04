@@ -8,12 +8,15 @@ import { ImEye } from 'react-icons/Im'
 import { AiOutlineHeart } from 'react-icons/Ai'
 
 import { AnimatedButton } from '../AnimatedButton'
+import { useCart } from '../../store/useCart'
 
 type ProductCardProps = {
   $cardStyling: 'normal' | 'circular'
 }
 
 export const ProductCard = (product: ProductTypeTwo & ProductCardProps) => {
+  const { addToCart } = useCart()
+
   const {
     id,
     image_url,
@@ -26,8 +29,10 @@ export const ProductCard = (product: ProductTypeTwo & ProductCardProps) => {
 
   return (
     <S.Container $cardStyling={$cardStyling} className='product-card'>
-      <Link to={`/loja/product/${id}`} className="image-container">
-        <img src={image_url} alt={name} />
+      <div className="image-container">
+        <Link to={`/loja/product/${id}`}>
+          <img src={image_url} alt={name} />
+        </Link>
 
         {discount && (
           <div className="badget-container">
@@ -35,8 +40,7 @@ export const ProductCard = (product: ProductTypeTwo & ProductCardProps) => {
               {`${discount}% off`}
             </div>
           </div>
-        )
-        }
+        )}
 
         <div className="actions-container">
           <Link to={`/loja/product/${id}`}>
@@ -48,7 +52,10 @@ export const ProductCard = (product: ProductTypeTwo & ProductCardProps) => {
             </div>
           </Link>
 
-          <div className="add-to-cart">
+          <div
+            className="add-to-cart"
+            onClick={() => addToCart({ ...product, quantity: 1 })}
+          >
             <AnimatedButton
               title='Adicionar ao Carrinho'
               $background='#ff497c'
@@ -64,7 +71,7 @@ export const ProductCard = (product: ProductTypeTwo & ProductCardProps) => {
             />
           </div>
         </div>
-      </Link>
+      </div>
 
       <div className="product-info">
         <div className="rating-stars">
@@ -103,7 +110,10 @@ export const ProductCard = (product: ProductTypeTwo & ProductCardProps) => {
               </div>
             </Link>
 
-            <div className="add-to-cart">
+            <div
+              className="add-to-cart"
+              onClick={() => addToCart({ ...product, quantity: 1 })}
+            >
               <AnimatedButton
                 title='Adicionar ao Carrinho'
                 $background='#ff497c'
