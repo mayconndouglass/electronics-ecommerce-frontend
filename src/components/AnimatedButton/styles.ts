@@ -10,7 +10,7 @@ interface ButtonProps {
 }
 
 export const Container = styled.div<ButtonProps>`
-  a {
+  span {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -30,6 +30,10 @@ export const Container = styled.div<ButtonProps>`
       transition: all .3s ease-in-out;
       z-index: 1;
       text-decoration: none;
+
+      &:hover {
+        cursor: pointer;
+      }
 
       &::before {
         content: "";

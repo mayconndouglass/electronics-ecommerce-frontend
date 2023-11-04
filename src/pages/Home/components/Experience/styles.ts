@@ -18,7 +18,7 @@ export const Container = styled.section`
   .info {
     width: 50%;
 
-    a {
+    span {
       display: inline-block;
     }
   }

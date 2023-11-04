@@ -22,9 +22,9 @@ export const AnimatedButton = (props: AnimatedButtonProps) => {
         horizontal: props.$padding.horizontal
       }}
     >
-      <a href="#">
+      <span>
         {props.icon} {props.title}
-      </a>
+      </span>
     </S.Container >
   )
 }

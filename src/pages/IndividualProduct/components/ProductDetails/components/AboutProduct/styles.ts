@@ -259,7 +259,7 @@ export const Container = styled.section<{ active: boolean }>`
       .submit-button {
         margin-top: 30px;
 
-        a {
+        span {
          display: inline-block;
         }
       }

@@ -107,7 +107,7 @@ export const Container = styled.div<{ $cardStyling: 'normal' | 'circular' }>`
 
       .add-to-cart {
         /* animatedButton */
-        a {
+        span {
           border-radius: 4px;
 
           font-weight: ${props => props.theme['font-w-bold']};
