@@ -16,12 +16,16 @@ import { CiUser } from 'react-icons/Ci'
 import { RiMenu3Fill } from 'react-icons/Ri'
 import { AiOutlineClose } from 'react-icons/Ai'
 
-export const Header = () => {
+type HeaderProps = {
+  $homeStyle?: boolean
+}
+
+export const Header = ({ $homeStyle }: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const { quantity } = useCart()
 
   return (
-    <S.Header $menuIsOpen={isOpen}>
+    <S.Header $menuIsOpen={isOpen} $homeStyle={$homeStyle}>
       <div className="header-utils">
         <ul>
           <li><a href="#">Ajuda</a></li>

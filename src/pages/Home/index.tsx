@@ -15,7 +15,7 @@ export const Home = () => {
   return (
     <>
       <HeaderTop />
-      <Header />
+      <Header $homeStyle={true} />
       <main>
         <MainCarousel />
         <Categories />

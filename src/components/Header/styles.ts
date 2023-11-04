@@ -1,15 +1,17 @@
 import styled, { css } from 'styled-components'
 
-export const Header = styled.header<{ $menuIsOpen: boolean }>`
-  background-color: ${props => props.theme['gray-100']};
-  padding-bottom: 2rem;
+export const Header = styled.header<{ $menuIsOpen: boolean, $homeStyle?: boolean }>`
+  background-color: ${props => props.$homeStyle ?
+    props.theme['gray-100'] :
+    props.theme.white};
+  padding-bottom: ${props => props.$homeStyle ? '2rem' : '0'};
 
   .container-navigation {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    padding: 0 2.5rem;
+    padding: ${props => props.$homeStyle ? '0 2.5rem' : '0'};
     border-radius: 0.5rem;
     background-color: ${props => props.theme.white};
 
@@ -128,6 +130,9 @@ export const Header = styled.header<{ $menuIsOpen: boolean }>`
 
   .header-utils {
     padding: 0.5rem 1rem;
+    background-color: ${props => props.$homeStyle
+    ? props.theme['gray-100']
+    : props.theme['gray-900']};
 
     ul {
       display: flex;
@@ -150,7 +155,7 @@ export const Header = styled.header<{ $menuIsOpen: boolean }>`
         list-style: none;
 
         a {
-          color: ${props => props.theme['gray-500']};
+          color: ${props => props.$homeStyle ? props.theme['gray-500'] : '#c2c2c2'};
           font-weight: ${props => props.theme['font-w-egular']};
           font-size: 0.875rem;
           text-decoration: none;
