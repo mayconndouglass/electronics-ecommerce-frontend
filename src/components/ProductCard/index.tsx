@@ -29,51 +29,49 @@ export const ProductCard = (product: ProductTypeTwo & ProductCardProps) => {
 
   return (
     <S.Container $cardStyling={$cardStyling} className='product-card'>
-      <Link to={`/loja/product/${id}`}>
-        <div className="image-container">
-
+      <div className="image-container">
+        <Link to={`/loja/product/${id}`}>
           <img src={image_url} alt={name} />
+        </Link>
 
-
-          {discount && (
-            <div className="badget-container">
-              <div className="badget-promotional">
-                {`${discount}% off`}
-              </div>
+        {discount && (
+          <div className="badget-container">
+            <div className="badget-promotional">
+              {`${discount}% off`}
             </div>
-          )}
+          </div>
+        )}
 
-          <div className="actions-container">
-            <Link to={`/loja/product/${id}`}>
-              <div className="view">
-                <AnimatedButton
-                  icon={<ImEye />}
-                  $padding={{ vertical: 0.825, horizontal: 0.825 }}
-                />
-              </div>
-            </Link>
-
-            <div
-              className="add-to-cart"
-              onClick={() => addItemToCart({ ...product, quantity: 1 })}
-            >
+        <div className="actions-container">
+          <Link to={`/loja/product/${id}`}>
+            <div className="view">
               <AnimatedButton
-                title='Adicionar ao Carrinho'
-                $background='#ff497c'
-                $padding={{ vertical: 0.625, horizontal: 0.3125 }}
-                color='white'
-              />
-            </div>
-
-            <div className="favorite">
-              <AnimatedButton
-                icon={<AiOutlineHeart />}
+                icon={<ImEye />}
                 $padding={{ vertical: 0.825, horizontal: 0.825 }}
               />
             </div>
+          </Link>
+
+          <div
+            className="add-to-cart"
+            onClick={() => addItemToCart({ ...product, quantity: 1 })}
+          >
+            <AnimatedButton
+              title='Adicionar ao Carrinho'
+              $background='#ff497c'
+              $padding={{ vertical: 0.625, horizontal: 0.3125 }}
+              color='white'
+            />
+          </div>
+
+          <div className="favorite">
+            <AnimatedButton
+              icon={<AiOutlineHeart />}
+              $padding={{ vertical: 0.825, horizontal: 0.825 }}
+            />
           </div>
         </div>
-      </Link>
+      </div>
 
       <div className="product-info">
         <div className="rating-stars">

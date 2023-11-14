@@ -32,6 +32,15 @@ export const Container = styled.div<{ $cardStyling: 'normal' | 'circular' }>`
 
     height: 300px;
 
+    & > a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 100%;
+      height: 100%;
+    }
+
     &:hover .actions-container {
       opacity: 1;
       bottom: 20px;
