@@ -7,7 +7,7 @@ import { ProductInfo } from './components/ProductInfo'
 import { ProductType } from '../../../../types/product'
 
 export const ProductDetails = () => {
-  const [productDetails, setProducDetails] = useState<ProductType>()
+  const [productDetails, setProductDetails] = useState<ProductType>()
   const { id } = useParams()
 
   useEffect(() => {
@@ -16,7 +16,7 @@ export const ProductDetails = () => {
         const response = await axios.get(`http://localhost:3333/product/${id}`)
         const { product } = response.data
 
-        setProducDetails(product[0])
+        setProductDetails(product)
       } catch (error) {
         console.error(error)
       }
@@ -27,8 +27,12 @@ export const ProductDetails = () => {
 
   return (
     <>
-      <ProductInfo productDetails={productDetails} />
-      <AboutProduct productDetails={productDetails} />
+      {productDetails && (
+        <>
+          <ProductInfo productDetails={productDetails} />
+          <AboutProduct productDetails={productDetails} />
+        </>
+      )}
     </>
   )
 }

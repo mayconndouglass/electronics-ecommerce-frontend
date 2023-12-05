@@ -54,7 +54,13 @@ export const ProductCard = (product: ProductTypeTwo & ProductCardProps) => {
 
           <div
             className="add-to-cart"
-            onClick={() => addItemToCart({ ...product, quantity: 1 })}
+            onClick={() => addItemToCart({
+              id: product.id,
+              name: product.name,
+              price: product.promotional_price ?? product.price,
+              imageUrl: product.image_url,
+              quantity: 1
+            })}
           >
             <AnimatedButton
               title='Adicionar ao Carrinho'
@@ -112,7 +118,13 @@ export const ProductCard = (product: ProductTypeTwo & ProductCardProps) => {
 
             <div
               className="add-to-cart"
-              onClick={() => addItemToCart({ ...product, quantity: 1 })}
+              onClick={() => addItemToCart({
+                id: product.id,
+                name: product.name,
+                price: product.promotional_price ?? product.price,
+                imageUrl: product.image_url,
+                quantity: 1
+              })}
             >
               <AnimatedButton
                 title='Adicionar ao Carrinho'

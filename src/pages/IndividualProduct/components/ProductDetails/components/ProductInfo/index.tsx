@@ -19,13 +19,19 @@ type ProductInfoProps = {
 }
 
 export const ProductInfo = ({ productDetails }: ProductInfoProps) => {
-  const { addToCart, products, subtotal, quantity: quanti2 } = useCart()
+  const { addItemToCart } = useCart()
   const [quantity, setQuantity] = useState(1)
+  const { colors, images, ...restData } = productDetails!
 
-  //CONSOLES
-  console.log('PRODUCTS', products)
-  console.log('SUBTOTAL', subtotal)
-  console.log('QUANTITY', quanti2)
+  const handleAddToCart = () => {
+    addItemToCart({
+      id: restData.id,
+      name: restData.name,
+      price: restData.promotional_price ?? restData.price,
+      imageUrl: images[0].url,
+      quantity,
+    })
+  }
 
   useEffect(() => {
     if (productDetails) {
@@ -76,7 +82,7 @@ export const ProductInfo = ({ productDetails }: ProductInfoProps) => {
     <S.Container>
       <Center>
         <Slider {...settings}>
-          {productDetails?.images.map((productImage, index) => (
+          {images.map((productImage, index) => (
             <div key={productImage?.id} className='main-image'>
               <img src={productImage?.url} alt={`Image ${index}`} />
             </div>
@@ -116,7 +122,7 @@ export const ProductInfo = ({ productDetails }: ProductInfoProps) => {
             <h6>Cores:</h6>
 
             <div>
-              {productDetails?.colors.map(color => (
+              {colors.map(color => (
                 <span
                   key={color.id}
                   style={{ backgroundColor: color.hexadecimal }}
@@ -150,7 +156,7 @@ export const ProductInfo = ({ productDetails }: ProductInfoProps) => {
           </div>
 
           <div className="buttons">
-            <div onClick={() => addToCart({ ...productDetails!, quantity })}>
+            <div onClick={handleAddToCart}>
               <AnimatedButton
                 $background='#3577F0'
                 color='#ffffff'
@@ -165,6 +171,6 @@ export const ProductInfo = ({ productDetails }: ProductInfoProps) => {
           </div>
         </div>
       </Center>
-    </S.Container>
+    </S.Container >
   )
 }
