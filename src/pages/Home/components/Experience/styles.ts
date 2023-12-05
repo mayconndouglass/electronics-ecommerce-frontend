@@ -18,6 +18,10 @@ export const Container = styled.section`
   .info {
     width: 50%;
 
+    & > span {
+      display: flex !important;
+    }
+
     span {
       display: inline-block;
     }

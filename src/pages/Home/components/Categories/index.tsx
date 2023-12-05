@@ -22,7 +22,10 @@ type Category = {
 }
 
 export const Categories = () => {
-  const { data: categories, isFetching } = useQuery<Category[]>('categories', async () => {
+  const {
+    data: categories,
+    isFetching
+  } = useQuery<Category[]>('categories', async () => {
     const response = await axios.get('http://localhost:3333/categories')
     const { categories } = response.data
 
@@ -31,7 +34,7 @@ export const Categories = () => {
 
   return (
     <S.Container>
-      <Link to={'/testPage'}>
+      <Link to={'/loja/cart'}>
         <button>
           Testando apenas
         </button>
