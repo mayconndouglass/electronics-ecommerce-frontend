@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 
 import { Home } from '../pages/Home'
 import { IndividualProduct } from '../pages/IndividualProduct'
-import { TestPage } from '../pages/TestPage'
+import { Cart } from '../pages/Cart'
 
 export const Router = () => {
   return (
@@ -10,7 +10,7 @@ export const Router = () => {
       <Route>
         <Route path='/' element={<Home />} />
         <Route path='/loja/product/:id' element={<IndividualProduct />} />
-        <Route path='/testPage' element={<TestPage />} />
+        <Route path='/loja/cart' element={<Cart />} />
       </Route>
 
       {/* <Route path="*" element={<NotFound />} /> */}
