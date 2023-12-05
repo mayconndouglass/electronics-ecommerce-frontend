@@ -16,7 +16,7 @@ export type ProductType = {
   images: [
     {
       id: string,
-      url
+      url: string
     }
   ]
 }
@@ -25,10 +25,10 @@ export type ProductTypeTwo = {
   id: string
   name: string
   description: string
-  created_At: string
+  created_at: string
   price: string
-  promotional_price: string
-  discount: number
+  promotional_price?: string
+  discount?: number
   category_id: string
   image_url: string
 }
