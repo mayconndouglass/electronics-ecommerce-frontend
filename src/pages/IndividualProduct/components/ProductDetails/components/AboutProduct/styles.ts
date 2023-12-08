@@ -228,7 +228,8 @@ export const Container = styled.section<{ active: boolean }>`
         margin-top: 30px;
       }
 
-      .name, .email {
+      //TODO: Apagar depois, esse código foi do input componetizado
+      /* .name, .email {
         width: 100%;
         position: relative;
 
@@ -254,7 +255,7 @@ export const Container = styled.section<{ active: boolean }>`
         &:focus {
           border-color: ${props => props.theme['blue-400']}
         }
-      }
+      } */
 
       .submit-button {
         margin-top: 30px;

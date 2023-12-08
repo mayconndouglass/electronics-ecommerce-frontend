@@ -9,13 +9,17 @@ import { comments } from './data/comments'
 
 import { ProductType } from '../../../../../../types/product'
 import { AiOutlineStar } from 'react-icons/Ai'
+import { CustomInput } from '../../../../../../components/CustomInput'
 
 type ProductInfoProps = {
   productDetails: ProductType | undefined
 }
 
 export const AboutProduct = ({ productDetails }: ProductInfoProps) => {
-  const [specificationsIsClicked, setSpecificationsIsClicked] = useState<boolean>(false)
+  const [
+    specificationsIsClicked,
+    setSpecificationsIsClicked
+  ] = useState<boolean>(false)
 
   const descriptions = productDetails?.description.split('\n')
 
@@ -85,15 +89,8 @@ export const AboutProduct = ({ productDetails }: ProductInfoProps) => {
                   </div>
 
                   <div className='user-data'>
-                    <div className="name">
-                      <label htmlFor="name">Name <span>*</span></label>
-                      <input id="name" type="text" />
-                    </div>
-
-                    <div className="email">
-                      <label htmlFor="email">Email <span>*</span></label>
-                      <input id="email" type="email" />
-                    </div>
+                    <CustomInput label='nome' type='text' />
+                    <CustomInput label='email' type='text' />
                   </div>
 
                   <div className="submit-button">
