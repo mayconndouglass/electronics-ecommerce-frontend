@@ -63,7 +63,7 @@ export const Header = styled.header<{ $menuIsOpen: boolean, $homeStyle?: boolean
         }
       }
 
-      @media screen and (max-width: 1024px) {
+      @media screen and (max-width: 1200px) {
           ul {
             gap: 2rem;
           }
@@ -83,6 +83,22 @@ export const Header = styled.header<{ $menuIsOpen: boolean, $homeStyle?: boolean
     display: flex;
     gap: 1.2rem;
     cursor: pointer;
+
+    & > span {
+      display: flex;
+      align-items: start;
+      gap: 0.15rem;
+
+      & > span:last-child {
+        align-self: center;
+        color: ${props => props.theme['gray-900']};
+        font-weight: ${props => props.theme['font-w-egular']};
+
+        @media screen and (max-width: 1050px) {
+          display: none;
+        }
+      }
+    }
 
     & > a {
       position: relative;

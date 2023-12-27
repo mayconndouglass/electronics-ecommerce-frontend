@@ -1,4 +1,5 @@
 import * as S from './styles'
+import { Link } from 'react-router-dom'
 
 import { Center } from '../Center'
 import { AnimatedIcon } from '../AnimatedIcon'
@@ -50,9 +51,9 @@ export const Footer = () => {
 
               <div className="content">
                 <ul>
-                  <a href="#"><li>Minha Conta</li></a>
-                  <a href="#"><li>Login / Cadastro</li></a>
-                  <a href="#"><li>Carrinho</li></a>
+                  <a href=""><li>Minha Conta</li></a>
+                  <Link to={'/accounts/sigin'}><li>Login / Cadastro</li></Link>
+                  <Link to={'/store/cart'}><li>Carrinho</li></Link>
                   <a href="#"><li>Favoritos</li></a>
                   <a href="#"><li>Loja</li></a>
                 </ul>
@@ -111,6 +112,6 @@ export const Footer = () => {
           </div>
         </div>
       </Center>
-    </S.Container>
+    </S.Container >
   )
 }
