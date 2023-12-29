@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { ButtonHTMLAttributes } from 'react'
 import * as S from './styles'
 
-type AnimatedButtonProps = {
+type AnimatedButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   icon?: React.ReactNode
   title?: string
   $background?: string
@@ -22,9 +22,9 @@ export const AnimatedButton = (props: AnimatedButtonProps) => {
         horizontal: props.$padding.horizontal
       }}
     >
-      <span>
+      <button type={props.type}>
         {props.icon} {props.title}
-      </span>
+      </button>
     </S.Container >
   )
 }

@@ -10,7 +10,10 @@ interface ButtonProps {
 }
 
 export const Container = styled.div<ButtonProps>`
-  span {
+  button {
+      outline: none;
+      border: none;
+
       display: flex;
       align-items: center;
       justify-content: center;
@@ -23,6 +26,7 @@ export const Container = styled.div<ButtonProps>`
       border-radius: 6px;
       line-height: 1.7;
       font-weight: ${props => props.theme['font-w-semi-bold']};
+      font-size: 1rem;
 
       padding:
         ${({ $padding }) => `${$padding.vertical}rem ${$padding.horizontal}rem`};
