@@ -1,25 +1,27 @@
 import * as S from './styles'
+import { InputHTMLAttributes, forwardRef } from 'react'
 
-type InputComponentProps = {
+type InputComponentProps = InputHTMLAttributes<HTMLInputElement> & {
   label: string
-  placeholder?: string
-  type: 'text' | 'password'
 }
 
-export const CustomInput = ({
-  label,
-  placeholder,
-  type
-}: InputComponentProps) => {
-  const placeHolder = placeholder ?? ''
-  const textLabelFormated = label.charAt(0).toUpperCase() + label.slice(1)
+export const CustomInput = forwardRef<HTMLInputElement, InputComponentProps>(
+  (props, ref) => {
+    const textLabelFormated = props.name!
+      .charAt(0).toUpperCase() + props.name!.slice(1)
 
-  return (
-    <S.Container id={label}>
-      <label htmlFor={label}>
-        {textLabelFormated} <span>*</span>
-      </label>
-      <input id={label} type={type} placeholder={placeHolder} />
-    </S.Container>
-  )
-}
+    return (
+      <S.Container id={props.name!}>
+        <label htmlFor={props.label}>
+          {textLabelFormated} <span>*</span>
+        </label>
+        <input
+          id={props.name!}
+          type={props.type}
+          placeholder={props.placeholder}
+          ref={ref}
+          {...props}
+        />
+      </S.Container>
+    )
+  })

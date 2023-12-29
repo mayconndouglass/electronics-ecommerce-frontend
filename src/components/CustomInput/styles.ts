@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
 
-export const Container = styled.div<{ id: string }> `
+export const Container = styled.div<{ id: string }>`
   width: 100%;
   position: relative;
 
