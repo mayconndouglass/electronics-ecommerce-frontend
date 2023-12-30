@@ -34,7 +34,7 @@ export const Container = styled.section`
 
     .button {
       & > div {
-        a {
+       button {
           padding: 1rem;
         }
       }
