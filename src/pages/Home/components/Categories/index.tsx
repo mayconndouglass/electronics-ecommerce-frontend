@@ -34,7 +34,7 @@ export const Categories = () => {
 
   return (
     <S.Container>
-      <Link to={'/loja/cart'}>
+      <Link to={'/store/cart'}>
         <button>
           Testando apenas
         </button>
@@ -47,7 +47,7 @@ export const Categories = () => {
           color={'#ff497c'}
         />
 
-        <Title fontSize={2.25}>Busque por Categorias</Title>
+        <Title fontSize={2.25}>Busque por Categoria</Title>
 
         <div className="container-categories">
           {!isFetching && (

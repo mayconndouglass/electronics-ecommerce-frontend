@@ -17,7 +17,12 @@ export const Container = styled.section`
     margin-top: 10px;
 
     .slick-list {
+      margin: 0 -15px;
       padding-block: 2rem;
+
+      .slick-slide {
+        padding: 0 15px;
+      }
     }
 
     @media screen and (max-width: 420px) {

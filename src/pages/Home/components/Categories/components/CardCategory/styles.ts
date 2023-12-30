@@ -7,7 +7,7 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
-    max-width: 159px;
+    /* max-width: 159px; */
     padding: 1.75rem 0.75rem;
 
     border-radius: 6px;
@@ -33,6 +33,10 @@ export const Container = styled.div`
       transition: transform .5s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
 
+    &:hover {
+      box-shadow: 0 20px 20px -10px rgba(0, 0, 0, .1);
+    }
+
     h4 {
       font-size: 1rem;
       font-weight: ${props => props.theme['font-w-medium']};
@@ -49,47 +53,15 @@ export const Container = styled.div`
       transition: transform .3s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
 
-    @media screen and (max-width: 1350px) {
-      max-width: 140px;
-      padding: 1.25rem 0.75rem;
-    }
-
     @media screen and (max-width: 1024px) {
-      max-width: 130px;
-
       img {
         max-width: 50px;
       }
     }
-
-    @media screen and (max-width: 990px) {
-      max-width: 159px;
-      padding: 1.75rem 0.75rem;
-    }
-
-    @media screen and (max-width: 580px) {
-      max-width: 140px;
-      padding: 1.25rem 0.75rem;
-    }
-
-    @media screen and (max-width: 490px) {
-      max-width: 180px;
-      padding: 1.75rem 0.75rem;
-    }
-
-    @media screen and (max-width: 420px) {
-      max-width: 160px;
-      padding: 1.25rem 0.75rem;
-    }
-
-    @media screen and (max-width: 390px) {
-      max-width: 100%;
-      padding: 3rem 0.75rem;
-    }
   }
 
   @media screen and (max-width: 390px) {
-    width: 85%;
+    width: 100%;
     margin: 0 auto;
   }
 `
