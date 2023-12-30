@@ -12,21 +12,44 @@ export const Container = styled.section`
   .products-container {
     & > div {
       margin: 0 -15px;
+
+     span {
+        @media screen and (max-width: 300px){
+          text-align: center;
+        }
+      }
     }
 
     .product-card {
-      @media screen and (max-width: 1389px){
-        .add-to-cart {
-          & > div {
-            a {
+      .add-to-cart {
+        & > div {
+          button {
+            line-height: 1.9;
+
+            @media screen and (max-width: 1269px) {
               line-height: 1;
-              text-align: center;
+            }
+
+            @media screen and (max-width: 1249px){
+              line-height: 1.9;
+            }
+
+            @media screen and (max-width: 750px) {
+              line-height: 1;
+            }
+
+            @media screen and (max-width: 512px) {
+              line-height: 1.9;
+            }
+
+            @media screen and (max-width: 292px) {
+              line-height: 1;
             }
           }
         }
       }
 
-      @media screen and (max-width: 1249px){
+      @media screen and (max-width: 1249px) {
         .image-container {
           width: 250px;
           height: 250px;
@@ -36,41 +59,15 @@ export const Container = styled.section`
             height: 150px;
           }
         }
-
-        .add-to-cart {
-          & > div {
-            a {
-              line-height: 1.7;
-            }
-          }
-        }
       }
 
-      @media screen and (max-width: 1033px){
-        .add-to-cart {
-          & > div {
-            a {
-              line-height: 1;
-            }
-          }
-        }
-      }
-
-      @media screen and (max-width: 990px){
+      @media screen and (max-width: 990px) {
         display: flex;
         flex-direction: column;
         align-items: center;
-
-        .add-to-cart {
-          & > div {
-            a {
-              line-height: 1.7;
-            }
-          }
-        }
       }
 
-      @media screen and (max-width: 750px){
+      @media screen and (max-width: 750px) {
         .image-container {
           width: 200px;
           height: 200px;
@@ -80,36 +77,10 @@ export const Container = styled.section`
             height: 125px;
           }
         }
-
-        .add-to-cart {
-          & > div {
-            a {
-              line-height: 1;
-            }
-          }
-        }
       }
 
-      @media screen and (max-width: 512px){
+      @media screen and (max-width: 512px) {
         padding-top: 5rem;
-
-        .add-to-cart {
-          & > div {
-            a {
-              line-height: 1.7;
-            }
-          }
-        }
-      }
-
-      @media screen and (max-width: 300px){
-        .add-to-cart {
-          & > div {
-            a {
-              line-height: 1;
-            }
-          }
-        }
       }
     }
   }

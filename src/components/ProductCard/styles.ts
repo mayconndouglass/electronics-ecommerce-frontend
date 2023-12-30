@@ -116,30 +116,41 @@ export const Container = styled.div<{ $cardStyling: 'normal' | 'circular' }>`
 
       .add-to-cart {
         /* animatedButton */
-        span {
+        & > div {
           border-radius: 4px;
 
           font-weight: ${props => props.theme['font-w-bold']};
           font-size: 0.875rem;
           text-align: center;
 
-          @media screen and (max-width: 1033px) {
-            line-height: 1;
-          }
+          button {
+            @media screen and (max-width: 1398px) {
+              line-height: 1;
+            }
 
-          @media screen and (max-width: 990px) {
-            line-height: 1.7;
-          }
+            @media screen and (max-width: 1300px) {
+              line-height: 1.7;
+            }
 
-          @media screen and (max-width: 750px) {
-            line-height: 1;
-          }
+            @media screen and (max-width: 1040px) {
+              line-height: 1;
+            }
 
-          @media screen and (max-width: 512px) {
-            line-height: 1.7;
-          }
-          @media screen and (max-width: 322px) {
-            line-height: 1;
+            @media screen and (max-width: 990px) {
+             line-height: 1.9;
+            }
+
+            @media screen and (max-width: 750px) {
+              line-height: 1;
+            }
+
+            @media screen and (max-width: 512px) {
+              line-height: 1.9;
+            }
+
+            @media screen and (max-width: 322px) {
+              line-height: 1;
+            }
           }
         }
       }

@@ -1,7 +1,7 @@
 import * as S from './styles'
 import { useQuery } from 'react-query'
 
-import axios from 'axios'
+// import axios from 'axios'
 import Slider from 'react-slick'
 
 import { settings } from './settings/slider'
@@ -15,12 +15,14 @@ import { BsBasket } from 'react-icons/Bs'
 import { AnimatedButton } from '../../../../components/AnimatedButton'
 import { Title } from '../../../../components/Title'
 
+import { api } from '../../../../services/api'
+
 export const ExploreOurProducts = () => {
   const {
     data: featuredProducts,
     isFetching
   } = useQuery<ProductTypeTwo[]>('featuredProducts', async () => {
-    const response = await axios.get('http://localhost:3333/featured-products')
+    const response = await api.get('/featured-products')
     const { featuredProducts } = response.data
 
     return featuredProducts
