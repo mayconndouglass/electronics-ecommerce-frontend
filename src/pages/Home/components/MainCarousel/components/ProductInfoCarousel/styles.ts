@@ -85,7 +85,7 @@ export const Container = styled.div`
     flex-direction: column;
   }
 
-  @media screen and (max-width: 415px) {
+  @media screen and (max-width: 430px) {
     h1 {
       text-align: center;
     }

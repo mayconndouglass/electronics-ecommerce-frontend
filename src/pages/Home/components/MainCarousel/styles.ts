@@ -49,8 +49,29 @@ export const Container = styled.section`
     }
   }
 
+  .slick-slider.slick-vertical.slick-initialized {
+    .slick-list {
+      height: 350px !important;
+
+      @media screen and (max-width: 1224px) {
+        height: 400px !important;
+      }
+
+      @media screen and (max-width: 512px) {
+        height: 300px !important;
+      }
+
+      @media screen and (max-width: 256px) {
+        height: 350px !important;
+      }
+    }
+  }
+
   .slick-slider.slick-initialized {
-    width: 678px;
+    width: 661px;//678px;
+
+    padding: 0 0 15px 15px;
+    margin: 0 0 -15px -15px;
 
     @media screen and (max-width: 1480px) {
      width: 45.3125vw;
@@ -97,6 +118,16 @@ export const Container = styled.section`
 
   .slick-list {
     z-index: 2;
+  }
+
+  .slick-slider > .slick-list {
+    padding: 0 0 15px 15px;
+    margin: 0 0 -15px -15px;
+
+    @media screen and (max-width: 512px) {
+      padding: 0;
+      margin: 0;
+    }
   }
 
   .shape-carousel {

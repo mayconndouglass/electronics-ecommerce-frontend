@@ -4,7 +4,7 @@ export const Container = styled.div`
   position: relative;
 
   img {
-    width: 100%;
+    width: 95%;//100%;
     object-fit: cover;
   }
 
