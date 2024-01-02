@@ -6,6 +6,7 @@ import { Cart } from '../pages/Cart'
 import { RequireAuth } from '../components/RequireAuth'
 import { SignUp } from '../pages/SignUp'
 import { SignIn } from '../pages/SignIn'
+import { NotFound } from '../pages/NotFound'
 
 export const Router = () => {
   return (
@@ -20,7 +21,7 @@ export const Router = () => {
         <Route path='/accounts/sign-in' element={<SignIn />} />
       </Route>
 
-      {/* <Route path="*" element={<NotFound />} /> */}
+      <Route path="*" element={<NotFound />} />
     </Routes>
   )
 }
