@@ -89,8 +89,8 @@ export const AboutProduct = ({ productDetails }: ProductInfoProps) => {
                   </div>
 
                   <div className='user-data'>
-                    <CustomInput label='nome' type='text' />
-                    <CustomInput label='email' type='text' />
+                    <CustomInput name='name' label='nome' type='text' id='name' />
+                    <CustomInput name='email' label='email' type='email' id='email' />
                   </div>
 
                   <div className="submit-button">
