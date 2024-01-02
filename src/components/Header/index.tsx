@@ -32,7 +32,7 @@ export const Header = ({ $homeStyle }: HeaderProps) => {
         <ul>
           <li><a href="#">Ajuda</a></li>
           <li><a href="#">Siga-nos</a></li>
-          <li><Link to={'/accounts/sigin'}>Login</Link></li>
+          <li><Link to={'/accounts/sign-in'}>Login</Link></li>
         </ul>
       </div>
 
