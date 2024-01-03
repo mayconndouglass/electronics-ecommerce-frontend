@@ -7,6 +7,8 @@ import { RequireAuth } from '../components/RequireAuth'
 import { SignUp } from '../pages/SignUp'
 import { SignIn } from '../pages/SignIn'
 import { NotFound } from '../pages/NotFound'
+import { PrivacyPolicy } from '../pages/PrivacyPolicy'
+import { Contact } from '../pages/Contact'
 
 export const Router = () => {
   return (
@@ -19,6 +21,8 @@ export const Router = () => {
 
         <Route path='/accounts/sign-up' element={<SignUp />} />
         <Route path='/accounts/sign-in' element={<SignIn />} />
+        <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+        <Route path='/contact' element={<Contact />} />
       </Route>
 
       <Route path="*" element={<NotFound />} />
