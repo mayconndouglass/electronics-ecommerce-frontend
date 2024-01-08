@@ -15,8 +15,8 @@ const SignUpFormSchema = z.object({
     .string()
     .min(3, { message: 'O nome precisa ter no mínimo 3 caracteres' })
     .regex(
-      /^([a-z\\-]+)$/i,
-      { message: 'O nome só pode ter letras e hifens' }
+      /^([a-zA-Z\s]+)$/i,
+      { message: 'O nome só pode ter letras e espaços' }
     )
     .transform(name => {
       return name.trim().split(' ').map(word => {
