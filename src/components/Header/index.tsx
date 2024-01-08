@@ -15,7 +15,9 @@ import { CiSearch } from 'react-icons/Ci'
 import { CiUser } from 'react-icons/Ci'
 import { RiMenu3Fill } from 'react-icons/Ri'
 import { AiOutlineClose } from 'react-icons/Ai'
+
 import { useUser } from '../../store/useUser'
+import { useWishList } from '../../store/useWishList'
 
 type HeaderProps = {
   $homeStyle?: boolean
@@ -25,6 +27,7 @@ export const Header = ({ $homeStyle }: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const { quantity } = useCart()
   const { user } = useUser()
+  const { favorites } = useWishList()
 
   return (
     <S.Header $menuIsOpen={isOpen} $homeStyle={$homeStyle}>
@@ -55,15 +58,22 @@ export const Header = ({ $homeStyle }: HeaderProps) => {
 
           <div className="icons">
             <AnimatedIcon icon={<CiSearch />} color='#292930' />
-            <AnimatedIcon icon={<CiHeart />} color='#292930' />
+            <div className="favorite-menu">
+              {favorites.length != 0 && (
+                <span>{favorites.length}</span>
+              )}
 
-            <a href="#" className='cart-menu'>
+              <AnimatedIcon icon={<CiHeart />} color='#292930' />
+            </div>
+
+            <div className='cart-menu'>
               {quantity != 0 && (
                 <span>{quantity}</span>
               )}
 
               <AnimatedIcon icon={<PiShoppingCartThin />} color='#292930' />
-            </a>
+            </div>
+
             <span>
               <AnimatedIcon icon={<CiUser />} color='#292930' />
               {user && <span>Olá, {user.name.split(' ')[0]}</span>}

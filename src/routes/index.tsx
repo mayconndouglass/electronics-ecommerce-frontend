@@ -9,6 +9,7 @@ import { SignIn } from '../pages/SignIn'
 import { NotFound } from '../pages/NotFound'
 import { PrivacyPolicy } from '../pages/PrivacyPolicy'
 import { Contact } from '../pages/Contact'
+import { WishList } from '../pages/WishList'
 
 export const Router = () => {
   return (
@@ -18,6 +19,7 @@ export const Router = () => {
         <Route path='/store/product/:id' element={<IndividualProduct />} />
 
         <Route path='/store/cart' element={<RequireAuth><Cart /></RequireAuth>} />
+        <Route path='/store/wish-list' element={<WishList />} />
 
         <Route path='/accounts/sign-up' element={<SignUp />} />
         <Route path='/accounts/sign-in' element={<SignIn />} />

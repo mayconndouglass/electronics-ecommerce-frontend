@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import { useCart } from './useCart'
+import { useWishList } from './useWishList'
 import { handleUserApi } from '../utils/handle-user-api'
 import { handleLocalStorageToken } from '../utils/handle-local-storage-token'
 
@@ -34,16 +35,21 @@ export const useUser = create<useUserProps>((set) => ({
       const userData = await handleUserApi.signin(email, password)
 
       if (userData) {
-        const { user, token } = userData
+        const { user, token }: { user: User, token: string } = userData
 
         set({ user })
         handleLocalStorageToken().setToken(token)
 
         const doesCartHaveItems = useCart.getState().items.length
+        const doesWishListHaveItems = useWishList.getState().favorites.length
 
         doesCartHaveItems
           ? useCart.getState().updateItems()
           : useCart.getState().getItems()
+
+        doesWishListHaveItems
+          ? useWishList.getState().updateFavoriteItems()
+          : useWishList.getState().getItems()
 
         return true
       }

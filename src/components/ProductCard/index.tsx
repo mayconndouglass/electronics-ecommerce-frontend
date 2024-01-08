@@ -9,6 +9,7 @@ import { AiOutlineHeart } from 'react-icons/Ai'
 
 import { AnimatedButton } from '../AnimatedButton'
 import { useCart } from '../../store/useCart'
+import { useWishList } from '../../store/useWishList'
 
 type ProductCardProps = {
   $cardStyling: 'normal' | 'circular'
@@ -16,6 +17,7 @@ type ProductCardProps = {
 
 export const ProductCard = (product: ProductTypeTwo & ProductCardProps) => {
   const { addItemToCart } = useCart()
+  const { addItemToWishList } = useWishList()
 
   const {
     id,
@@ -30,7 +32,7 @@ export const ProductCard = (product: ProductTypeTwo & ProductCardProps) => {
   return (
     <S.Container $cardStyling={$cardStyling} className='product-card'>
       <div className="image-container">
-        <Link to={`/loja/product/${id}`}>
+        <Link to={`/store/product/${id}`}>
           <img src={image_url} alt={name} />
         </Link>
 
@@ -43,7 +45,7 @@ export const ProductCard = (product: ProductTypeTwo & ProductCardProps) => {
         )}
 
         <div className="actions-container">
-          <Link to={`/loja/product/${id}`}>
+          <Link to={`/store/product/${id}`}>
             <div className="view">
               <AnimatedButton
                 icon={<ImEye />}
@@ -70,7 +72,14 @@ export const ProductCard = (product: ProductTypeTwo & ProductCardProps) => {
             />
           </div>
 
-          <div className="favorite">
+          <div
+            className="favorite"
+            onClick={() => addItemToWishList({
+              id: product.id,
+              name: product.name,
+              price: product.promotional_price ?? product.price,
+              imageUrl: product.image_url
+            })}>
             <AnimatedButton
               icon={<AiOutlineHeart />}
               $padding={{ vertical: 0.825, horizontal: 0.825 }}
@@ -107,7 +116,7 @@ export const ProductCard = (product: ProductTypeTwo & ProductCardProps) => {
 
         {$cardStyling === 'circular' &&
           <div className="actions-container">
-            <Link to={`/loja/product/${id}`}>
+            <Link to={`/store/product/${id}`}>
               <div className="view">
                 <AnimatedButton
                   icon={<ImEye />}
@@ -134,7 +143,15 @@ export const ProductCard = (product: ProductTypeTwo & ProductCardProps) => {
               />
             </div>
 
-            <div className="favorite">
+            <div
+              className="favorite"
+              onClick={() => addItemToWishList({
+                id: product.id,
+                name: product.name,
+                price: product.promotional_price ?? product.price,
+                imageUrl: product.image_url,
+              })}
+            >
               <AnimatedButton
                 icon={<AiOutlineHeart />}
                 $padding={{ vertical: 0.825, horizontal: 0.825 }}

@@ -100,7 +100,7 @@ export const Header = styled.header<{ $menuIsOpen: boolean, $homeStyle?: boolean
       }
     }
 
-    & > a {
+    .cart-menu, .favorite-menu {
       position: relative;
 
       & > span {
