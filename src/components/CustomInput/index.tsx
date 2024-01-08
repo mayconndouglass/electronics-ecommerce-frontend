@@ -7,8 +7,8 @@ type InputComponentProps = InputHTMLAttributes<HTMLInputElement> & {
 
 export const CustomInput = forwardRef<HTMLInputElement, InputComponentProps>(
   (props, ref) => {
-    const textLabelFormated = props.name!
-      .charAt(0).toUpperCase() + props.name!.slice(1)
+    const textLabelFormated = props.label!
+      .charAt(0).toUpperCase() + props.label!.slice(1)
 
     return (
       <S.Container id={props.name!}>
