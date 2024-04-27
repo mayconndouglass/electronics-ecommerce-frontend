@@ -228,35 +228,6 @@ export const Container = styled.section<{ active: boolean }>`
         margin-top: 30px;
       }
 
-      //TODO: Apagar depois, esse código foi do input componetizado
-      /* .name, .email {
-        width: 100%;
-        position: relative;
-
-        span {
-          color: #E76458;
-        }
-      }
-
-      #name, #email {
-        width: 100%;
-        height: 50px;
-        border-radius: 6px;
-        outline: none;
-        padding: 0 1.25rem;
-
-        font-size: 0.875rem;
-        font-weight: ${props => props.theme['font-w-egular']};
-        line-height: 1.3;
-        color: ${props => props.theme['gray-900']};
-        border: 1px solid #CBD3D9;
-        background-color: ${props => props.theme.white};
-
-        &:focus {
-          border-color: ${props => props.theme['blue-400']}
-        }
-      } */
-
       .submit-button {
         margin-top: 30px;
 

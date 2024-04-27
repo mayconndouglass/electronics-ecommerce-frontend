@@ -44,7 +44,7 @@ export const ProductCart = () => {
 
         <div className="subtotal-container">
           <div className="coupon">
-            <input type="text" placeholder='Adicione o seu coupon' />
+            <input type="text" placeholder='Adicione o seu cupom' />
             <button>Aplicar</button>
           </div>
 

@@ -1,14 +1,16 @@
 import * as S from './styles'
-import { useForm } from 'react-hook-form'
-import { Link, useNavigate } from 'react-router-dom'
 
-import logo from '../../../public/assets/images/logo.png'
+import { z } from 'zod'
+import { Link, useNavigate } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
+
 import { AnimatedButton } from '../../components/AnimatedButton'
 import { CustomInput } from '../../components/CustomInput'
-import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useUser } from '../../store/useUser'
 import { FormError } from '../../components/FormError'
+import logo from '../../../public/assets/images/logo.png'
+
+import { useUser } from '../../store/useUser'
 
 const SignInFormSchema = z.object({
   email: z
@@ -27,7 +29,7 @@ export const SignIn = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm<handleSignInFormData>({
     resolver: zodResolver(SignInFormSchema)
   })
@@ -38,9 +40,8 @@ export const SignIn = () => {
     email,
     password
   }: handleSignInFormData) => {
-    console.log('ENtrou handle signin')
     const isLogged = await signin(email, password)
-    console.log(isLogged)
+
     if (isLogged) {
       navigate('/')
       return
@@ -80,7 +81,7 @@ export const SignIn = () => {
 
           <div className="container-form-sign-up">
             <div>
-              <h3>Eu Sou Novo Aqui</h3>
+              <h3>Faça Login</h3>
 
               <p>Insira seus dados</p>
 

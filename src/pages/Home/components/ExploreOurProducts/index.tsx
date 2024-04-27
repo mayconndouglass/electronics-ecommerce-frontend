@@ -1,7 +1,6 @@
 import * as S from './styles'
 import { useQuery } from 'react-query'
 
-// import axios from 'axios'
 import Slider from 'react-slick'
 
 import { settings } from './settings/slider'

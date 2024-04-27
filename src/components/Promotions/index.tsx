@@ -1,6 +1,6 @@
 import * as S from './styles'
 
-import axios from 'axios'
+import { api } from '../../services/api'
 import { useQuery } from 'react-query'
 import Slider from 'react-slick'
 
@@ -23,7 +23,7 @@ export const Promotions = ({ $typeCard }: cardStyling) => {
     data: productsOnSale,
     isFetching
   } = useQuery<ProductTypeTwo[]>('productsOnSale', async () => {
-    const response = await axios.get('http://localhost:3333/products-on-sale')
+    const response = await api.get('/products-on-sale')
     const { productsOnSale } = response.data
 
     return productsOnSale

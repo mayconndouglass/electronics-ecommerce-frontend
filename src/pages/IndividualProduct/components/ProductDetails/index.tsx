@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import axios from 'axios'
+import { api } from '../../../../services/api'
 
 import { AboutProduct } from './components/AboutProduct'
 import { ProductInfo } from './components/ProductInfo'
@@ -13,7 +13,7 @@ export const ProductDetails = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3333/product/${id}`)
+        const response = await api.get(`/product/${id}`)
         const { product } = response.data
 
         setProductDetails(product)

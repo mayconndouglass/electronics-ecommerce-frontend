@@ -19,7 +19,7 @@ export const AboutProduct = ({ productDetails }: ProductInfoProps) => {
   const [
     specificationsIsClicked,
     setSpecificationsIsClicked
-  ] = useState<boolean>(false)
+  ] = useState<boolean>(true)
 
   const descriptions = productDetails?.description.split('\n')
 

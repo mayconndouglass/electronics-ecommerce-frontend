@@ -264,7 +264,7 @@ export const Container = styled.section`
             background-color: ${props => props.theme['blue-400']};
             opacity: 0;
             visibility: hidden;
-            transform: scale(.8);
+            transform: scale(1.2);
             transition: .3s;
           }
 

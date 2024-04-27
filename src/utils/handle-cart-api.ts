@@ -18,6 +18,7 @@ type handleCartApiProps = {
   removeAllItems: (token: string) => void
 }
 
+//TODO: Precisa tratar erros aqui ?
 export const handleCartApi = <handleCartApiProps>{
   getItems: async (token) => {
     try {

@@ -1,7 +1,8 @@
 import * as S from './styles'
 
 import Slider from 'react-slick'
-import axios from 'axios'
+
+import { api } from '../../../../services/api'
 
 import { settings } from './settings/slider'
 
@@ -26,7 +27,7 @@ export const Categories = () => {
     data: categories,
     isFetching
   } = useQuery<Category[]>('categories', async () => {
-    const response = await axios.get('http://localhost:3333/categories')
+    const response = await api.get('/categories')
     const { categories } = response.data
 
     return categories
@@ -36,7 +37,12 @@ export const Categories = () => {
     <S.Container>
       <Link to={'/store/cart'}>
         <button>
-          Testando apenas
+          Testando cart
+        </button>
+      </Link>
+      <Link to={'/store/wish-list'}>
+        <button>
+          Testando wishlist
         </button>
       </Link>
 

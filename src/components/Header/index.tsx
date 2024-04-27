@@ -51,8 +51,8 @@ export const Header = ({ $homeStyle }: HeaderProps) => {
               <li><Link to={'/'}>Início</Link></li>
               <li><a href="#">Loja</a></li>
               <li><a href="#">Páginas</a></li>
-              <li><a href="#">Sobre</a></li>
-              <li><a href="#">Contato</a></li>
+              <li><Link to={'/about'}>Sobre</Link></li>
+              <li><Link to={'/contact'}>Contato</Link></li>
             </ul>
           </nav>
 
