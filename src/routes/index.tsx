@@ -10,6 +10,8 @@ import { NotFound } from '../pages/NotFound'
 import { PrivacyPolicy } from '../pages/PrivacyPolicy'
 import { Contact } from '../pages/Contact'
 import { WishList } from '../pages/WishList'
+import { About } from '../pages/About'
+import { Checkout } from '../pages/Checkout'
 
 export const Router = () => {
   return (
@@ -25,6 +27,8 @@ export const Router = () => {
         <Route path='/accounts/sign-in' element={<SignIn />} />
         <Route path='/privacy-policy' element={<PrivacyPolicy />} />
         <Route path='/contact' element={<Contact />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/checkout' element={<Checkout />} />
       </Route>
 
       <Route path="*" element={<NotFound />} />
