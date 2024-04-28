@@ -1,7 +1,7 @@
 import * as S from './styles'
 
-import { FaShoppingBasket } from 'react-icons/Fa'
-import { RiTeamFill } from 'react-icons/Ri'
+import { FaShoppingBasket } from 'react-icons/fa'
+import { RiTeamFill } from 'react-icons/ri'
 
 import { Banner } from '../../components/Banner'
 import { BreadCrumb } from '../../components/BreadCrumb'

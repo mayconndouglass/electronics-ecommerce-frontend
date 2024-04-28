@@ -10,7 +10,7 @@ import { Tag } from '../../../../components/Tag'
 import { Center } from '../../../../components/Center'
 import { ProductCard } from '../../../../components/ProductCard'
 
-import { BsBasket } from 'react-icons/Bs'
+import { BsBasket } from 'react-icons/bs'
 import { AnimatedButton } from '../../../../components/AnimatedButton'
 import { Title } from '../../../../components/Title'
 

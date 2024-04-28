@@ -12,7 +12,7 @@ import { Tag } from '../Tag'
 import { Title } from '../Title'
 import { ProductCard } from '../ProductCard'
 
-import { BsBasket } from 'react-icons/Bs'
+import { BsBasket } from 'react-icons/bs'
 
 type cardStyling = {
   $typeCard: 'circular' | 'normal'

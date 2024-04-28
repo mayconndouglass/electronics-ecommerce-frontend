@@ -4,7 +4,7 @@ import { Title } from '../../../../components/Title'
 import { ServiceCard } from './components/ServiceCard'
 import * as S from './styles'
 
-import { LuThumbsUp } from 'react-icons/Lu'
+import { LuThumbsUp } from 'react-icons/lu'
 
 import { dataCard } from './data/card-data'
 

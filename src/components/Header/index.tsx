@@ -9,12 +9,12 @@ import { AnimatedIcon } from '../AnimatedIcon'
 
 import logo from '/assets/images/logo.png'
 
-import { PiShoppingCartThin } from 'react-icons/Pi'
-import { CiHeart } from 'react-icons/Ci'
-import { CiSearch } from 'react-icons/Ci'
-import { CiUser } from 'react-icons/Ci'
-import { RiMenu3Fill } from 'react-icons/Ri'
-import { AiOutlineClose } from 'react-icons/Ai'
+import { PiShoppingCartThin } from 'react-icons/pi'
+import { CiHeart } from 'react-icons/ci'
+import { CiSearch } from 'react-icons/ci'
+import { CiUser } from 'react-icons/ci'
+import { RiMenu3Fill } from 'react-icons/ri'
+import { AiOutlineClose } from 'react-icons/ai'
 
 import { useUser } from '../../store/useUser'
 import { useWishList } from '../../store/useWishList'

@@ -1,6 +1,6 @@
 import * as S from './styles'
 import { ReactNode, useState } from 'react'
-import { IoIosArrowDown } from 'react-icons/Io'
+import { IoIosArrowDown } from 'react-icons/io'
 
 type TogleProps = React.PropsWithChildren<{
   $icon: ReactNode

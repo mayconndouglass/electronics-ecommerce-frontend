@@ -1,3 +1,7 @@
+
+import * as S from './styles'
+
+import { FiClock } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 import { AnimatedButton } from '../../components/AnimatedButton'
 import { Banner } from '../../components/Banner'
@@ -6,8 +10,6 @@ import { Footer } from '../../components/Footer'
 import { Header } from '../../components/Header'
 import { Tag } from '../../components/Tag'
 import { Title } from '../../components/Title'
-import * as S from './styles'
-import { FiClock } from 'react-icons/Fi'
 
 export const NotFound = () => {
   return (

@@ -3,7 +3,7 @@ import * as S from './styles'
 import { Center } from '../Center'
 import { Tag } from '../Tag'
 
-import { BsEnvelopeOpenFill } from 'react-icons/Bs'
+import { BsEnvelopeOpenFill } from 'react-icons/bs'
 
 import { Title } from '../Title'
 import { AnimatedButton } from '../AnimatedButton'

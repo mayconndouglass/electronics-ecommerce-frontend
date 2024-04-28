@@ -11,7 +11,7 @@ import { Tag } from '../../../../components/Tag'
 import { CardCategory } from './components/CardCategory'
 import { Title } from '../../../../components/Title'
 
-import { BsTags } from 'react-icons/Bs'
+import { BsTags } from 'react-icons/bs'
 import { useQuery } from 'react-query'
 import { Link } from 'react-router-dom'
 

@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 
 import { ProductTypeTwo } from '../../types/product'
 
-import { AiFillStar } from 'react-icons/Ai'
-import { ImEye } from 'react-icons/Im'
-import { AiOutlineHeart } from 'react-icons/Ai'
+import { AiFillStar } from 'react-icons/ai'
+import { ImEye } from 'react-icons/im'
+import { AiOutlineHeart } from 'react-icons/ai'
 
 import { AnimatedButton } from '../AnimatedButton'
 import { useCart } from '../../store/useCart'

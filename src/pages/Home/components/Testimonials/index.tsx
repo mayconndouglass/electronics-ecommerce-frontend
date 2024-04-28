@@ -8,7 +8,7 @@ import user1 from '../../../../../public/assets/images/image-1.png'
 import user2 from '../../../../../public/assets/images/image-2.png'
 import user3 from '../../../../../public/assets/images/image-3.png'
 
-import { FaQuoteLeft } from 'react-icons/Fa'
+import { FaQuoteLeft } from 'react-icons/fa'
 
 export const Testimonials = () => {
   return (

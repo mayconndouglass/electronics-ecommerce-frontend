@@ -1,7 +1,7 @@
 import * as S from './styles'
 
 import { Link } from 'react-router-dom'
-import { IoIosClose } from 'react-icons/Io'
+import { IoIosClose } from 'react-icons/io'
 
 import { useCart } from '../../../../store/useCart'
 import { FavoriteItemProps, useWishList } from '../../../../store/useWishList'

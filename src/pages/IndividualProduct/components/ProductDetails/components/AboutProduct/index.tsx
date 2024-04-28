@@ -8,7 +8,7 @@ import { servicesDetails } from './data/services-details'
 import { comments } from './data/comments'
 
 import { ProductType } from '../../../../../../types/product'
-import { AiOutlineStar } from 'react-icons/Ai'
+import { AiOutlineStar } from 'react-icons/ai'
 import { CustomInput } from '../../../../../../components/CustomInput'
 
 type ProductInfoProps = {

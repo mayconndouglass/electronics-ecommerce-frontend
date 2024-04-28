@@ -1,8 +1,8 @@
 import * as S from './styles'
 import { useState } from 'react'
 
-import { FaPencilAlt } from 'react-icons/Fa'
-import { FaUser } from 'react-icons/Fa'
+import { FaPencilAlt } from 'react-icons/fa'
+import { FaUser } from 'react-icons/fa'
 
 import { AnimatedButton } from '../../components/AnimatedButton'
 import { Banner } from '../../components/Banner'

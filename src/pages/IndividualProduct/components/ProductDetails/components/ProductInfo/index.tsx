@@ -7,10 +7,10 @@ import { ProductType } from '../../../../../../types/product'
 import { Center } from '../../../../../../components/Center'
 import { AnimatedButton } from '../../../../../../components/AnimatedButton'
 
-import { AiOutlineCheck } from 'react-icons/Ai'
-import { CiHeart } from 'react-icons/Ci'
-import { BsPlusLg } from 'react-icons/Bs'
-import { BiMinus } from 'react-icons/Bi'
+import { AiOutlineCheck } from 'react-icons/ai'
+import { CiHeart } from 'react-icons/ci'
+import { BsPlusLg } from 'react-icons/bs'
+import { BiMinus } from 'react-icons/bi'
 
 import { useCart } from '../../../../../../store/useCart'
 

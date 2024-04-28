@@ -1,8 +1,8 @@
 import * as S from './styles'
 
-import { IoIosClose } from 'react-icons/Io'
-import { HiOutlineMinusSm } from 'react-icons/Hi'
-import { HiOutlinePlusSm } from 'react-icons/Hi'
+import { IoIosClose } from 'react-icons/io'
+import { HiOutlineMinusSm } from 'react-icons/hi'
+import { HiOutlinePlusSm } from 'react-icons/hi'
 
 import { CartItemProps, useCart } from '../../../../../store/useCart'
 import { useEffect, useState } from 'react'

@@ -1,10 +1,10 @@
 import * as S from './styles'
 import { Tag } from '../../../../../../components/Tag'
 
-import { HiOutlineShoppingCart } from 'react-icons/Hi'
-import { AiFillStar } from 'react-icons/Ai'
-import { CiStar } from 'react-icons/Ci'
-import { FaFire } from 'react-icons/Fa'
+import { HiOutlineShoppingCart } from 'react-icons/hi'
+import { AiFillStar } from 'react-icons/ai'
+import { CiStar } from 'react-icons/ci'
+import { FaFire } from 'react-icons/fa'
 
 import { AnimatedButton } from '../../../../../../components/AnimatedButton'
 

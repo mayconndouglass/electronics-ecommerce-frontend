@@ -1,7 +1,7 @@
 import * as S from './styles'
 
 import { Tag } from '../../../../components/Tag'
-import { ImHeadphones } from 'react-icons/Im'
+import { ImHeadphones } from 'react-icons/im'
 import headsetWhite from '../../../../../public/assets/images/headset-white.png'
 import { AnimatedButton } from '../../../../components/AnimatedButton'
 import { Title } from '../../../../components/Title'
