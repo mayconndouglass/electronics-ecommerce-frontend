@@ -7,7 +7,7 @@ export const Container = styled.section`
     padding: 6.25rem 6.6875rem 5.3125rem;
     border-radius: 6px;
 
-    background-image: url("../../../../../public/assets/images/bg-image-tosign.jpg");
+    background-image: url("../assets/images/bg-image-tosign.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;

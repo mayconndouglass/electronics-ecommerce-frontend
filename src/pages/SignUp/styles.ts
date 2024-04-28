@@ -53,7 +53,7 @@ export const Container = styled.section`
       width: 33.3%;
       height: 100vh;
       /* padding-top: 12.5rem; */
-      background-image: url('../../../public/assets/images/signup.jpg');
+      background-image: url('../assets/images/signup.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;

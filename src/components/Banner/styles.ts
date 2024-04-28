@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  background-image: url('../../../../../public/assets/images/banner-loja.png');
+  background-image: url('..assets/images/banner-loja.png');
   padding: 1.25rem 0 1.125rem;
 
   p {
