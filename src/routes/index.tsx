@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import { Home } from '../pages/Home'
 import { IndividualProduct } from '../pages/IndividualProduct'
 import { Cart } from '../pages/Cart'
-import { RequireAuth } from '../components/RequireAuth'
+// import { RequireAuth } from '../components/RequireAuth'
 import { SignUp } from '../pages/SignUp'
 import { SignIn } from '../pages/SignIn'
 import { NotFound } from '../pages/NotFound'
@@ -12,6 +12,7 @@ import { Contact } from '../pages/Contact'
 import { WishList } from '../pages/WishList'
 import { About } from '../pages/About'
 import { Checkout } from '../pages/Checkout'
+import { Products } from '../pages/Products'
 
 export const Router = () => {
   return (
@@ -20,7 +21,7 @@ export const Router = () => {
         <Route path='/' element={<Home />} />
         <Route path='/store/product/:id' element={<IndividualProduct />} />
 
-        <Route path='/store/cart' element={<RequireAuth><Cart /></RequireAuth>} />
+        <Route path='/store/cart' element={<Cart />} />
         <Route path='/store/wish-list' element={<WishList />} />
 
         <Route path='/accounts/sign-up' element={<SignUp />} />
@@ -29,6 +30,7 @@ export const Router = () => {
         <Route path='/contact' element={<Contact />} />
         <Route path='/about' element={<About />} />
         <Route path='/checkout' element={<Checkout />} />
+        <Route path='/products' element={<Products />} />
       </Route>
 
       <Route path="*" element={<NotFound />} />
