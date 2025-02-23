@@ -1,5 +1,6 @@
 import * as S from './styles'
 import Slider from 'react-slick'
+import { getSliderSettings } from './settings'
 import { ChangeEvent, useEffect, useState } from 'react'
 
 import { ProductType } from '../../../../../../types/product'
@@ -14,69 +15,26 @@ import { BiMinus } from 'react-icons/bi'
 
 import { useCart } from '../../../../../../store/useCart'
 
+
 type ProductInfoProps = {
-  productDetails: ProductType | undefined
+  productDetails: ProductType
 }
 
 export const ProductInfo = ({ productDetails }: ProductInfoProps) => {
   const { addItemToCart } = useCart()
   const [quantity, setQuantity] = useState(1)
-  const { colors, images, ...restData } = productDetails!
+  const { colors, images, ...restData } = productDetails
 
-  const handleAddToCart = () => {
-    addItemToCart({
-      id: restData.id,
-      name: restData.name,
-      price: restData.promotional_price ?? restData.price,
-      imageUrl: images[0].url,
-      quantity,
-    })
-  }
+  const settings = getSliderSettings(productDetails)
+  const descriptions = productDetails?.description.split('\n')
 
-  useEffect(() => {
-    if (productDetails) {
-      setQuantity(1)
-    }
-  }, [productDetails])
+  useEffect(() => { if (productDetails) setQuantity(1) }, [productDetails])
 
   const handleQuantityChange = (event: ChangeEvent<HTMLInputElement>) => {
     const reportedValue = Number(event.target.value)
 
-    if (reportedValue > 0) {
-      setQuantity(Number(reportedValue))
-    }
+    if (reportedValue > 0) setQuantity(Number(reportedValue))
   }
-
-  const settings = {
-    customPaging: function (i: number) {
-      const productImages = productDetails?.images
-
-      if (productImages && i >= 0 && i < productImages.length) {
-        return (
-          <img
-            src={productDetails?.images[i].url ?? ''}
-            alt={productDetails?.name}
-          />
-        )
-      }
-
-      return (
-        <img
-          src={''}
-          alt={''}
-        />
-      )
-    },
-    dots: true,
-    dotsClass: 'slick-dots slick-thumb',
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-  }
-
-  const descriptions = productDetails?.description.split('\n')
 
   return (
     <S.Container>
@@ -156,7 +114,14 @@ export const ProductInfo = ({ productDetails }: ProductInfoProps) => {
           </div>
 
           <div className="buttons">
-            <div onClick={handleAddToCart}>
+            <div onClick={() => {
+              addItemToCart({
+                ...restData,
+                price: restData.promotional_price ?? restData.price,
+                imageUrl: images[0].url,
+                quantity,
+              })
+            }}>
               <AnimatedButton
                 $background='#3577F0'
                 color='#ffffff'
