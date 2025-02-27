@@ -1,21 +1,18 @@
-import * as S from './styles.ts'
 import { useState } from 'react'
 
+import empty from '../../../public/assets/images/empty.jpg'
 import { Banner } from '../../components/Banner'
-import { Header } from '../../components/Header'
 import { BreadCrumb } from '../../components/BreadCrumb'
 import { Center } from '../../components/Center'
 import { Footer } from '../../components/Footer/index.tsx'
-import { ToSign } from '../../components/ToSign/index.tsx'
+import { Header } from '../../components/Header'
 import { ProductCard } from '../../components/ProductCard/index.tsx'
-import { Pagination } from './components/pagination/index.tsx'
-import { Filters } from './components/Filters/filters.tsx'
-
+import { ToSign } from '../../components/ToSign/index.tsx'
 import { UseApiQuery } from '../../hooks/use-api-query.ts'
-
 import { ProductsPaginated } from '../../types/products-paginated'
-
-import empty from '../../../public/assets/images/empty.jpg'
+import { Filters } from './components/Filters/filters.tsx'
+import { Pagination } from './components/pagination/index.tsx'
+import * as S from './styles.ts'
 
 export type FiltersType = {
   category: string
@@ -43,10 +40,9 @@ export const Products = () => {
     maxprice: filters.price || ''
   }).toString()
 
-  const { data: pagination } = UseApiQuery<ProductsPaginated>(
+  const { data: pagination, isFetching } = UseApiQuery<ProductsPaginated>(
     `/products/paginated?${queryParams.toString()}`
   )
-
   const { currentPage, totalPages, totalItems, products } = pagination ?? {}
 
   return (
@@ -80,15 +76,29 @@ export const Products = () => {
                 </select>
               </div>
 
-              <div className="products">
+              <div className='products'>
                 {products?.map(product => (
                   <ProductCard
                     key={product.id}
                     {...product}
                     image_url={product.ProductImage[0].image.url}
-                    $cardStyling='normal'
+                    $cardStyling="normal"
                   />
                 ))}
+              </div>
+
+              <div className="products">
+                {isFetching && (
+                  <>
+                    {Array.from({ length: 9 }).map((_, index) => (
+                      <div key={index} >
+                        <div className="skeleton image-loading" />
+                        <div className="title-loading skeleton" />
+                        <div className="price-loading skeleton" />
+                      </div>
+                    ))}
+                  </>
+                )}
               </div>
 
               {products?.length === 0 && (
@@ -100,8 +110,12 @@ export const Products = () => {
             </div>
           </div>
 
-          {totalItems && (
+          {!isFetching ? (
             <Pagination  products={pagination} setFilters={setFilters} />
+          ) : (
+            <div className="skeleton-pagination-container">
+              <div className="skeleton skeleton-pagination" />
+            </div>
           )}
 
         </Center>

@@ -14,8 +14,14 @@ type FiltersProps = {
 }
 
 export const Filters = ({ filters, setFilters }: FiltersProps) => {
-  const { data: categories } = UseApiQuery<Category[]>('/categories')
-  const { data: colors } = UseApiQuery<Color[]>('/colors')
+  const {
+    data: categories,
+    isFetching: isFetchingCategories
+  } = UseApiQuery<Category[]>('/categories')
+  const {
+    data: colors,
+    isFetching: isFetchingColors
+  } = UseApiQuery<Color[]>('/colors')
 
   const prices = ['50', '100', '200', '500', '1000', '5000', '10000']
 
@@ -31,7 +37,7 @@ export const Filters = ({ filters, setFilters }: FiltersProps) => {
 
   return (
     <S.Container>
-      <FilterTogle title='Categorias' size={'416px'}>
+      <FilterTogle title='Categorias' size={isFetchingCategories ? '0px': '416px'}>
         <div className="drop-categories">
           <ul>
             <label htmlFor= 'all'>
@@ -61,7 +67,7 @@ export const Filters = ({ filters, setFilters }: FiltersProps) => {
         </div>
       </FilterTogle>
 
-      <FilterTogle title='Cores' size={'72px'}>
+      <FilterTogle title='Cores' size={isFetchingColors ? 'opx' : '72px'}>
         <div className="colors">
           <ul>
             {colors?.map(color => (
