@@ -1,17 +1,16 @@
-import * as S from './styles'
+import { Link } from 'react-router-dom'
 
+import image from '../../../public/assets/images/image-bread-crumb.avif'
 import { Center } from '../Center'
 import { Title } from '../Title'
-
-import image from '../../../public/assets/images/image-bread-crumb.png'
-import { Link } from 'react-router-dom'
+import * as S from './styles'
 
 type BreadCrumbProps = {
   title: string
   crumb: string
 }
 
-export const BreadCrumb = (props: BreadCrumbProps) => {
+export const BreadCrumb = ({ title, crumb }: BreadCrumbProps) => {
   return (
     <S.Container>
       <Center>
@@ -22,11 +21,11 @@ export const BreadCrumb = (props: BreadCrumbProps) => {
                 <Link to='/'>Home</Link>
               </li>
               <li>|</li>
-              <li>{props.crumb}</li>
+              <li>{crumb}</li>
             </ul>
 
             <Title fontSize={2.5}>
-              {props.title}
+              {title}
             </Title>
           </div>
 

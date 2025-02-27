@@ -107,6 +107,10 @@ export const Container = styled.footer`
             @media screen and (max-width: 280px) {
               flex-direction: column;
             }
+
+            @media screen and (max-width: 512px) {
+              justify-content: center;
+            }
           }
         }
       }

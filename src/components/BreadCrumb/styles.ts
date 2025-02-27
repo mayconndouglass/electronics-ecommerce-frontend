@@ -56,6 +56,22 @@ export const Container = styled.section`
           right: 60px;
         }
       }
+
+      @media screen and (max-width: 550px) {
+        .image-area {
+          display: none;
+        }
+
+        .bread-crumb {
+          width: 100%;
+        }
+      }
+
+      @media screen and (max-width: 350px) {
+        .bread-crumb h2 {
+            text-align: center;
+        }
+      }
     }
   }
 `

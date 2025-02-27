@@ -1,26 +1,23 @@
-import * as S from './styles'
-import { Link } from 'react-router-dom'
-
-import { Center } from '../Center'
-import { AnimatedIcon } from '../AnimatedIcon'
-
-import { dataServices } from './data/data-services'
-import { Service } from './components/Service'
-
-import { PiEnvelopeSimpleOpenBold } from 'react-icons/pi'
-import { BsTelephone } from 'react-icons/bs'
-import { BiLogoFacebook } from 'react-icons/bi'
 import { AiOutlineInstagram } from 'react-icons/ai'
 import { AiOutlineTwitter } from 'react-icons/ai'
+import { BiLogoFacebook } from 'react-icons/bi'
 import { BiLogoDiscord } from 'react-icons/bi'
 import { BiLogoLinkedinSquare } from 'react-icons/bi'
+import { BsTelephone } from 'react-icons/bs'
+import { PiEnvelopeSimpleOpenBold } from 'react-icons/pi'
+import { Link } from 'react-router-dom'
 
-import qrCode from '../../../public/assets/images/qr.png'
-import appStore from '../../../public/assets/images/app-store.png'
-import PlayStore from '../../../public/assets/images/play-store.png'
-import cart1 from '../../../public/assets/images/cart-1.png'
-import cart2 from '../../../public/assets/images/cart-2.png'
-import cart3 from '../../../public/assets/images/cart-3.png'
+import appStore from '../../../public/assets/images/app-store.avif'
+import cart1 from '../../../public/assets/images/cart-1.avif'
+import cart2 from '../../../public/assets/images/cart-2.avif'
+import cart3 from '../../../public/assets/images/cart-3.avif'
+import PlayStore from '../../../public/assets/images/play-store.avif'
+import qrCode from '../../../public/assets/images/qr.avif'
+import { AnimatedIcon } from '../AnimatedIcon'
+import { Center } from '../Center'
+import { Service } from './components/Service'
+import { dataServices } from './data/data-services'
+import * as S from './styles'
 
 export const Footer = () => {
   return (
@@ -80,8 +77,8 @@ export const Footer = () => {
                   <img src={qrCode} alt="Qr Code para o aplicativo" />
 
                   <div className="app-stores">
-                    <img src={appStore} alt="App Store" />
-                    <img src={PlayStore} alt="Play Store" />
+                    <img src={appStore} alt="App Store" title='App Store'/>
+                    <img src={PlayStore} alt="Play Store" title='Play Store'/>
                   </div>
                 </div>
               </div>
@@ -99,15 +96,15 @@ export const Footer = () => {
           </div>
 
           <div className="copyright">
-            © 2023. Todos os Direitos Reservados
+            © 2025. Todos os Direitos Reservados
           </div>
 
           <div className="carts">
             <ul>
               <li>Aceitamos</li>
-              <li><img src={cart1} alt="Paypal" /></li>
-              <li><img src={cart2} alt="Master Card" /></li>
-              <li><img src={cart3} alt="Visa" /></li>
+              <li><img src={cart1} alt="Paypal" title='Paypal' /></li>
+              <li><img src={cart2} alt="Master Card" title='Master Card' /></li>
+              <li><img src={cart3} alt="Visa" title='Visa' /></li>
             </ul>
           </div>
         </div>
