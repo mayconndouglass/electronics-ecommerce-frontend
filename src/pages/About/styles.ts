@@ -15,6 +15,7 @@ export const Container = styled.section`
           width: 410px;
           height: 480px;
           border-radius: 10px;
+          object-fit: cover;
         }
       }
 
@@ -40,6 +41,57 @@ export const Container = styled.section`
 
           p {
             width: 50%;
+          }
+        }
+      }
+
+      @media screen and (max-width: 990px) {
+        flex-direction: column;
+
+        .about-store-image {
+          width: 100%;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .about-store-paragraphs {
+          flex-direction: column;
+          gap: 1rem;
+
+          p {
+            width: 100% !important;
+          }
+        }
+      }
+
+      @media screen and (max-width: 550px) {
+        .about-store-text {
+          gap: 1.5rem;
+
+          span {
+            line-height: initial;
+          }
+        }
+      }
+
+      @media screen and (max-width: 450px) {
+        .about-store-image {
+          img {
+            height: 350px;
+          }
+        }
+      }
+
+      @media screen and (max-width: 450px) {
+        h2, span, p {
+          text-align: center;
+        }
+
+        .about-store-image {
+          img {
+            height: 300px;
           }
         }
       }
@@ -96,6 +148,16 @@ export const Container = styled.section`
           line-height: 1.7;
           color: ${props => props.theme['gray-500']};
         }
+
+        @media screen and (max-width: 550px) {
+          padding: 1.5rem 3.125rem;
+        }
+      }
+
+      @media screen and (max-width: 990px) {
+        & > div {
+          flex-direction: column;
+        }
       }
     }
 
@@ -105,6 +167,12 @@ export const Container = styled.section`
 
       h2 {
         margin-bottom: 40px;
+      }
+
+      @media screen and (max-width: 550px) {
+        h2 {
+          text-align: center;
+        }
       }
 
       .team {
@@ -147,22 +215,65 @@ export const Container = styled.section`
             line-height: 1.3;
           }
         }
+
+        @media screen and (max-width: 990px) {
+          flex-wrap: wrap;
+        }
+
+        @media screen and (max-width: 750px) {
+          .card-team {
+            width: inherit;
+
+            img {
+              width: 235px;
+            }
+          }
+        }
+
+        @media screen and (max-width: 550px) {
+          justify-content: center;
+
+          .card-team {
+            img {
+              width: 330px;
+            }
+          }
+        }
+
+        @media screen and (max-width: 450px) {
+          .card-team {
+            img {
+              width: 300px;
+              height: 300px;
+              object-fit: cover;
+            }
+          }
+        }
+
+        @media screen and (max-width: 350px) {
+          .card-team img {
+            width: 100%;
+          }
+        }
       }
     }
 
     .about-features {
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
       padding: 5rem 0;
 
       .feature {
         display: flex;
         align-items: center;
         gap: 80px;
-        margin-bottom: 5rem;
 
         img {
           border-radius: 10px;
           width: 520px;
           height: 420px;
+          object-fit: cover;
         }
 
         .feature-text {
@@ -203,6 +314,42 @@ export const Container = styled.section`
               border-color: ${props => props.theme['blue-600']};
             }
           }
+        }
+
+        @media screen and (max-width: 990px) {
+          flex-direction: column;
+
+          & > div:first-child {
+            order: 1;
+          }
+
+          .feature-text, img {
+            width: 100%;
+          }
+        }
+
+        @media screen and (max-width: 450px) {
+          gap: 2.5rem;
+
+          img {
+            height: 350px;
+          }
+        }
+
+        @media screen and (max-width: 350px) {
+          img {
+            height: 300px;
+          }
+
+         .feature-text {
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+
+           h4, p {
+            text-align: center;
+           }
+         }
         }
       }
     }

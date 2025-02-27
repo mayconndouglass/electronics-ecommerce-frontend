@@ -1,22 +1,22 @@
-import * as S from './styles'
-
 import { FaShoppingBasket } from 'react-icons/fa'
 import { RiTeamFill } from 'react-icons/ri'
 
-import { Banner } from '../../components/Banner'
-import { BreadCrumb } from '../../components/BreadCrumb'
-import { Center } from '../../components/Center'
-import { Footer } from '../../components/Footer'
-import { Header } from '../../components/Header'
-import { Tag } from '../../components/Tag'
-import { Title } from '../../components/Title'
+import {
+  Banner,
+  BreadCrumb,
+  Center,
+  Footer,
+  Header,
+  Tag,
+  Title
+} from '@/components'
 
-import { aboutCardData } from './data'
-import { aboutTeamData } from './data'
-
-import aboutImg1 from '../../../public/assets/images/aboutUm.jpg'
-import aboutImg2 from '../../../public/assets/images/aboutTres.jpg'
-import aboutImg3 from '../../../public/assets/images/aboutDois.jpg'
+import aboutImg2 from '../../../public/assets/images/aboutDois.webp'
+import aboutImg1 from '../../../public/assets/images/aboutTres.avif'
+import aboutImg3 from '../../../public/assets/images/aboutUm.avif'
+import { cardData } from './data'
+import { teamData } from './data'
+import * as S from './styles'
 
 export const About = () => {
   return (
@@ -61,7 +61,7 @@ export const About = () => {
 
         <div className="about-info-area">
           <Center>
-            {aboutCardData.map(({ title, id, image }) => (
+            {cardData.map(({ title, id, image }) => (
               <div key={id} className='about-info-card'>
                 <img src={image} alt={title} />
                 <h6>{title}</h6>
@@ -85,7 +85,7 @@ export const About = () => {
             </Title>
 
             <div className="team">
-              {aboutTeamData.map(({ id, name, role, image }) => (
+              {teamData.map(({ id, name, role, image }) => (
                 <div className="card-team" key={id}>
                   <div>
                     <img src={image} alt={role} />
