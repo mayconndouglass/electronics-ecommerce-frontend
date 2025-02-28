@@ -3,32 +3,46 @@ import styled from 'styled-components'
 export const Container = styled.section`
   .contact-with-us {
     display: flex;
-    gap: 60px;
+    gap: 3rem;
     padding: 5rem 0;
 
     .contact-form {
+      @media screen and (max-width: 500px) {
+        h3 {
+          font-size: 1.5rem !important;
+        }
+
+        p {
+          line-height: 1.3 !important;
+        }
+      }
+
       h3 {
         font-size: 1.75rem;
         font-weight: ${props => props.theme['font-w-medium']};
         color: #000;
-        margin-bottom: 10px;
+        margin-bottom: 0.625rem;
       }
 
       p {
         font-size: 1rem;
         color: #777;
         line-height: 1.7;
-        margin-bottom: 45px;
+        margin-bottom: 2.8125rem;
       }
 
       form {
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        gap: 2.5rem;
 
         & > div {
           display: flex;
-          gap: 20px;
+          gap: 1.25rem;
+
+          @media screen and (max-width: 750px) {
+            flex-direction: column;
+          }
         }
       }
 
@@ -49,7 +63,6 @@ export const Container = styled.section`
           background: ${props => props.theme.white};
           z-index: 4;
         }
-
 
         #contact-message {
           width: 100%;
@@ -79,20 +92,20 @@ export const Container = styled.section`
         font-size: 1.5rem;
         font-weight: ${props => props.theme['font-w-medium']};
         line-height: 1.3;
-        margin-bottom: 20px;
+        margin-bottom: 1.25rem;
         color: #000;
       }
 
       .contact-info-first {
-        margin-bottom: 40px;
+        margin-bottom: 2.5rem;
 
         .adress {
-          margin-bottom: 20px;
+          margin-bottom: 1.25rem;
         }
       }
 
       .contact-info-second {
-        margin-bottom: 40px;
+        margin-bottom: 2.5rem;
       }
 
       span {
@@ -102,14 +115,34 @@ export const Container = styled.section`
 
         color: #777;
       }
+
+      @media screen and (max-width: 1200px) {
+        width: 40%;
+      }
+    }
+
+    @media screen and (max-width: 990px) {
+      flex-direction: column;
+      .contact-info {
+        width: 100%;
+      }
     }
   }
 
   .map {
-    margin-bottom: 80px;
+    height: 500px;
+    margin-bottom: 5rem;
 
     iframe {
       border: none;
+    }
+
+    @media screen and (max-width: 990px) {
+      height: 400px;
+    }
+
+    @media screen and (max-width: 750px) {
+      height: 300px;
     }
   }
 `

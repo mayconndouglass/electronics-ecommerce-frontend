@@ -1,10 +1,13 @@
-import { AnimatedButton } from '../../components/AnimatedButton'
-import { Banner } from '../../components/Banner'
-import { BreadCrumb } from '../../components/BreadCrumb'
-import { Center } from '../../components/Center'
-import { CustomInput } from '../../components/CustomInput'
-import { Footer } from '../../components/Footer'
-import { Header } from '../../components/Header'
+import {
+  AnimatedButton,
+  Banner,
+  BreadCrumb,
+  Center,
+  CustomInput,
+  Footer,
+  Header,
+} from '@/components'
+
 import * as S from './styles'
 
 export const Contact = () => {
@@ -18,7 +21,10 @@ export const Contact = () => {
           <div className="contact-with-us">
             <div className="contact-form">
               <h3>Gostaríamos muito de ouvir você.</h3>
-              <p>Se você tem ótimos produtos para vender ou deseja trabalhar conosco, envie-nos uma mensagem.</p>
+              <p>
+                Se você tem ótimos produtos para vender ou deseja trabalhar
+                 conosco, envie-nos uma mensagem.
+              </p>
 
               <form>
                 <div>
@@ -46,7 +52,7 @@ export const Contact = () => {
 
                 <div className="contact-text-area">
                   <label htmlFor="contact-message">Sua Mensagem</label>
-                  <textarea name="contact-message" id="contact-message"></textarea>
+                  <textarea name="contact-message" id="contact-message" />
                 </div>
 
                 <AnimatedButton
@@ -60,14 +66,20 @@ export const Contact = () => {
             <div className="contact-info">
               <div className='contact-info-first'>
                 <h3>Nossa Loja</h3>
-                <span className='adress'>8212 E. Glen Creek Street Orchard Park,<br /> NY 14127, United States of America</span>
+                <span className='adress'>
+                  8212 E. Glen Creek Street Orchard Park,<br /> NY 14127,
+                   United States of America
+                </span>
                 <span>Telefone: +55 9 1234-56789</span>
                 <span>Email: Hello@ecommerce.com</span>
               </div>
 
               <div className='contact-info-second'>
                 <h3>Carreira</h3>
-                <span>Com uma trajetória dedicada e apaixonada na indústria do comércio eletrônico</span>
+                <span>
+                  Com uma trajetória dedicada e apaixonada na indústria do
+                   comércio eletrônico
+                </span>
               </div>
 
               <div>
@@ -79,7 +91,11 @@ export const Contact = () => {
           </div>
 
           <div className="map">
-            <iframe width="100%" height="500" src="https://maps.google.com/maps?q=melbourne&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://maps.google.com/maps?q=melbourne&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            />
           </div>
         </Center>
       </main>
