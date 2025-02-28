@@ -32,6 +32,10 @@ export const Container = styled.section`
       }
     }
 
+    .products-container {
+      margin-top: 40px;
+    }
+
     ul {
       & > div {
         display: flex;
@@ -63,7 +67,7 @@ export const Container = styled.section`
 
     .subtotal-container {
       display: flex;
-      margin-top: 40px;
+      margin-top: 2.5rem;
 
       button {
         font-size: 1rem;
@@ -83,6 +87,11 @@ export const Container = styled.section`
           color: white;
           cursor: pointer;
           border-color: ${props => props.theme['blue-600']};
+        }
+
+        @media screen and (max-width: 990px) {
+          padding: 0.75rem 1.5rem;
+          font-size: 0.875rem;
         }
       }
 
@@ -107,6 +116,14 @@ export const Container = styled.section`
           outline: none;
           color: ${props => props.theme['gray-900']};
         }
+
+        @media screen and (max-width: 990px) {
+          flex-direction: column;
+        }
+
+        @media screen and (max-width: 450px) {
+          display: none;
+        }
       }
 
       .subtotal {
@@ -129,6 +146,16 @@ export const Container = styled.section`
           span {
             color: #777777;
           }
+        }
+
+        @media screen and (max-width: 450px) {
+          width: 100%;
+        }
+      }
+
+      @media screen and (max-width: 990px) {
+        .subtotal {
+          font-size: 1rem;
         }
       }
     }

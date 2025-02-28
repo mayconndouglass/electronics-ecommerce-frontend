@@ -1,15 +1,28 @@
-import * as S from './styles.ts'
+import { useEffect, useState } from 'react'
 
-import { useCart } from '../../../../store/useCart.ts'
-import { Center } from '../../../../components/Center/index.tsx'
-import { CartProductCard } from './CartProductCard/index.tsx'
+import { Center } from '@/components'
+import { useCart } from '@/store'
 
 import emptyCart from '../../../../../public/assets/images/empty-cart.png'
+import { CartProductCardV1 } from './components/CartProductCardV1/index.tsx'
+import { CartProductCardV2 } from './components/CartProductCardV2/index.tsx'
+import * as S from './styles.ts'
 
 export const ProductCart = () => {
   const { items, total, removeAllItems } = useCart()
   const subTotalFormated = total
     .toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 991)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 991)
+    }
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   return (
     <S.Container>
@@ -21,7 +34,8 @@ export const ProductCart = () => {
 
         <div className="products-container">
           <ul>
-            <li>
+
+            <li style={{ display: isMobile ? 'none' : 'grid' }}>
               <span>Produto</span>
               <span>Preço</span>
               <span>Quantidade</span>
@@ -30,9 +44,15 @@ export const ProductCart = () => {
 
             {items.length ? items.map(item => (
               <li key={item.id}>
-                <CartProductCard
-                  {...item}
-                />
+                {!isMobile ? (
+                  <CartProductCardV1
+                    {...item}
+                  />
+                ) : (
+                  <CartProductCardV2
+                    {...item}
+                  />
+                )}
               </li>
             )) : (
               <div>
