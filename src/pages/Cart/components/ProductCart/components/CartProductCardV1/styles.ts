@@ -12,7 +12,7 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
 
-    width: 32px;
+    min-width: 32px;
     height: 32px;
     border-radius: 100%;
     border: 2px solid ${props => props.theme['slate-50']};
@@ -41,7 +41,7 @@ export const Container = styled.div`
       justify-content: center;
       align-items: center;
 
-      width: 80px;
+      min-width: 80px;
       height: 80px;
       background-color: ${props => props.theme['slate-50']};
       border-radius: 10px;

@@ -1,26 +1,23 @@
-import * as S from './styles'
-
-import { IoIosClose } from 'react-icons/io'
+import { useEffect, useState } from 'react'
 import { HiOutlineMinusSm } from 'react-icons/hi'
 import { HiOutlinePlusSm } from 'react-icons/hi'
-
-import { CartItemProps, useCart } from '../../../../../store/useCart'
-import { useEffect, useState } from 'react'
+import { IoIosClose } from 'react-icons/io'
 import { Link } from 'react-router-dom'
 
-import { formatPriceForUSA } from '../../../../../utils/format-price-for-usa'
+import { CartItemProps, useCart } from '@/store'
+import { formatPriceForUSA } from '@/utils'
 
-export const CartProductCard = (productData: CartItemProps) => {
+import * as S from './styles'
+
+export const CartProductCardV1 = ({
+  id,
+  quantity: productQuantity,
+  name,
+  price,
+  imageUrl
+}: CartItemProps) => {
   const { addItemToCart, decreaseItemQuantity, removeItemFromCart } = useCart()
   const [quantity, setQuantity] = useState<number>(0)
-
-  const {
-    id,
-    quantity: productQuantity,
-    name,
-    price,
-    imageUrl
-  } = productData
 
   const handleInputQuantityChange = (newQuantity: number) => {
     if (newQuantity < quantity) {
@@ -51,7 +48,7 @@ export const CartProductCard = (productData: CartItemProps) => {
 
         <div className="cart-product-image">
           <Link to={`/loja/product/${id}`}>
-            <img src={imageUrl} alt={name} />
+            <img src={imageUrl} alt={name} title={name}/>
           </Link>
         </div>
 
