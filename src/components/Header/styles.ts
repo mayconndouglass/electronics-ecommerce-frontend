@@ -16,7 +16,7 @@ export const Header = styled.header<{ $menuIsOpen: boolean, $homeStyle?: boolean
     background-color: ${props => props.theme.white};
 
     img {
-      width: 80px;
+      width: 5rem;
 
       @media screen and (max-width: 990px) {
         width: 70px;
@@ -107,7 +107,7 @@ export const Header = styled.header<{ $menuIsOpen: boolean, $homeStyle?: boolean
         text-align: center;
         background-color: ${props => props.theme['blue-400']};
         border: 2px solid ${props => props.theme.white};
-        font-size: 12px;
+        font-size: 0.75rem;
         font-weight: 500;
         color: ${props => props.theme.white};
         border-radius: 50%;
@@ -218,7 +218,7 @@ export const SideBar = styled.div<{ $menuIsOpen: boolean }>`
   background-color: white;
   z-index: 10;
   transition: all .3s ease-in-out;
-  padding: 20px 30px 10px;
+  padding: 1.25rem 2rem 0.625rem;
 
   right: -250px;
   visibility: hidden;
@@ -246,8 +246,8 @@ export const SideBar = styled.div<{ $menuIsOpen: boolean }>`
       align-items: center;
       background-color: ${props => props.theme['gray-100']};
       border-radius: 100%;
-      width:30px;
-      height: 30px;
+      width: 1.875rem;
+      height: 1.875rem;
 
       &:hover {
         cursor: pointer;

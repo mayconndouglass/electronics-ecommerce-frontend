@@ -1,33 +1,29 @@
-import * as S from './styles'
-
-import { api } from '../../services/api'
-import { useQuery } from 'react-query'
+import { BsBasket } from 'react-icons/bs'
 import Slider from 'react-slick'
 
-import { ProductTypeTwo } from '../../types/product'
-import { settings } from './settings/slider'
+import { UseApiQuery } from '@/hooks/use-api-query'
+import { ProductTypeTwo } from '@/types'
 
 import { Center } from '../Center'
+import { ProductCard } from '../ProductCard'
 import { Tag } from '../Tag'
 import { Title } from '../Title'
-import { ProductCard } from '../ProductCard'
-
-import { BsBasket } from 'react-icons/bs'
+import { settings } from './settings/slider'
+import * as S from './styles'
 
 type cardStyling = {
   $typeCard: 'circular' | 'normal'
 }
 
+type FeaturedProductsType = {
+  productsOnSale: ProductTypeTwo[]
+}
+
 export const Promotions = ({ $typeCard }: cardStyling) => {
   const {
-    data: productsOnSale,
+    data: { productsOnSale } = {},
     isFetching
-  } = useQuery<ProductTypeTwo[]>('productsOnSale', async () => {
-    const response = await api.get('/products-on-sale')
-    const { productsOnSale } = response.data
-
-    return productsOnSale
-  }, { staleTime: 1000 * 60 * 10 })
+  } = UseApiQuery<FeaturedProductsType>('/products-on-sale')
 
   return (
     <S.Container>

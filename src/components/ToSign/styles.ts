@@ -1,7 +1,7 @@
 import { styled } from 'styled-components'
 
 export const Container = styled.section`
-  margin-bottom: 80px;
+  margin-bottom: 5rem;
 
   .newsletter {
     padding: 6.25rem 6.6875rem 5.3125rem;
@@ -41,7 +41,7 @@ export const Container = styled.section`
         line-height: 60px;
         background: ${props => props.theme.white};
         box-shadow: none;
-        padding: 0 30px 0 66px;
+        padding: 0 1.875rem 0 4.125rem;
         outline: none;
         border: none;
         border-radius: 6px;

@@ -1,4 +1,5 @@
 import React, { ButtonHTMLAttributes } from 'react'
+
 import * as S from './styles'
 
 type AnimatedButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {

@@ -1,23 +1,18 @@
-import * as S from './styles'
-
 import { useState } from 'react'
-import { useCart } from '../../store/useCart'
-import { Link } from 'react-router-dom'
-
-import { Center } from '../Center'
-import { AnimatedIcon } from '../AnimatedIcon'
-
-import logo from '/assets/images/logo.png'
-
-import { PiShoppingCartThin } from 'react-icons/pi'
+import { AiOutlineClose } from 'react-icons/ai'
 import { CiHeart } from 'react-icons/ci'
 import { CiSearch } from 'react-icons/ci'
 import { CiUser } from 'react-icons/ci'
+import { PiShoppingCartThin } from 'react-icons/pi'
 import { RiMenu3Fill } from 'react-icons/ri'
-import { AiOutlineClose } from 'react-icons/ai'
+import { Link } from 'react-router-dom'
 
-import { useUser } from '../../store/useUser'
-import { useWishList } from '../../store/useWishList'
+import logo from '/assets/images/logo.avif'
+import { useCart, useUser,useWishList } from '@/store'
+
+import { AnimatedIcon } from '../AnimatedIcon'
+import { Center } from '../Center'
+import * as S from './styles'
 
 type HeaderProps = {
   $homeStyle?: boolean

@@ -1,5 +1,6 @@
-import { Arrow } from '../../Arrow'
 import { HiOutlineArrowNarrowLeft, HiOutlineArrowNarrowRight } from 'react-icons/hi'
+
+import { Arrow } from '../../Arrow'
 
 export const settings = {
   infinite: true,

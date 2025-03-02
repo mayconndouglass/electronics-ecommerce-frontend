@@ -1,9 +1,8 @@
-import * as S from './styles'
-
-import { Poster } from './components/Poster'
-import poster1 from '../../../public/assets/images/poster-01.png'
-import poster2 from '../../../public/assets/images/poster-02.png'
+import poster1 from '../../../public/assets/images/poster-01.avif'
+import poster2 from '../../../public/assets/images/poster-02.avif'
 import { Center } from '../Center'
+import { Poster } from './components/Poster'
+import * as S from './styles'
 
 
 export const Posters = () => {

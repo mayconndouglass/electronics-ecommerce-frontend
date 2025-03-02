@@ -6,7 +6,7 @@ export const Container = styled.section`
     justify-content: space-between;
     gap: 1.875rem;
 
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
 
     @media screen and (max-width: 990px){
       flex-direction: column;
