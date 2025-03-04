@@ -1,36 +1,14 @@
-import * as S from './styles'
+import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { Link, useNavigate } from 'react-router-dom'
-
-import logo from '../../../public/assets/images/logo.png'
-import { AnimatedButton } from '../../components/AnimatedButton'
-import { CustomInput } from '../../components/CustomInput'
 import { z } from 'zod'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useUser } from '../../store/useUser'
-import { FormError } from '../../components/FormError'
 
-const SignUpFormSchema = z.object({
-  name: z
-    .string()
-    .min(3, { message: 'O nome precisa ter no mínimo 3 caracteres' })
-    .regex(
-      /^([a-zA-Z\s]+)$/i,
-      { message: 'O nome só pode ter letras e espaços' }
-    )
-    .transform(name => {
-      return name.trim().split(' ').map(word => {
-        return word[0].toLocaleUpperCase().concat(word.substring(1))
-      }).join(' ')
-    }),
-  email: z
-    .string()
-    .min(1, { message: 'O Email é obrigatório' })
-    .email({ message: 'Formato de e-mail Inválido' }),
-  password: z
-    .string()
-    .min(6, { message: 'A senha precisa ter no mínimo 6 caracteres' }),
-})
+import { AnimatedButton, CustomInput, FormError } from '@/components'
+import { useUser } from '@/store'
+
+import logo from '../../../public/assets/images/logo.avif'
+import { SignUpFormSchema } from './schemas/signup-form-schema'
+import * as S from './styles'
 
 type handleSignUpFormData = z.infer<typeof SignUpFormSchema>
 
