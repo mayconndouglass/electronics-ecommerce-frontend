@@ -12,7 +12,7 @@ export const Container = styled.section`
           font-weight: ${props => props.theme['font-w-medium']};
           color: #27272E;
           padding-bottom: 1.25rem;
-          margin-bottom: 70px;
+          margin-bottom: 4.375rem;
 
           position: relative;
 

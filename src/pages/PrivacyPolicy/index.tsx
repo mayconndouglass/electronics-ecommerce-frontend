@@ -1,11 +1,7 @@
-import * as S from './styles'
+import { Banner, BreadCrumb, Center, Footer, Header } from '@/components'
 
-import { Banner } from '../../components/Banner'
-import { BreadCrumb } from '../../components/BreadCrumb'
-import { Center } from '../../components/Center'
-import { Footer } from '../../components/Footer'
-import { Header } from '../../components/Header'
 import { Texts } from './components/Texts'
+import * as S from './styles'
 
 export const PrivacyPolicy = () => {
   return (

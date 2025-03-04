@@ -2,12 +2,11 @@ import styled from 'styled-components'
 
 export const Container = styled.section`
   div {
-    width: 80%;
+    /* width: 80%; */
     margin-bottom: 2rem;
 
     h4 {
-      margin-bottom: 20px;
-      /*  */
+      margin-bottom: 1.25rem;
       color: #27272E;
       font-weight: ${props => props.theme['font-w-medium']};
       font-size: 1.5rem;
@@ -19,7 +18,7 @@ export const Container = styled.section`
       font-weight: ${props => props.theme['font-w-egular']};
       line-height: 1.7;
       color: ${props => props.theme['gray-500']};
-      margin: 0 0 30px;
+      margin: 0 0 2rem;
     }
 
     span {
@@ -28,12 +27,12 @@ export const Container = styled.section`
     }
 
     ul {
-      margin-bottom: 45px;
-      padding-left: 20px;
+      margin-bottom: 2.8rem;
+      padding-left: 1.25rem;
 
       li {
         list-style: disc;
-        margin-bottom: 12px;
+        margin-bottom: 0.75rem;
         font-size: 1rem;
         color: ${props => props.theme['gray-500']};
         line-height: 1.7;
