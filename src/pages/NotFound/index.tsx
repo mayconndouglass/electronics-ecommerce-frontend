@@ -1,15 +1,18 @@
 
-import * as S from './styles'
-
 import { FiClock } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
-import { AnimatedButton } from '../../components/AnimatedButton'
-import { Banner } from '../../components/Banner'
-import { Center } from '../../components/Center'
-import { Footer } from '../../components/Footer'
-import { Header } from '../../components/Header'
-import { Tag } from '../../components/Tag'
-import { Title } from '../../components/Title'
+
+import {
+  AnimatedButton,
+  Banner,
+  Center,
+  Footer,
+  Header,
+  Tag,
+  Title
+} from '@/components'
+
+import * as S from './styles'
 
 export const NotFound = () => {
   return (
