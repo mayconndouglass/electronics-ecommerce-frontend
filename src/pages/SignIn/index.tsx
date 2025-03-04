@@ -1,30 +1,21 @@
-import * as S from './styles'
-
-import { z } from 'zod'
-import { Link, useNavigate } from 'react-router-dom'
-import { useForm } from 'react-hook-form'
-
-import { AnimatedButton } from '../../components/AnimatedButton'
-import { CustomInput } from '../../components/CustomInput'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { FormError } from '../../components/FormError'
-import logo from '../../../public/assets/images/logo.png'
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { Link, useNavigate } from 'react-router-dom'
+import { z } from 'zod'
 
-import { useUser } from '../../store/useUser'
+import { AnimatedButton, CustomInput, FormError } from '@/components'
+import { useUser } from '@/store/'
 
-const SignInFormSchema = z.object({
-  email: z
-    .string()
-    .min(1, { message: 'O Email é obrigatório' })
-    .email({ message: 'Formato de e-mail Inválido' }),
-  password: z
-    .string()
-    .min(6, { message: 'A senha precisa ter no mínimo 6 caracteres' }),
-})
+import logo from '../../../public/assets/images/logo.avif'
+import { SignInFormSchema } from './schemas/signin-form-schema'
+import * as S from './styles'
 
 type handleSignInFormData = z.infer<typeof SignInFormSchema>
 
 export const SignIn = () => {
+  const [isLoginValid, setIsLoginValid] = useState(true)
+
   const navigate = useNavigate()
   const {
     register,
@@ -47,7 +38,8 @@ export const SignIn = () => {
       return
     }
 
-    alert('Invalid credentials error')//TODO: Temporário ?
+    console.log('deveria ter chegado até aqui ')
+    setIsLoginValid(false)
   }
 
   return (
@@ -109,6 +101,10 @@ export const SignIn = () => {
                   />
                   {errors.password && (
                     <FormError text={errors.password.message ?? ''} />
+                  )}
+
+                  {!isLoginValid && (
+                    <FormError text='Usuário Inválido' />
                   )}
                 </div>
 
