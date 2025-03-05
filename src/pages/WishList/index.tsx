@@ -1,13 +1,26 @@
-import { Banner } from '../../components/Banner'
-import { Center } from '../../components/Center'
-import { Footer } from '../../components/Footer'
-import { Header } from '../../components/Header'
-import { useWishList } from '../../store/useWishList'
-import { FavoriteProductCard } from './components/FavoriteProductCard'
+import { useEffect, useState } from 'react'
+
+import { Banner, Center, Footer, Header } from '@/components'
+import { useWishList } from '@/store'
+
+import emptyCart from '../../../public/assets/images/empty-cart.avif'
+import { FavoriteProductCardV1 } from './components/FavoriteProductCardV1'
+import { FavoriteProductCardV2 } from './components/FavoriteProductCardV2'
 import * as S from './styles'
 
 export const WishList = () => {
   const { favorites } = useWishList()
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 991)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 991)
+    }
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   return (
     <S.Container>
@@ -21,7 +34,7 @@ export const WishList = () => {
 
           <div className="products-container">
             <ul>
-              <li>
+              <li style={{ display: isMobile ? 'none' : 'grid' }}>
                 <span>Produto</span>
                 <span>Preço</span>
                 <span>Status do Estoque</span>
@@ -29,14 +42,19 @@ export const WishList = () => {
 
               {favorites.length ? favorites.map(item => (
                 <li key={item.id}>
-                  <FavoriteProductCard
-                    {...item}
-                  />
+                  {!isMobile ? (
+                    <FavoriteProductCardV1
+                      {...item}
+                    />
+                  ) : (
+                    <FavoriteProductCardV2
+                      {...item}
+                    />
+                  )}
                 </li>
               )) : (
                 <div>
-                  {/* <img src={emptyCart} alt="Carrinho vazio" /> */}
-                  <h2>Vazio</h2>
+                  <img src={emptyCart} alt="Lista vazia" />
                 </div>
               )}
             </ul>

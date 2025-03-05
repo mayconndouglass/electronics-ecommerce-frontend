@@ -1,12 +1,11 @@
+import { IoIosClose } from 'react-icons/io'
+import { Link } from 'react-router-dom'
+
+import { FavoriteItemProps, useCart, useWishList } from '@/store'
+
 import * as S from './styles'
 
-import { Link } from 'react-router-dom'
-import { IoIosClose } from 'react-icons/io'
-
-import { useCart } from '../../../../store/useCart'
-import { FavoriteItemProps, useWishList } from '../../../../store/useWishList'
-
-export const FavoriteProductCard = (itemData: FavoriteItemProps) => {
+export const FavoriteProductCardV1 = (itemData: FavoriteItemProps) => {
   const { id, name, price, imageUrl } = itemData
   const { removeItemFromWishList } = useWishList()
   const { addItemToCart } = useCart()
@@ -36,7 +35,9 @@ export const FavoriteProductCard = (itemData: FavoriteItemProps) => {
       </div>
 
       <div className='favorite-product-button'>
-        <button onClick={() => addItemToCart({ ...itemData, quantity: 1 })}>Adicionar ao carrinho</button>
+        <button onClick={() => addItemToCart({ ...itemData, quantity: 1 })}>
+          Adicionar ao carrinho
+        </button>
       </div>
     </S.Container>
   )

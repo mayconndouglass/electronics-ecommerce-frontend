@@ -106,5 +106,11 @@ export const Container = styled.div`
       cursor: pointer;
       border-color: ${props => props.theme['blue-600']};
     }
+
+    @media screen and (max-width: 1400px) {
+      font-size: 0.875rem;
+      font-weight: 500;
+      line-height: 1.3;
+    }
   }
 `

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { Center } from '@/components'
 import { useCart } from '@/store'
 
-import emptyCart from '../../../../../public/assets/images/empty-cart.png'
+import emptyCart from '../../../../../public/assets/images/empty-cart.avif'
 import { CartProductCardV1 } from './components/CartProductCardV1/index.tsx'
 import { CartProductCardV2 } from './components/CartProductCardV2/index.tsx'
 import * as S from './styles.ts'

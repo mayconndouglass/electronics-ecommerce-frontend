@@ -5,11 +5,15 @@ export const Container = styled.section`
     & > div {
       padding: 5rem 0;
 
+      @media screen and (max-width: 550px) {
+        padding: 2.5rem 0;
+      }
+
       .header-container {
         display: flex;
         justify-content: space-between;
 
-        margin-bottom: 20px;
+        margin-bottom: 1.25rem;
 
         h4 {
           font-size: 1.5rem;
@@ -44,6 +48,10 @@ export const Container = styled.section`
         & > span:first-child {
           margin-left: 4.5rem;
           grid-column: 1/4;
+        }
+
+        & > span:last-child {
+          grid-column: 5/7;
         }
       }
     }
