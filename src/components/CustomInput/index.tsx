@@ -1,5 +1,6 @@
+import { forwardRef,InputHTMLAttributes } from 'react'
+
 import * as S from './styles'
-import { InputHTMLAttributes, forwardRef } from 'react'
 
 type InputComponentProps = InputHTMLAttributes<HTMLInputElement> & {
   label: string

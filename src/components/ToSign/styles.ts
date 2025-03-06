@@ -7,7 +7,7 @@ export const Container = styled.section`
     padding: 6.25rem 6.6875rem 5.3125rem;
     border-radius: 6px;
 
-    background-image: url("../assets/images/bg-image-tosign.jpg");
+    background-image: url("/assets/images/bg-image-tosign.avif");
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -25,7 +25,7 @@ export const Container = styled.section`
         content: "";
         position: absolute;
         left: 30px;
-        background: url('../../../../../public/assets/images/send-mail.png') no-repeat;
+        background: url('/assets/images/send-mail.avif') no-repeat;
         z-index: 2;
         top: 17px;
         width: 25px;
