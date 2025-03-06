@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import { Center } from '../../../../components/Center'
 
-import * as S from './styles'
+import { Center } from '@/components'
+
 import iconClose from '../../../../../public/assets/images/icon-close.svg'
+import * as S from './styles'
 
 export const HeaderTop = () => {
   const [isOpen, setIsOpen] = useState(true)

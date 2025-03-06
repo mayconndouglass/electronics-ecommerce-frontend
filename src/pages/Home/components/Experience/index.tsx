@@ -1,11 +1,14 @@
-import * as S from './styles'
-
-import { Tag } from '../../../../components/Tag'
 import { ImHeadphones } from 'react-icons/im'
-import headsetWhite from '../../../../../public/assets/images/headset-white.png'
-import { AnimatedButton } from '../../../../components/AnimatedButton'
-import { Title } from '../../../../components/Title'
-import { Center } from '../../../../components/Center'
+
+import {
+  AnimatedButton,
+  Center,
+  Tag,
+  Title
+} from '@/components'
+
+import headsetWhite from '../../../../../public/assets/images/headset-white.avif'
+import * as S from './styles'
 
 export const Experience = () => {
   return (

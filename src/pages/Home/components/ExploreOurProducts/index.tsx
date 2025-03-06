@@ -1,31 +1,33 @@
-import * as S from './styles'
-import { useQuery } from 'react-query'
-
+// import { useEffect, useState } from 'react'
+import { BsBasket } from 'react-icons/bs'
 import Slider from 'react-slick'
 
+import {
+  AnimatedButton,
+  Center,
+  ProductCard,
+  Tag,
+  Title
+} from '@/components'
+import { UseApiQuery } from '@/hooks/use-api-query'
+import { useImagesLoaded } from '@/hooks/use-image-loaded'
+import { SkeletonProductCard } from '@/pages/Products/components/SkeletonProductCard'
+import { ProductTypeTwo } from '@/types'
+
 import { settings } from './settings/slider'
-import { ProductTypeTwo } from '../../../../types/product'
+import * as S from './styles'
 
-import { Tag } from '../../../../components/Tag'
-import { Center } from '../../../../components/Center'
-import { ProductCard } from '../../../../components/ProductCard'
-
-import { BsBasket } from 'react-icons/bs'
-import { AnimatedButton } from '../../../../components/AnimatedButton'
-import { Title } from '../../../../components/Title'
-
-import { api } from '../../../../services/api'
+type FeaturedProductsType = {
+  featuredProducts: ProductTypeTwo[]
+}
 
 export const ExploreOurProducts = () => {
   const {
-    data: featuredProducts,
-    isFetching
-  } = useQuery<ProductTypeTwo[]>('featuredProducts', async () => {
-    const response = await api.get('/featured-products')
-    const { featuredProducts } = response.data
-
-    return featuredProducts
-  }, { staleTime: 1000 * 60 * 10 })
+    data: { featuredProducts } = {},
+  } = UseApiQuery<FeaturedProductsType>(
+    '/featured-products'
+  )
+  const loadedImages = useImagesLoaded(featuredProducts, (product) => product.image_url)
 
   return (
     <S.Container>
@@ -34,11 +36,21 @@ export const ExploreOurProducts = () => {
         <Title fontSize={2.25}>Explore nossos Produtos</Title>
 
         <div className="container-products-cards">
-          <Slider {...settings}>
-            {!isFetching && featuredProducts?.map(product => (
-              <ProductCard key={product.id} {...product} $cardStyling='normal' />
-            ))}
-          </Slider>
+          {loadedImages && featuredProducts ? (
+            <Slider {...settings}>
+              {featuredProducts.map(product => (
+                <ProductCard key={product.id} {...product} $cardStyling='normal' />
+              ))}
+            </Slider>
+          ) : (
+            <>
+              <Slider {...settings}>
+                {Array.from({ length: 8 }).map((_, index) => (
+                  <SkeletonProductCard key={index} $cardStyling='normal'/>
+                ))}
+              </Slider>
+            </>
+          )}
         </div>
 
         <div className="button">

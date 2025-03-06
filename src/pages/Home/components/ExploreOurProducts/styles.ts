@@ -4,7 +4,7 @@ export const Container = styled.section`
   padding: 5rem 0;
 
   h2 {
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
   }
 
   .container-products-cards {

@@ -5,7 +5,7 @@ export const Container = styled.section`
   padding: 5rem 0;
 
   h2 {
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
   }
 
   .testimonials-container {
@@ -14,7 +14,7 @@ export const Container = styled.section`
     gap: 2.5rem;
 
     & > div:nth-child(2) {
-      margin-top: 30px;
+      margin-top: 1.875rem;
     }
 
     @media screen and (max-width: 990px){

@@ -19,7 +19,7 @@ export const Container = styled.section`
   }
 
   h2 {
-    margin-bottom: 50px;
+    margin-bottom: 3.125rem;
   }
 
   .services-container {

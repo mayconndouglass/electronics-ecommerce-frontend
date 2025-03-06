@@ -5,7 +5,7 @@ export const Container = styled.div`
   border: 1px solid #f1f1f1;
   padding: 2.125rem 1.5rem;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
   border-radius: 6px;
   position: relative;
   transition: all .3s ease-in-out;
@@ -21,7 +21,7 @@ export const Container = styled.div`
   }
 
   .img {
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
   }
 
   h6 {

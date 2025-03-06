@@ -1,37 +1,20 @@
-import * as S from './styles'
-
+import { BsTags } from 'react-icons/bs'
+import { Link } from 'react-router-dom'
 import Slider from 'react-slick'
 
-import { api } from '../../../../services/api'
+import { Center, Tag, Title } from '@/components'
+import { UseApiQuery } from '@/hooks/use-api-query'
+import { useImagesLoaded } from '@/hooks/use-image-loaded'
+import { Category } from '@/types'
 
-import { settings } from './settings/slider'
-
-import { Center } from '../../../../components/Center'
-import { Tag } from '../../../../components/Tag'
 import { CardCategory } from './components/CardCategory'
-import { Title } from '../../../../components/Title'
-
-import { BsTags } from 'react-icons/bs'
-import { useQuery } from 'react-query'
-import { Link } from 'react-router-dom'
-
-type Category = {
-  id: string
-  name: string
-  description: string
-  image: string
-}
+import { SkeletonCardCategory } from './components/SkeletonCardCategory'
+import { settings } from './settings/slider'
+import * as S from './styles'
 
 export const Categories = () => {
-  const {
-    data: categories,
-    isFetching
-  } = useQuery<Category[]>('categories', async () => {
-    const response = await api.get('/categories')
-    const { categories } = response.data
-
-    return categories
-  }, { staleTime: 1000 * 60 * 10 })
+  const { data: categories, isFetching } = UseApiQuery<Category[]>('/categories')
+  const loadedImages = useImagesLoaded(categories, (category) => category.image)
 
   return (
     <S.Container>
@@ -56,15 +39,25 @@ export const Categories = () => {
         <Title fontSize={2.25}>Busque por Categoria</Title>
 
         <div className="container-categories">
-          {!isFetching && (
+          {loadedImages && (
             <div className="cards">
               <Slider {...settings}>
-                {categories && categories.map(category => (
+                {categories?.map(category => (
                   <CardCategory
                     key={category.id}
                     alt={category.description}
                     {...category}
                   />
+                ))}
+              </Slider>
+            </div>
+          )}
+
+          {(isFetching || !loadedImages) && (
+            <div className="cards">
+              <Slider {...settings}>
+                {Array.from({ length: 7 }).map((_, index) => (
+                  <SkeletonCardCategory key={index} />
                 ))}
               </Slider>
             </div>

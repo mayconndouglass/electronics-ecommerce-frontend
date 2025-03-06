@@ -1,7 +1,7 @@
-import { Arrow } from '../../../../../components/Arrow'
-
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi'
 import { HiOutlineArrowNarrowLeft } from 'react-icons/hi'
+
+import { Arrow } from '@/components'
 
 export const settings = {
   infinite: true,

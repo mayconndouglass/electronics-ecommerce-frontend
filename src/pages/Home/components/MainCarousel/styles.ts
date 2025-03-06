@@ -70,8 +70,8 @@ export const Container = styled.section`
   .slick-slider.slick-initialized {
     width: 661px;//678px;
 
-    padding: 0 0 15px 15px;
-    margin: 0 0 -15px -15px;
+    padding: 0 0 0.9375rem 0.9375rem;
+    margin: 0 0 -0.9375rem -0.9375rem;
 
     @media screen and (max-width: 1480px) {
      width: 45.3125vw;
@@ -121,8 +121,8 @@ export const Container = styled.section`
   }
 
   .slick-slider > .slick-list {
-    padding: 0 0 15px 15px;
-    margin: 0 0 -15px -15px;
+    padding: 0 0 0.9375rem 0.9375rem;
+    margin: 0 0 -0.9375rem -0.9375rem;
 
     @media screen and (max-width: 512px) {
       padding: 0;

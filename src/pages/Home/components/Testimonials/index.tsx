@@ -1,14 +1,12 @@
-import { Center } from '../../../../components/Center'
-import { Tag } from '../../../../components/Tag'
-import { Title } from '../../../../components/Title'
+import { FaQuoteLeft } from 'react-icons/fa'
+
+import user1 from '/assets/images/image-1.avif'
+import user2 from '/assets/images/image-2.avif'
+import user3 from '/assets/images/image-3.avif'
+import { Center, Tag, Title } from '@/components'
+
 import { TestimonialCard } from './components/TestimonialCard'
 import * as S from './styles'
-
-import user1 from '../../../../../public/assets/images/image-1.png'
-import user2 from '../../../../../public/assets/images/image-2.png'
-import user3 from '../../../../../public/assets/images/image-3.png'
-
-import { FaQuoteLeft } from 'react-icons/fa'
 
 export const Testimonials = () => {
   return (

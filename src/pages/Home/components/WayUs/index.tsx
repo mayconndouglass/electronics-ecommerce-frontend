@@ -1,12 +1,10 @@
-import { Center } from '../../../../components/Center'
-import { Tag } from '../../../../components/Tag'
-import { Title } from '../../../../components/Title'
-import { ServiceCard } from './components/ServiceCard'
-import * as S from './styles'
-
 import { LuThumbsUp } from 'react-icons/lu'
 
+import { Center, Tag, Title } from '@/components'
+
+import { ServiceCard } from './components/ServiceCard'
 import { dataCard } from './data/card-data'
+import * as S from './styles'
 
 export const WayUs = () => {
   return (

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.section`
-  margin: 95px auto 0 auto;
+  margin: 5.9375rem auto 0 auto; //95px
 
   & > div {
     display: flex;
@@ -48,7 +48,7 @@ export const Container = styled.section`
         font-weight: ${props => props.theme['font-w-medium']};
         color: ${props => props.theme.black};
         line-height: 1;
-        margin-bottom: 5px;
+        margin-bottom: 0.3125rem; //5px;
       }
 
       p {

@@ -1,12 +1,11 @@
-import * as S from './styles'
-import { Tag } from '../../../../../../components/Tag'
-
-import { HiOutlineShoppingCart } from 'react-icons/hi'
 import { AiFillStar } from 'react-icons/ai'
 import { CiStar } from 'react-icons/ci'
 import { FaFire } from 'react-icons/fa'
+import { HiOutlineShoppingCart } from 'react-icons/hi'
 
-import { AnimatedButton } from '../../../../../../components/AnimatedButton'
+import { AnimatedButton, Tag } from '@/components'
+
+import * as S from './styles'
 
 interface ProductInfoCarouselProps {
   id: number

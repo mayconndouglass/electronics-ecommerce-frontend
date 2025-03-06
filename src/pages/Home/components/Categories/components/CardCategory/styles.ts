@@ -43,6 +43,16 @@ export const Container = styled.div`
       color: ${props => props.theme['gray-900']};
     }
 
+    /* .hidden {
+      visibility: hidden;
+    }
+
+    .skeleton-image {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 0.7rem;
+    } */
+
     img {
       max-width: 64px;
       min-width: 41px;
@@ -63,5 +73,20 @@ export const Container = styled.div`
   @media screen and (max-width: 390px) {
     width: 100%;
     margin: 0 auto;
+  }
+
+  .skeleton {
+      opacity: .7;
+      animation: skeleton-loading 1s linear infinite alternate;
+    }
+
+  @keyframes skeleton-loading {
+    0% {
+      background-color: hsl(200, 20%, 70%);
+    }
+
+    100% {
+      background-color: hsl(200, 20%, 95%);
+    }
   }
 `

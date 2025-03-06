@@ -3,7 +3,7 @@ import { styled } from 'styled-components'
 export const Container = styled.div`
   .message {
     background-color: ${props => props.theme.white};
-    border-radius: 10px;
+    border-radius: 0.625rem;
     padding: 2.5rem;
     margin-bottom: 2.5rem;
     position: relative;
@@ -19,7 +19,7 @@ export const Container = styled.div`
         content: "";
         width: 0;
         height: 0;
-        border-top: 25px solid white;
+        border-top: 1.5625rem solid white;
         border-right: 50px solid rgba(0,0,0,0);
         position: absolute;
         bottom: -25px;
@@ -39,7 +39,7 @@ export const Container = styled.div`
 .user {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 1.25rem;
 
     .info {
       span {
