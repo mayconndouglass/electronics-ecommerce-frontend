@@ -2,11 +2,6 @@ import { styled } from 'styled-components'
 
 export const Container = styled.section`
   main {
-    .skeleton {
-      opacity: .7;
-      animation: skeleton-loading 1s linear infinite alternate;
-    }
-
     .content {
       display: flex;
       gap: 2rem;
@@ -14,10 +9,16 @@ export const Container = styled.section`
       padding-top: 5rem;
 
       .right {
-
-
         width: 75%;
         /* height: 100vh; */
+
+        @media screen and (max-width: 1150px) {
+          width: 80%;
+        }
+
+        @media screen and (max-width: 990px) {
+          width: 100%;
+        }
 
         .filter-results {
           display: flex;
@@ -25,11 +26,41 @@ export const Container = styled.section`
           align-items: center;
           margin-bottom: 1.5rem;
 
+          .filter-icon {
+            display: none;
+          }
+
+          @media screen and (max-width: 990px) {
+            justify-content: space-between;
+
+            .filter-icon {
+              display: flex;
+              align-items: center;
+              cursor: pointer;
+
+              svg {
+                width: 20px;
+                height: 20px;
+                font-weight: 500;
+              }
+
+              span {
+                margin: 0;
+              }
+            }
+          }
+
+          @media screen and (max-width: 425px) {
+            flex-direction: column;
+            align-items: end;
+            gap: 1rem;
+          }
+
           span {
-            font-size: 16px;
+            font-size: 1rem;
             color: #000;
             font-weight: 500;
-            margin: 0 20px 0 10px;
+            margin: 0 1.25rem 0 0.625rem;
           }
 
           select {
@@ -37,7 +68,7 @@ export const Container = styled.section`
             font-weight: 500;
             font-size: 1rem;
             border: 2px solid #CBD3D9;
-            background: url('../../../../../public/assets/images/arrow-icon2.png') 85% center no-repeat rgba(0, 0, 0, 0);
+            background: url('/assets/images/arrow-icon2.png') 85% center no-repeat rgba(0, 0, 0, 0);
 
             cursor: pointer;
             transition: .3s;
@@ -50,6 +81,26 @@ export const Container = styled.section`
             background-color: white;
             border-radius: 0.5rem;
           }
+
+          @media screen and (max-width: 750px) {
+            & > div:last-child {
+              display: flex;
+              flex-direction: column;
+              align-items: end;
+              gap: 1rem;
+            }
+           /*  flex-direction: column;
+            align-items: end;
+            gap: 1rem; */
+
+            span {
+              order: 2;
+            }
+
+            select {
+              height: 45px;
+            }
+          }
         }
 
         .hidden {
@@ -61,9 +112,47 @@ export const Container = styled.section`
           grid-template-columns: repeat(3, 1fr);
           column-gap: 2rem;
 
+          @media screen and (max-width: 750px) {
+            grid-template-columns: repeat(2, 1fr);
+          }
+
+          @media screen and (max-width: 520px) {
+            grid-template-columns: repeat(1, 1fr);
+          }
+
+          .skeleton-product-card {
+            & > div {
+              padding: 0;
+
+              .image-loading {
+                height: 200px;
+              }
+            }
+          }
+
           .product-card hidden {
             visibility: hidden;
             margin-top: 2rem;
+          }
+
+          @media screen and (max-width: 1300px) {
+            column-gap: 1.4rem;
+
+            .product-card .image-container .actions-container .add-to-cart button {
+              line-height: 1;
+            }
+          }
+
+          @media screen and (max-width: 520px) {
+            .product-card .image-container .actions-container .add-to-cart button {
+              line-height: 1.7;
+            }
+          }
+
+          @media screen and (max-width: 330px) {
+            .product-card .image-container .actions-container .add-to-cart button {
+              line-height: 1;
+            }
           }
 
           /* customizando o card-product */
@@ -97,26 +186,6 @@ export const Container = styled.section`
           .rating-stars {
             display: none;
           }
-
-          .image-loading {
-            height: 200px;
-            border-radius: 6px;
-            margin-bottom: 0.7rem;
-          }
-
-          .title-loading {
-            width: 75%;
-            height: 1rem;
-            border-radius: 6px;
-            margin-bottom: .5rem;
-          }
-
-          .price-loading {
-            width: 30%;
-            height: 1rem;
-            border-radius: 6px;
-            margin-bottom: 2rem;
-          }
         }
 
         .no-products {
@@ -130,6 +199,10 @@ export const Container = styled.section`
             margin-left: 2rem;
           }
         }
+      }
+
+      @media screen and (max-width: 400px) {
+        padding-top: 2.25rem;
       }
     }
 
@@ -146,14 +219,4 @@ export const Container = styled.section`
       }
     }
   }
-
-  @keyframes skeleton-loading {
-  0% {
-    background-color: hsl(200, 20%, 70%);
-  }
-
-  100% {
-    background-color: hsl(200, 20%, 95%);
-  }
-}
 `

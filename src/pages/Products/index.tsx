@@ -1,15 +1,18 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { CiFilter } from 'react-icons/ci'
 
-import empty from '../../../public/assets/images/empty.jpg'
-import { Banner } from '../../components/Banner'
-import { BreadCrumb } from '../../components/BreadCrumb'
-import { Center } from '../../components/Center'
-import { Footer } from '../../components/Footer/index.tsx'
-import { Header } from '../../components/Header'
-import { ProductCard } from '../../components/ProductCard/index.tsx'
-import { ToSign } from '../../components/ToSign/index.tsx'
+import empty from '/assets/images/empty.avif'
+import { Banner,
+  BreadCrumb,
+  Center,
+  Footer,
+  Header,
+  ProductCard,
+  SkeletonProductCard,
+  ToSign} from '@/components'
+import { ProductsPaginated } from '@/types'
+
 import { UseApiQuery } from '../../hooks/use-api-query.ts'
-import { ProductsPaginated } from '../../types/products-paginated'
 import { Filters } from './components/Filters/filters.tsx'
 import { Pagination } from './components/pagination/index.tsx'
 import * as S from './styles.ts'
@@ -23,6 +26,8 @@ export type FiltersType = {
 }
 
 export const Products = () => {
+  const [sideBarIsOpen, setSideBarIsOpen] = useState(false)
+  const [loadedImages, setLoadedImages] = useState<boolean>(false)
   const [filters, setFilters] = useState<FiltersType>({
     category: '',
     color: '',
@@ -45,6 +50,23 @@ export const Products = () => {
   )
   const { currentPage, totalPages, totalItems, products } = pagination ?? {}
 
+  useEffect(() => {
+    setLoadedImages(false)
+
+    if (!products) return
+
+    Promise.all(
+      products.map((product) =>
+        new Promise<void>((resolve) => {
+          const img = new Image()
+          img.src = product.ProductImage[0].image.url
+          img.onload = () => resolve()
+          img.onerror = () => resolve()
+        })
+      )
+    ).then(() => setLoadedImages(true))
+  }, [products])
+
   return (
     <S.Container>
       <Header />
@@ -54,30 +76,44 @@ export const Products = () => {
         <BreadCrumb title='Nossos Produtos' crumb='Produtos' />
         <Center>
           <div className="content">
-            <Filters  filters={filters} setFilters={setFilters} />
-
+            <Filters
+              filters={filters}
+              setFilters={setFilters}
+              sideBar={sideBarIsOpen}
+              setSideBar={setSideBarIsOpen}
+            />
             <div className="right">
               <div className='filter-results'>
-                <span>
-                  Exibindo {totalPages ? currentPage : 0} - {totalPages}
-                  {' '}de {totalItems} resultados
-                </span>
-
-                <select
-                  name="filter-results"
-                  id="filter-results"
-                  value={filters.sort}
-                  onChange={(e) => setFilters(prev => ({...prev, sort: e.target.value}))}
+                <div
+                  className='filter-icon'
+                  onClick={() => setSideBarIsOpen(!sideBarIsOpen)}
                 >
-                  <option value="newest">Mais recentes</option>
-                  <option value="older">Mais antigos</option>
-                  <option value="name">Por nome</option>
-                  <option value="price">Por preço</option>
-                </select>
+                  <CiFilter />
+                  <span>Filtros</span>
+                </div>
+
+                <div>
+                  <span>
+                  Exibindo {totalPages ? currentPage : 0} - {totalPages}
+                    {' '}de {totalItems} resultados
+                  </span>
+
+                  <select
+                    name="filter-results"
+                    id="filter-results"
+                    value={filters.sort}
+                    onChange={(e) => setFilters(prev => ({...prev, sort: e.target.value}))}
+                  >
+                    <option value="newest">Mais recentes</option>
+                    <option value="older">Mais antigos</option>
+                    <option value="name">Por nome</option>
+                    <option value="price">Por preço</option>
+                  </select>
+                </div>
               </div>
 
               <div className='products'>
-                {products?.map(product => (
+                {loadedImages && products?.map(product => (
                   <ProductCard
                     key={product.id}
                     {...product}
@@ -88,13 +124,11 @@ export const Products = () => {
               </div>
 
               <div className="products">
-                {isFetching && (
+                {(isFetching || !loadedImages) &&  (
                   <>
                     {Array.from({ length: 9 }).map((_, index) => (
-                      <div key={index} >
-                        <div className="skeleton image-loading" />
-                        <div className="title-loading skeleton" />
-                        <div className="price-loading skeleton" />
+                      <div key={index} className='skeleton-product-card'>
+                        <SkeletonProductCard  $cardStyling='normal' />
                       </div>
                     ))}
                   </>

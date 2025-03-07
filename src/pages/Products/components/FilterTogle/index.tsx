@@ -1,5 +1,6 @@
-import * as S from './styles'
 import { useState } from 'react'
+
+import * as S from './styles'
 
 type TogleProps = {
   title: string

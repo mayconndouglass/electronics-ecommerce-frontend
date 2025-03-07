@@ -7,6 +7,10 @@ export const Container = styled.div`
   margin-left: auto;
   padding-bottom: 5rem;
 
+  @media screen and (max-width: 990px) {
+    width: 100%;
+  }
+
   ul {
     display: flex;
     align-items: center;

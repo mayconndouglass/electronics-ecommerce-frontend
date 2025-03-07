@@ -1,4 +1,4 @@
-import { styled, keyframes } from 'styled-components'
+import { keyframes,styled } from 'styled-components'
 
 const slideOut = (size: string) => keyframes`
   0% {
@@ -31,8 +31,8 @@ export const Container = styled.div<{ open: boolean, size: string }>`
     font-weight: 500;
     color: #27272E;
     border-bottom: 2px solid #CBD3D9;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+    padding-bottom: 0.625rem;
+    margin-bottom: 1.25rem;
     cursor: pointer;
     line-height: 1.3;
     position: relative;

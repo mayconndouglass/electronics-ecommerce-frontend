@@ -1,8 +1,9 @@
-import * as S from './styles.ts'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 
+import { ProductsPaginated } from '@/types'
+
 import { FiltersType } from '../../index.tsx'
-import { ProductsPaginated } from '../../../../types/products-paginated'
+import * as S from './styles.ts'
 
 type FultersProps = {
   products: ProductsPaginated | undefined
